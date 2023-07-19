@@ -11,7 +11,6 @@ const index = () => {
           <Route path='/' element={<Home/>}/>
             <Route path='/home' element={<Home/>}/>
             <Route path='/profile' element={<Profile/>}/>
-
           </Routes>
         </BrowserRouter>
     </>
