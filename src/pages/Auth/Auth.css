@@ -128,3 +128,41 @@ html body {
   accent-color: #efc81a;
   margin-right: 20px;
 }
+
+.paragraf {
+  text-align: center;
+  height: 100px;
+  width: 400px;
+  /* background-color: lightskyblue; */
+}
+
+.formforgot {
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.formforgot button {
+  margin-top: 10px;
+  cursor: pointer;
+  width: 400px;
+  height: 50px;
+  border-radius: 16px;
+  border: none;
+  background: #efc81a;
+  font-size: 17px;
+  color: #fff;
+}
+
+.inputloginforgot {
+  /* background-color: beige; */
+  width: 500px;
+  height: 300px;
+  /* background-color: lightblue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
