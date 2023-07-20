@@ -1,9 +1,9 @@
-import Router from './config/router'
+import Router from "./config/router";
 
 function App() {
   return (
     <>
-    <Router/>
+      <Router />
     </>
   );
 }

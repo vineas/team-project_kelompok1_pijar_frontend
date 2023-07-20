@@ -1,16 +1,16 @@
 import React from "react";
+import AddRecepisi from "../component/AddRecep/AddRecepisi";
 import Nav from "../component/navbar/Nav";
-import HomePage from "../component/homepage/HomePage";
 import Footer from "../component/footer/footer";
 
-const Home = () => {
+const AddRecep = () => {
   return (
     <>
       <Nav />
-      <HomePage />
+      <AddRecepisi />
       <Footer />
     </>
   );
 };
 
-export default Home;
+export default AddRecep;
