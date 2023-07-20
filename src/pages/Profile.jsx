@@ -1,15 +1,35 @@
+// import styles from '../profile.module.css'
 import React from 'react';
+import ModalUpdateProfile from '../component/ModalUpdateProfile';
 const profileImg = require('../assets/img/profile/profile.png')
 const recipe1 = require('../assets/img/profile/recipe1.png')
-const recipe2 = require('../assets/img/profile/recipe2.png')
-const edit = require('../assets/img/profile/edit.png')
-
+// const recipe2 = require('../assets/img/profile/recipe2.png')
+// const edit = require('../assets/img/profile/edit.png')
 
 
 const Profile = () => {
 
   return (
     <>
+      <style>
+        <>
+          .image-recipe-profile{"{"}
+          width: 30%;
+          {/* height: 250px;  */}
+          margin-right: 30px;
+          margin-top: 30px
+          {"}"}
+
+          @media screen and (max-width: 576px){"{"}
+          .image-recipe-profile {"{"}
+          width: 85%;
+          {"}"}
+          {"}"}
+
+
+        </>
+      </style>
+
       <div className="container" style={{ marginTop: 90 }}>
         <div className="row">
           <div className="col-md-12 ">
@@ -28,7 +48,7 @@ const Profile = () => {
                       width: "30%",
                       flexDirection: "row",
                       justifyContent: "center",
-                      borderRadius: 60 
+                      borderRadius: 60
                     }}
                   />
                 </div>
@@ -39,38 +59,11 @@ const Profile = () => {
                   <h5>Your Name</h5>
                 </div>
                 <div
-                  className="dropdown"
                   style={{ display: "flex", justifyContent: "center" }}
                 >
-                  <a
-                    className="btn btn dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <img
-                      src={edit}
-                      type="button"
-                      data-toggle="dropdown"
-                      aria-expanded="false"
-                      style={{
-                        width: 20,
-                        height: 20,
-                        flexDirection: "row",
-                        justifyContent: "center"
-                      }}
-                    />
-                  </a>
-                  <div className="dropdown-menu">
-                    <a className="dropdown-item" href="#">
-                      Change Photo Profile
-                    </a>
-                    <a className="dropdown-item" href="#">
-                      Change Password
-                    </a>
-                  </div>
+                  <ModalUpdateProfile />
                 </div>
+
               </div>
               <div className="col-md-4 " />
             </div>
@@ -119,44 +112,31 @@ const Profile = () => {
             <div
               className="tab-content"
               id="nav-tabContent"
-              style={{ marginTop: 20, paddingBottom: 60 }}
+              style={{ marginTop: 20, paddingBottom: 60, paddingLeft: 48 }}
             >
               <div
                 className="tab-pane fade show active"
                 id="nav-home"
                 role="tabpanel"
                 aria-labelledby="nav-home-tab"
+                style={{ justifyContent: 'center' }}
               >
                 <img
+                  className='image-recipe-profile'
                   src={recipe1}
                   alt=""
-                  style={{ width: "30%", marginRight: 30, marginTop: 30 }}
                 />
                 <img
-                  src={recipe2}
-                  alt=""
-                  style={{ width: "30%", marginRight: 30, marginTop: 30 }}
-                />
-                <img
+                  className='image-recipe-profile'
                   src={recipe1}
                   alt=""
-                  style={{ width: "30%", marginRight: 30, marginTop: 30 }}
                 />
                 <img
-                  src={recipe2}
-                  alt=""
-                  style={{ width: "30%", marginRight: 30, marginTop: 30 }}
-                />
-                <img
+                  className='image-recipe-profile'
                   src={recipe1}
                   alt=""
-                  style={{ width: "30%", marginRight: 30, marginTop: 30 }}
                 />
-                <img
-                  src={recipe2}
-                  alt=""
-                  style={{ width: "30%", marginRight: 30, marginTop: 30 }}
-                />
+
               </div>
               <div
                 className="tab-pane fade"
@@ -165,19 +145,9 @@ const Profile = () => {
                 aria-labelledby="nav-profile-tab"
               >
                 <img
+                  className='image-recipe-profile'
                   src={recipe1}
                   alt=""
-                  style={{ width: "30%", marginRight: 30, marginTop: 30 }}
-                />
-                <img
-                  src={recipe1}
-                  alt=""
-                  style={{ width: "30%", marginRight: 30, marginTop: 30 }}
-                />
-                <img
-                  src={recipe1}
-                  alt=""
-                  style={{ width: "30%", marginRight: 30, marginTop: 30 }}
                 />
               </div>
               <div
@@ -187,14 +157,9 @@ const Profile = () => {
                 aria-labelledby="nav-contact-tab"
               >
                 <img
+                  className='image-recipe-profile'
                   src={recipe1}
                   alt=""
-                  style={{ width: "30%", marginRight: 30, marginTop: 30 }}
-                />
-                <img
-                  src={recipe1}
-                  alt=""
-                  style={{ width: "30%", marginRight: 30, marginTop: 30 }}
                 />
               </div>
             </div>
