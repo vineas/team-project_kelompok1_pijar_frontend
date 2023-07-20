@@ -38,7 +38,7 @@ const Nav = () => {
                   </Link>
                 </div>
                 <div className="col-md-4 col-3">
-                  <Link to="/Profile">
+                  <Link to="/profile/:id">
                     <p style={{ margin: 0 }}>Profile</p>
                   </Link>
                 </div>

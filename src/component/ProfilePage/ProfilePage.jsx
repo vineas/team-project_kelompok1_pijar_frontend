@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ModalUpdateProfile from '../../component/ModalUpdateProfile/ModalUpdateProfile';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import ModalUpdateRecipe from '../ModalUpdateRecipe/ModalUpdateRecipe';
 const profileImg = require('../../assets/img/profile/profile.png')
 const recipe1 = require('../../assets/img/profile/recipe1.png')
 
 const ProfilePage = () => {
+    
+    let {id} = useParams()
+    let [users, setUsers]  = useState([])
+    useEffect(() => {
+        axios.get(`https://careful-petticoat-fox.cyclic.app/users/profile/${id}`)
+          .then((res) => {
+            setUsers(res.data.data[0]);
+            // console.log(res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+      }, [])
+
   return (
     <>
       <style>
@@ -16,7 +33,7 @@ const ProfilePage = () => {
 
           .title_menu {"{"}
           font-weight: 500; font-size: 25px; position: absolute; bottom: 0; left:
-          20px; color: white;
+          20px; color: white; margin-left: 10px;
           {"}"}
 
           @media screen and (max-width: 480px){"{"}
@@ -27,7 +44,7 @@ const ProfilePage = () => {
 
 
         </>
-      </style>
+      </style>    
 
       <div className="container" style={{ marginTop: 90 }}>
         <div className="row">
@@ -40,7 +57,7 @@ const ProfilePage = () => {
                 >
                   <img
                     className=""
-                    src={profileImg}
+                    src={users.users_photo}
                     alt=""
                     style={{
                       width: "30%",
@@ -53,7 +70,9 @@ const ProfilePage = () => {
                   className=""
                   style={{ display: "flex", justifyContent: "center", marginTop: 10 }}
                 >
-                  <h5>Your Name</h5>
+                  <h5>
+                    {users.users_name}
+                    </h5>
                 </div>
                 <div
                   style={{ display: "flex", justifyContent: "center" }}
@@ -126,53 +145,14 @@ const ProfilePage = () => {
                       />
                       <p className="title_menu">
                         Chiken <br />
-                        Kare
-                      </p>
-                    </div>
-                  </div>
+                        Kare 
 
-                  <div className="col-md-4 col-6">
-                    <div className="menu" style={{ position: "relative" }}>
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img
-                        className='image-recipe-profile'
-                        src={recipe1}
-                        alt=""
-                      />
-                      <p className="title_menu">
-                        Chiken <br />
-                        Kare
+                        <ModalUpdateRecipe/>
+                        <button className='btn-danger' style={{marginLeft: 10, borderRadius: 10}}>
+                            <i class="bi bi-trash3"></i>
+                        </button>
                       </p>
-                    </div>
-                  </div>
 
-                  <div className="col-md-4 col-6">
-                    <div className="menu" style={{ position: "relative" }}>
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img
-                        className='image-recipe-profile'
-                        src={recipe1}
-                        alt=""
-                      />
-                      <p className="title_menu">
-                        Chiken <br />
-                        Kare
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-md-4 col-6">
-                    <div className="menu" style={{ position: "relative" }}>
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img
-                        className='image-recipe-profile'
-                        src={recipe1}
-                        alt=""
-                      />
-                      <p className="title_menu">
-                        Chiken <br />
-                        Kare
-                      </p>
                     </div>
                   </div>
 
@@ -181,6 +161,26 @@ const ProfilePage = () => {
 
               <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <div className='row'>
+                <div className="col-md-4 col-6" >
+                    <div className="menu">
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare 
+
+                        <button className='btn-success' style={{marginLeft: 10, borderRadius: 10}}>
+                        <i class="bi bi-bookmark"></i>
+                        </button>
+                      </p>
+
+                    </div>
+                  </div>
+
                   <div className="col-md-4 col-6" >
                     <div className="menu">
                       {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
@@ -191,13 +191,18 @@ const ProfilePage = () => {
                       />
                       <p className="title_menu">
                         Chiken <br />
-                        Kare
+                        Kare 
+
+                        <button className='btn-success' style={{marginLeft: 10, borderRadius: 10}}>
+                        <i class="bi bi-bookmark"></i>
+                        </button>
                       </p>
+
                     </div>
                   </div>
 
-                  <div className="col-md-4 col-6">
-                    <div className="menu" style={{ position: "relative" }}>
+                  <div className="col-md-4 col-6" >
+                    <div className="menu">
                       {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
                       <img
                         className='image-recipe-profile'
@@ -206,23 +211,13 @@ const ProfilePage = () => {
                       />
                       <p className="title_menu">
                         Chiken <br />
-                        Kare
-                      </p>
-                    </div>
-                  </div>
+                        Kare 
 
-                  <div className="col-md-4 col-6">
-                    <div className="menu" style={{ position: "relative" }}>
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img
-                        className='image-recipe-profile'
-                        src={recipe1}
-                        alt=""
-                      />
-                      <p className="title_menu">
-                        Chiken <br />
-                        Kare
+                        <button className='btn-success' style={{marginLeft: 10, borderRadius: 10}}>
+                        <i class="bi bi-bookmark"></i>
+                        </button>
                       </p>
+
                     </div>
                   </div>
 
@@ -236,6 +231,25 @@ const ProfilePage = () => {
                 aria-labelledby="nav-contact-tab"
               >
                 <div className='row'>
+                <div className="col-md-4 col-6" >
+                    <div className="menu">
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare 
+
+                        <button className='btn-info' style={{marginLeft: 10, borderRadius: 10}}>
+                        <i class="bi bi-heart"></i>
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+
                   <div className="col-md-4 col-6" >
                     <div className="menu">
                       {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
@@ -246,53 +260,13 @@ const ProfilePage = () => {
                       />
                       <p className="title_menu">
                         Chiken <br />
-                        Kare
-                      </p>
-                    </div>
-                  </div>
+                        Kare 
 
-                  <div className="col-md-4 col-6">
-                    <div className="menu" style={{ position: "relative" }}>
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img
-                        className='image-recipe-profile'
-                        src={recipe1}
-                        alt=""
-                      />
-                      <p className="title_menu">
-                        Chiken <br />
-                        Kare
+                        <button className='btn-info' style={{marginLeft: 10, borderRadius: 10}}>
+                        <i class="bi bi-heart"></i>
+                        </button>
                       </p>
-                    </div>
-                  </div>
 
-                  <div className="col-md-4 col-6">
-                    <div className="menu" style={{ position: "relative" }}>
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img
-                        className='image-recipe-profile'
-                        src={recipe1}
-                        alt=""
-                      />
-                      <p className="title_menu">
-                        Chiken <br />
-                        Kare
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="col-md-4 col-6">
-                    <div className="menu" style={{ position: "relative" }}>
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img
-                        className='image-recipe-profile'
-                        src={recipe1}
-                        alt=""
-                      />
-                      <p className="title_menu">
-                        Chiken <br />
-                        Kare
-                      </p>
                     </div>
                   </div>
 
