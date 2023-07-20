@@ -17,11 +17,7 @@ const Profile = () => {
 
           .title_menu {"{"}
           font-weight: 500; font-size: 25px; position: absolute; bottom: 0; left:
-          20px; color: white; 
-          {"}"}
-
-          @font-face {"{"}
-          font-family: air-bnb; src: url(./assets/font/AirbnbCereal_W_Md.otf);
+          20px; color: white;
           {"}"}
 
           @media screen and (max-width: 480px){"{"}
@@ -117,89 +113,190 @@ const Profile = () => {
               style={{ paddingBottom: 90 }}
             >
 
-              <div className="row">
-                <div className="col-md-4 col-6">
-                  <div className="menu" style={{ position: "relative" }}>
-                    {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                    <img
-                      className='image-recipe-profile'
-                      src={recipe1}
-                      alt=""
-                    />
-                    <p className="title_menu">
-                      Chiken <br />
-                      Kare
-                    </p>
+              <div className="tab-pane fade show active" id="nav-home">
+                <div className='row'>
+                  <div className="col-md-4 col-6" >
+                    <div className="menu">
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-md-4 col-6">
-                  <div className="menu" style={{ position: "relative" }}>
-                    {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                    <img
-                      className='image-recipe-profile'
-                      src={recipe1}
-                      alt=""
-                    />
-                    <p className="title_menu">
-                      Chiken <br />
-                      Kare
-                    </p>
+                  <div className="col-md-4 col-6">
+                    <div className="menu" style={{ position: "relative" }}>
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="col-md-4 col-6">
-                  <div className="menu" style={{ position: "relative" }}>
-                    {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                    <img
-                      className='image-recipe-profile'
-                      src={recipe1}
-                      alt=""
-                    />
-                    <p className="title_menu">
-                      Chiken <br />
-                      Kare
-                    </p>
+
+                  <div className="col-md-4 col-6">
+                    <div className="menu" style={{ position: "relative" }}>
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="col-md-4 col-6">
-                  <div className="menu" style={{ position: "relative" }}>
-                    {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                    <img
-                      className='image-recipe-profile'
-                      src={recipe1}
-                      alt=""
-                    />
-                    <p className="title_menu">
-                      Chiken <br />
-                      Kare
-                    </p>
+
+                  <div className="col-md-4 col-6">
+                    <div className="menu" style={{ position: "relative" }}>
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare
+                      </p>
+                    </div>
                   </div>
+
                 </div>
               </div>
 
-              <div
-                className="tab-pane fade"
-                id="nav-profile"
-                role="tabpanel"
-                aria-labelledby="nav-profile-tab"
-              >
-                <img
-                  className='image-recipe-profile'
-                  src={recipe1}
-                  alt=""
-                />
+              <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div className='row'>
+                  <div className="col-md-4 col-6" >
+                    <div className="menu">
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="col-md-4 col-6">
+                    <div className="menu" style={{ position: "relative" }}>
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="col-md-4 col-6">
+                    <div className="menu" style={{ position: "relative" }}>
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
               </div>
+
               <div
                 className="tab-pane fade"
                 id="nav-contact"
                 role="tabpanel"
                 aria-labelledby="nav-contact-tab"
               >
-                <img
-                  className='image-recipe-profile'
-                  src={recipe1}
-                  alt=""
-                />
+                <div className='row'>
+                  <div className="col-md-4 col-6" >
+                    <div className="menu">
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="col-md-4 col-6">
+                    <div className="menu" style={{ position: "relative" }}>
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="col-md-4 col-6">
+                    <div className="menu" style={{ position: "relative" }}>
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="col-md-4 col-6">
+                    <div className="menu" style={{ position: "relative" }}>
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                      <img
+                        className='image-recipe-profile'
+                        src={recipe1}
+                        alt=""
+                      />
+                      <p className="title_menu">
+                        Chiken <br />
+                        Kare
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
               </div>
             </div>
           </div>
