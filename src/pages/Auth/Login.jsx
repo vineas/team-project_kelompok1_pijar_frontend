@@ -4,15 +4,15 @@ import "./Auth.css";
 const Login = () => {
   return (
     <>
-      <section>
+      <section className="hero">
         <div className="row">
-          <div className="background col-6 col-md-6">
+          <div className="background col-12 col-md-6">
             <div className="icon-1">
               <img src={require("../../assets/img/Login/icon.png")} alt="grup-icon" />
               <p>Mama Recipe.</p>
             </div>
           </div>
-          <div className={` inputku col-6 col-md-6`}>
+          <div className={` inputku col-12 col-md-6`}>
             <div className="inputlogin">
               <h2>Welcome</h2>
               <p>Log in into your exiting account</p>

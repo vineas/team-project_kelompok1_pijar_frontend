@@ -1,13 +1,16 @@
 import React from "react";
-import DetailVedeoIsi from "../component/DetailVideo/DetailVedeoIsi";
-// import DetailResepIsi from "../component/DetailResep/DetailResepIsi";
+// import DetailVedeoIsi from "../component/DetailVideo/DetailVedeoIsi";
+import DetailResepIsi from "../component/DetailResep/DetailResepIsi";
+import Nav from "../component/navbar/Nav";
+import Footer from "../component/footer/footer";
 
 const DetailResep = () => {
   return (
     <>
-      {/* <DetailResepIsi /> */}
-
-      <DetailVedeoIsi />
+      <Nav />
+      <DetailResepIsi />
+      <Footer />
+      {/* <DetailVedeoIsi /> */}
     </>
   );
 };
