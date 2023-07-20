@@ -1,13 +1,10 @@
-import React from 'react';
-const profileImg = require('../assets/img/profile/profile.png')
-const recipe1 = require('../assets/img/profile/recipe1.png')
-const recipe2 = require('../assets/img/profile/recipe2.png')
-const edit = require('../assets/img/profile/edit.png')
-
-
+import React from "react";
+const profileImg = require("../assets/img/profile/profile.png");
+const recipe1 = require("../assets/img/profile/recipe1.png");
+const recipe2 = require("../assets/img/profile/recipe2.png");
+const edit = require("../assets/img/profile/edit.png");
 
 const Profile = () => {
-
   return (
     <>
       <div className="container" style={{ marginTop: 90 }}>
@@ -18,7 +15,7 @@ const Profile = () => {
               <div className="col-md-4 ">
                 <div
                   className=""
-                  style={{ display: "flex", justifyContent: "center", }}
+                  style={{ display: "flex", justifyContent: "center" }}
                 >
                   <img
                     className=""
@@ -28,13 +25,17 @@ const Profile = () => {
                       width: "30%",
                       flexDirection: "row",
                       justifyContent: "center",
-                      borderRadius: 60 
+                      borderRadius: 60,
                     }}
                   />
                 </div>
                 <div
                   className=""
-                  style={{ display: "flex", justifyContent: "center", marginTop: 10 }}
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: 10,
+                  }}
                 >
                   <h5>Your Name</h5>
                 </div>
@@ -58,7 +59,7 @@ const Profile = () => {
                         width: 20,
                         height: 20,
                         flexDirection: "row",
-                        justifyContent: "center"
+                        justifyContent: "center",
                       }}
                     />
                   </a>
@@ -201,10 +202,8 @@ const Profile = () => {
           </div>
         </div>
       </div>
-
-
     </>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
