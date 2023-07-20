@@ -1,11 +1,7 @@
-// import styles from '../profile.module.css'
 import React from 'react';
 import ModalUpdateProfile from '../component/ModalUpdateProfile';
 const profileImg = require('../assets/img/profile/profile.png')
 const recipe1 = require('../assets/img/profile/recipe1.png')
-// const recipe2 = require('../assets/img/profile/recipe2.png')
-// const edit = require('../assets/img/profile/edit.png')
-
 
 const Profile = () => {
 
@@ -14,13 +10,21 @@ const Profile = () => {
       <style>
         <>
           .image-recipe-profile{"{"}
-          width: 30%;
-          {/* height: 250px;  */}
+          width: 100%;
           margin-right: 30px;
           margin-top: 30px
           {"}"}
 
-          @media screen and (max-width: 576px){"{"}
+          .title_menu {"{"}
+          font-weight: 500; font-size: 25px; position: absolute; bottom: 0; left:
+          20px; color: white; 
+          {"}"}
+
+          @font-face {"{"}
+          font-family: air-bnb; src: url(./assets/font/AirbnbCereal_W_Md.otf);
+          {"}"}
+
+          @media screen and (max-width: 480px){"{"}
           .image-recipe-profile {"{"}
           width: 85%;
           {"}"}
@@ -37,8 +41,7 @@ const Profile = () => {
               <div className="col-md-4 " />
               <div className="col-md-4 ">
                 <div
-                  className=""
-                  style={{ display: "flex", justifyContent: "center", }}
+                  style={{ display: "flex", justifyContent: "center" }}
                 >
                   <img
                     className=""
@@ -47,7 +50,6 @@ const Profile = () => {
                     style={{
                       width: "30%",
                       flexDirection: "row",
-                      justifyContent: "center",
                       borderRadius: 60
                     }}
                   />
@@ -112,32 +114,69 @@ const Profile = () => {
             <div
               className="tab-content"
               id="nav-tabContent"
-              style={{ marginTop: 20, paddingBottom: 60, paddingLeft: 48 }}
+              style={{ paddingBottom: 90 }}
             >
-              <div
-                className="tab-pane fade show active"
-                id="nav-home"
-                role="tabpanel"
-                aria-labelledby="nav-home-tab"
-                style={{ justifyContent: 'center' }}
-              >
-                <img
-                  className='image-recipe-profile'
-                  src={recipe1}
-                  alt=""
-                />
-                <img
-                  className='image-recipe-profile'
-                  src={recipe1}
-                  alt=""
-                />
-                <img
-                  className='image-recipe-profile'
-                  src={recipe1}
-                  alt=""
-                />
 
+              <div className="row">
+                <div className="col-md-4 col-6">
+                  <div className="menu" style={{ position: "relative" }}>
+                    {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                    <img
+                      className='image-recipe-profile'
+                      src={recipe1}
+                      alt=""
+                    />
+                    <p className="title_menu">
+                      Chiken <br />
+                      Kare
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-md-4 col-6">
+                  <div className="menu" style={{ position: "relative" }}>
+                    {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                    <img
+                      className='image-recipe-profile'
+                      src={recipe1}
+                      alt=""
+                    />
+                    <p className="title_menu">
+                      Chiken <br />
+                      Kare
+                    </p>
+                  </div>
+                </div>
+                <div className="col-md-4 col-6">
+                  <div className="menu" style={{ position: "relative" }}>
+                    {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                    <img
+                      className='image-recipe-profile'
+                      src={recipe1}
+                      alt=""
+                    />
+                    <p className="title_menu">
+                      Chiken <br />
+                      Kare
+                    </p>
+                  </div>
+                </div>
+                <div className="col-md-4 col-6">
+                  <div className="menu" style={{ position: "relative" }}>
+                    {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
+                    <img
+                      className='image-recipe-profile'
+                      src={recipe1}
+                      alt=""
+                    />
+                    <p className="title_menu">
+                      Chiken <br />
+                      Kare
+                    </p>
+                  </div>
+                </div>
               </div>
+
               <div
                 className="tab-pane fade"
                 id="nav-profile"
