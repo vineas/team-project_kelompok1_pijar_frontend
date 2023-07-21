@@ -14,19 +14,16 @@ const Nav = () => {
     <>
       <style>
         header {"{"}
-        top: 0; position: sticky; background-color: transparent; transition:
-        background-color 0.2s ease-in-out; z-index: 10;
+        top: 0; position: sticky; background-color: transparent; transition: background-color 0.2s ease-in-out; z-index: 10;
         {"}"}
         header.scrolled {"{"}
         background-color: #efc81a; opacity: 0.98;
         {"}"}
         .icon {"{"}
-        height: 50px; width: 50px; position: relative; background-color:
-        transparent;
+        height: 50px; width: 50px; position: relative; background-color: transparent;
         {"}"}
         .icon::after {"{"}
-        content: ""; width: 15px; height: 15px; background-color: #31a24c;
-        position: absolute; border-radius: 100%; right: 0px; top: 0px;
+        content: ""; width: 15px; height: 15px; background-color: #31a24c; position: absolute; border-radius: 100%; right: 0px; top: 0px;
         {"}"}
         {/* div {"{"}
         border: 1px solid;
@@ -48,17 +45,18 @@ const Nav = () => {
                 style={{
                   alignItems: "center",
                   height: "100%",
-                  textAlign: "center",
                   display: "flex",
+                  
                 }}
               >
                 <div>
-                  <Link to="#">
+                  <Link to="/home">
                     <p
                       style={{
                         margin: 0,
                         width: "80px",
                         borderRadius: "10px",
+                        color: "#2E266F"
                       }}
                     >
                       Home
@@ -66,12 +64,13 @@ const Nav = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link to="#">
+                  <Link to="/addrecipe">
                     <p
                       style={{
                         margin: 0,
-                        width: "90px",
+                        width: "115px",
                         borderRadius: "10px",
+                        color: "#2E266F"
                       }}
                     >
                       Add Recipe
@@ -79,12 +78,13 @@ const Nav = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link to="#">
+                  <Link to="/profile/:id">
                     <p
                       style={{
                         margin: 0,
-                        width: "80px",
+                        width: "60px",
                         borderRadius: "10px",
+                        color: "#2E266F"
                       }}
                     >
                       Profile

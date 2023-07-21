@@ -2,6 +2,13 @@ import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Profile from "../../pages/Profile";
 import Home from "../../pages/Home";
+import DetailResep from "../../pages/DetailResep";
+import AddRecep from "../../pages/AddRecep";
+import Login from "../../pages/Auth/Login";
+import Register from "../../pages/Auth/Register";
+import ForgotPassword from "../../pages/Auth/ForgotPassword/ForgotPassword";
+import Reset from "../../pages/Auth/ForgotPassword/Reset";
+import DetailVideo from "../../pages/Auth/DetailVideo";
 
 const index = () => {
   return (
@@ -10,7 +17,14 @@ const index = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace="true"></Navigate>} />
           <Route path="/home" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/detailrecipe" element={<DetailResep />} />
+          <Route path="/detailvideo" element={<DetailVideo />} />    
+          <Route path="/addrecipe" element={<AddRecep />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/reset" element={<Reset />} />
         </Routes>
       </BrowserRouter>
     </>

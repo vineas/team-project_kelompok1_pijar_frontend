@@ -1,0 +1,209 @@
+html body {
+  padding: 0px;
+  margin: 0;
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(#cecb2660 100%, rgb(170, 199, 39) 0%), url("../../assets/img/Login/image\ 15\ \(1\).png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background p {
+  font-size: 30px;
+  font-weight: 700px;
+  color: #fff;
+}
+
+.inputku {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputlogin {
+  /* background-color: beige; */
+  width: 500px;
+  height: 600px;
+  /* background-color: lightblue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputlogin h2 {
+  color: #efc81a;
+}
+
+.form {
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
+}
+
+.form-1 {
+  /* border-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  /* flex-direction: column; */
+}
+.form-1 label {
+  font-size: 15px;
+  font-weight: 100;
+  padding-bottom: 10px;
+}
+
+.form-1 input {
+  background-color: #fff;
+  height: 50px;
+  width: 400px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid #efc81a;
+}
+
+.cekbox {
+  display: flex;
+  align-items: center;
+}
+.form-2 {
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form-2 label {
+  font-size: 15px;
+  font-weight: 100;
+  padding-bottom: 10px;
+}
+.form-2 input {
+  background-color: #fff;
+  height: 50px;
+  width: 400px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid #21201f;
+}
+
+.form button {
+  margin-top: 10px;
+  cursor: pointer;
+  width: 400px;
+  height: 50px;
+  border-radius: 16px;
+  border: none;
+  background: #efc81a;
+  font-size: 17px;
+  color: #fff;
+}
+
+.form h6 {
+  font-size: 16px;
+  color: #8692a6;
+  font-weight: 200;
+  text-align: right;
+}
+
+#foot {
+  font-size: 16px;
+  text-align: center;
+}
+
+#foot span {
+  color: #efc81a;
+}
+
+#cb-1 {
+  accent-color: #efc81a;
+  margin-right: 20px;
+}
+
+.paragraf {
+  text-align: center;
+  height: 100px;
+  width: 400px;
+  /* background-color: lightskyblue; */
+}
+
+.formforgot {
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.formforgot button {
+  margin-top: 10px;
+  cursor: pointer;
+  width: 400px;
+  height: 50px;
+  border-radius: 16px;
+  border: none;
+  background: #efc81a;
+  font-size: 17px;
+  color: #fff;
+}
+
+.inputloginforgot {
+  /* background-color: beige; */
+  width: 500px;
+  height: 300px;
+  /* background-color: lightblue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 668px) {
+  .hero {
+    font-size: 52%;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .background {
+    display: none;
+  }
+
+  .hero .con {
+    width: 100%;
+    padding: 0;
+    margin-top: 100px;
+    object-position: center;
+  }
+
+  .hero .con .form {
+    width: 100%;
+    padding: 0;
+  }
+
+  .hero .con .form .form-1 input {
+    width: auto;
+  }
+
+  .hero .con .form .form-2 input {
+    width: auto;
+  }
+
+  .con button {
+    width: auto;
+    text-align: center;
+  }
+}
