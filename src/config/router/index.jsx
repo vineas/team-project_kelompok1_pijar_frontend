@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Profile from "../../pages/Profile";
 import Home from "../../pages/Home";
 import DetailResep from "../../pages/DetailResep";
@@ -15,12 +15,12 @@ const index = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Navigate to="/home" replace="true"></Navigate>} />
           <Route path="/home" element={<Home />} />
           <Route path="/profile/:id" element={<Profile />} />
-          <Route path="/detailresep" element={<DetailResep />} />
+          <Route path="/detailrecipe" element={<DetailResep />} />
           <Route path="/detailvideo" element={<DetailVideo />} />    
-          <Route path="/addrecep" element={<AddRecep />} />
+          <Route path="/addrecipe" element={<AddRecep />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />

@@ -32,7 +32,7 @@ const Footer = () => {
         font-size: 10px; padding-bottom: 10px;
         {"}"}
         .footer2 {"{"}
-        padding: 0 0 30px;
+        padding: 0 0 15px;
         {"}"}
         .footer2 a {"{"}
         list-style: none; padding: 10px; font-size: 6px; margin: 0;
