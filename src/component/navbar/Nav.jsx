@@ -47,7 +47,7 @@ const Nav = () => {
 
             <div className="col-md-1 col-3 row" style={{ justifyContent: "center" }}>
               <div className="icon">
-                <Link to="/login">
+                <Link to="/Login">
                   <img style={{ width: "100%", height: "100%", borderRadius: "100%" }} src={require("../../assets/img/home/profile-icon.png")} />
                 </Link>
               </div>
