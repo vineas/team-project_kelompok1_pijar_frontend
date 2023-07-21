@@ -3,23 +3,39 @@ import ModalUpdateProfile from '../../component/ModalUpdateProfile/ModalUpdatePr
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ModalUpdateRecipe from '../ModalUpdateRecipe/ModalUpdateRecipe';
-const profileImg = require('../../assets/img/profile/profile.png')
-const recipe1 = require('../../assets/img/profile/recipe1.png')
+// const profileImg = require('../../assets/img/profile/profile.png')
+const recipe1 = require('../../assets/img/profile/recipe1.png') 
+
 
 const ProfilePage = () => {
     
     let {id} = useParams()
     let [users, setUsers]  = useState([])
+    let [recipes, setRecipes] = useState([])
+
+    const getid = localStorage.getItem('users_id')
+
     useEffect(() => {
         axios.get(`https://careful-petticoat-fox.cyclic.app/users/profile/${id}`)
           .then((res) => {
             setUsers(res.data.data[0]);
-            // console.log(res.data);
-          })
+            localStorage.setItem('users_id', res.data.data[0].users_id)
+            // console.log(res.data.data[0]);
+          },[])
           .catch((err) => {
             console.log(err);
           })
-      }, [])
+      },[])
+
+      useEffect(() => {
+          axios.get(`https://careful-petticoat-fox.cyclic.app/recipes/${getid}`)
+          .then((res) => {
+            setRecipes(res.data.data);
+          },[])
+          .catch((err) => {
+            console.log(err);
+          })
+      },[])
 
   return (
     <>
@@ -28,7 +44,8 @@ const ProfilePage = () => {
           .image-recipe-profile{"{"}
           width: 100%;
           margin-right: 30px;
-          margin-top: 30px
+          margin-top: 30px;
+          border-radius: 10px;
           {"}"}
 
           .title_menu {"{"}
@@ -41,8 +58,6 @@ const ProfilePage = () => {
           width: 85%;
           {"}"}
           {"}"}
-
-
         </>
       </style>    
 
@@ -135,17 +150,17 @@ const ProfilePage = () => {
 
               <div className="tab-pane fade show active" id="nav-home">
                 <div className='row'>
+                      {recipes.map((recipe)=> (
                   <div className="col-md-4 col-6" >
                     <div className="menu">
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img
+                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}                      
+                        <img
                         className='image-recipe-profile'
-                        src={recipe1}
+                        src={recipe.recipes_photo}
                         alt=""
-                      />
+                        />
                       <p className="title_menu">
-                        Chiken <br />
-                        Kare 
+                        {recipe.recipes_title} 
 
                         <ModalUpdateRecipe/>
                         <button className='btn-danger' style={{marginLeft: 10, borderRadius: 10}}>
@@ -155,7 +170,7 @@ const ProfilePage = () => {
 
                     </div>
                   </div>
-
+                  ))}
                 </div>
               </div>
 
@@ -217,10 +232,8 @@ const ProfilePage = () => {
                         <i class="bi bi-bookmark"></i>
                         </button>
                       </p>
-
                     </div>
                   </div>
-
                 </div>
               </div>
 
@@ -266,10 +279,8 @@ const ProfilePage = () => {
                         <i class="bi bi-heart"></i>
                         </button>
                       </p>
-
                     </div>
                   </div>
-
                 </div>
 
               </div>

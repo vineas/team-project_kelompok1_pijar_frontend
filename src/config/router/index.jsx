@@ -8,6 +8,7 @@ import Login from "../../pages/Auth/Login";
 import Register from "../../pages/Auth/Register";
 import ForgotPassword from "../../pages/Auth/ForgotPassword/ForgotPassword";
 import Reset from "../../pages/Auth/ForgotPassword/Reset";
+import DetailVideo from "../../pages/Auth/DetailVideo";
 
 const index = () => {
   return (
@@ -18,6 +19,7 @@ const index = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/detailresep" element={<DetailResep />} />
+          <Route path="/detailvideo" element={<DetailVideo />} />    
           <Route path="/addrecep" element={<AddRecep />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

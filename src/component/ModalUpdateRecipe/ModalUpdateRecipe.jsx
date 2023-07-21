@@ -6,12 +6,12 @@ const ModalUpdateRecipe = () => {
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
-    
 
-    
+
+
     return (
         <>
-            <button className='btn-warning' style={{ marginLeft: 180, borderRadius: 10 }} onClick={handleShow}>
+            <button className='btn-warning' style={{ marginLeft: 30, borderRadius: 10 }} onClick={handleShow}>
                 <i class="bi bi-pencil-square"></i>
             </button>
 
@@ -28,32 +28,40 @@ const ModalUpdateRecipe = () => {
                     <Modal.Body>
                         <input
                             className="form-control mt-3"
-                            type="text"
-                            placeholder="Your Name"
-                            name="name"
-                        // value={data.name}
-                        // onChange={handleChange}
-                        />
-                        <input
-                            className="form-control mt-3"
-                            type="tel"
-                            name="phone"
-                            placeholder="Phone Number"
-                        // value={data.price}
-                        // onChange={handleChange}
-                        />                      
-                        <input
-                            className="form-control mt-3"
                             type="file"
                             placeholder="Image"
                             name="image"
                         // onChange={handleUpload}
                         />
+
+                        <input
+                            className="form-control mt-3"
+                            type="text"
+                            placeholder="Title"
+                            name="name"
+                        // value={data.name}
+                        // onChange={handleChange}
+                        />
+                        <textarea
+                            className="form-control mt-3"
+                            type="text"
+                            placeholder="Ingredients"
+                            name="ingredients"
+                        // value={data.name}
+                        // onChange={handleChange}
+                        />
+
+                        <input
+                            className="form-control mt-3"
+                            type="tel"
+                            name="phone"
+                            placeholder="Video"
+                        // value={data.price}
+                        // onChange={handleChange}
+                        />
+
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button variant="secondary">
-                            Change Password
-                        </Button>
                         <Button variant="secondary" onClick={handleClose}>
                             Close
                         </Button>
