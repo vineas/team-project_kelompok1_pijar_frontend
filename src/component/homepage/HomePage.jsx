@@ -8,7 +8,7 @@ const HomePage = () => {
         font-size: 52px; font-weight: 500; line-height: 50px; color: #2e266f;
         {"}"}
         .search_input {"{"}
-        width: 80%; height: 80px; background-color: #efefef; border-radius:
+        width: 80%; height: 70px; background-color: #efefef; border-radius:
         15px; color: #b6b6b6; padding: 0 50px; border: 0;
         {"}"}
         .colstrip {"{"}

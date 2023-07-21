@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Profile from "../../pages/Profile";
 import Home from "../../pages/Home";
 
@@ -8,7 +8,7 @@ const index = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Navigate to="/home" replace="true"></Navigate>} />
           <Route path="/home" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
