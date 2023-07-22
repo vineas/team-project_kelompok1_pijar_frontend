@@ -16,11 +16,7 @@ const ProfilePage = () => {
     const getid = localStorage.getItem('users_id')
 
     useEffect(() => {
-        axios.get(`https://017d-2001-448a-4005-2b24-59da-c08f-a097-5e5.ngrok-free.app/users/profile/${id}`, {
-          headers : { 
-            'ngrok-skip-browser-warning':true
-          }
-        })
+        axios.get(`https://tame-teal-shark-tie.cyclic.app/users/profile/${id}`)
           .then((res) => {
             setUsers(res.data.data[0]);
             localStorage.setItem('users_id', res.data.data[0].users_id)
@@ -32,11 +28,7 @@ const ProfilePage = () => {
       },[])
 
       useEffect(() => {
-          axios.get(`https://017d-2001-448a-4005-2b24-59da-c08f-a097-5e5.ngrok-free.app/recipes/${getid}`, {
-            headers : { 
-              'ngrok-skip-browser-warning':true
-            }
-          })
+          axios.get(`https://tame-teal-shark-tie.cyclic.app/recipes/users/${getid}`)
           .then((res) => {
             setRecipes(res.data.data);
           },[])
@@ -101,7 +93,12 @@ const ProfilePage = () => {
                   style={{ display: "flex", justifyContent: "center" }}
                 >
 
-                  <ModalUpdateProfile />
+                  <ModalUpdateProfile 
+                  users_id={users.users_id}
+                  users_name={users.users_name}
+                  users_phone={users.users_phone}
+                  users_photo={users.users_photo}
+                  />
 
                 </div>
 
