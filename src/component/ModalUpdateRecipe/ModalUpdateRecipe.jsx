@@ -7,8 +7,6 @@ const ModalUpdateRecipe = () => {
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
-
-
     return (
         <>
             <button className='btn-warning' style={{ marginLeft: 30, borderRadius: 10 }} onClick={handleShow}>

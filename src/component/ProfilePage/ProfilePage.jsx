@@ -16,11 +16,15 @@ const ProfilePage = () => {
     const getid = localStorage.getItem('users_id')
 
     useEffect(() => {
-        axios.get(`https://careful-petticoat-fox.cyclic.app/users/profile/${id}`)
+        axios.get(`https://017d-2001-448a-4005-2b24-59da-c08f-a097-5e5.ngrok-free.app/users/profile/${id}`, {
+          headers : { 
+            'ngrok-skip-browser-warning':true
+          }
+        })
           .then((res) => {
             setUsers(res.data.data[0]);
             localStorage.setItem('users_id', res.data.data[0].users_id)
-            // console.log(res.data.data[0]);
+            console.log(res.data.data[0]);
           },[])
           .catch((err) => {
             console.log(err);
@@ -28,7 +32,11 @@ const ProfilePage = () => {
       },[])
 
       useEffect(() => {
-          axios.get(`https://careful-petticoat-fox.cyclic.app/recipes/${getid}`)
+          axios.get(`https://017d-2001-448a-4005-2b24-59da-c08f-a097-5e5.ngrok-free.app/recipes/${getid}`, {
+            headers : { 
+              'ngrok-skip-browser-warning':true
+            }
+          })
           .then((res) => {
             setRecipes(res.data.data);
           },[])

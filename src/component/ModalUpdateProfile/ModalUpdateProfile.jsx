@@ -10,6 +10,31 @@ const ModalUpdateProfile = () => {
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
+        // const [data, setData] = useState({
+    //     users_name,
+    //     users_phone,
+    //     users_photo
+    // })
+
+    // const [image, setImage] = useState(null)
+
+    // const handleChange = (e) => {
+    //     setData({
+    //         ...data,
+    //         [e.target.name]: e.target.value,
+    //     });
+    // }
+
+    // const handleUpload = (e) => {
+    //     setImage(e.target.files[0]);
+    // }
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+
+    //     dispatch(updateProductAction(data, id, image, setShow))
+    // }
+
     
     return (
         <>
