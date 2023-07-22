@@ -42,12 +42,13 @@ const HomePage = () => {
         {"}"}
         .newImg::before{"{"}
         content: ""; background-color: #efc81a; width: 414px; height: 490px;
-        position: absolute; display: block; top: -20px; left: -160px; z-index:
+        position: absolute; display: block; top: -20px; right: 440px; z-index:
         -1;
         {"}"}
         .eggImg::before{"{"}
-        width: 414px; height: 490px; background-color: #efc81a; position:
-        absolute; display: block;  top: -20px; right: -160px; z-index:
+        content: ""; background-color: #efc81a; position: absolute; display:
+        block; width: 400px; height: 780px; top: -90px; left:
+        265px; z-index: -1;
         {"}"}
         @media screen and (max-width: 428px) {"{"}
         .text_title {"{"}
