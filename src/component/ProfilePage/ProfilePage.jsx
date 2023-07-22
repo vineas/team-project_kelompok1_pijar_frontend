@@ -3,39 +3,63 @@ import ModalUpdateProfile from '../../component/ModalUpdateProfile/ModalUpdatePr
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ModalUpdateRecipe from '../ModalUpdateRecipe/ModalUpdateRecipe';
+import ModalDeleteRecipes from '../ModalDeleteRecipes.jsx/ModalDeleteRecipes';
+import Swal from 'sweetalert';
 // const profileImg = require('../../assets/img/profile/profile.png')
-const recipe1 = require('../../assets/img/profile/recipe1.png') 
+const recipe1 = require('../../assets/img/profile/recipe1.png')
 
 
 const ProfilePage = () => {
-    
-    let {id} = useParams()
-    let [users, setUsers]  = useState([])
-    let [recipes, setRecipes] = useState([])
 
-    const getid = localStorage.getItem('users_id')
+  let { id, recipes_id } = useParams()
+  let [users, setUsers] = useState([])
+  let [resep, setResep] = useState([])
+  let [recipes, setRecipes] = useState([])
 
-    useEffect(() => {
-        axios.get(`https://tame-teal-shark-tie.cyclic.app/users/profile/${id}`)
-          .then((res) => {
-            setUsers(res.data.data[0]);
-            localStorage.setItem('users_id', res.data.data[0].users_id)
-            console.log(res.data.data[0]);
-          },[])
-          .catch((err) => {
-            console.log(err);
-          })
-      },[])
+  const getid = localStorage.getItem('users_id')
 
-      useEffect(() => {
-          axios.get(`https://tame-teal-shark-tie.cyclic.app/recipes/users/${getid}`)
-          .then((res) => {
-            setRecipes(res.data.data);
-          },[])
-          .catch((err) => {
-            console.log(err);
-          })
-      },[])
+  useEffect(() => {
+    axios.get(`https://tame-teal-shark-tie.cyclic.app/users/profile/${id}`)
+      .then((res) => {
+        setUsers(res.data.data[0]);
+        localStorage.setItem('users_id', res.data.data[0].users_id)
+        console.log(res.data.data[0]);
+      }, [])
+      .catch((err) => {
+        console.log(err);
+      })
+  }, [])
+
+  useEffect(() => {
+    axios.get(`https://tame-teal-shark-tie.cyclic.app/recipes/users/${getid}`)
+      .then((res) => {
+        setRecipes(res.data.data);
+      }, [])
+      .catch((err) => {
+        console.log(err);
+      })
+  }, [])
+
+  const handleDelete = (recipes_id) => {
+    axios.delete(`https://tame-teal-shark-tie.cyclic.app/recipes/${recipes_id}`)
+      .then((res) => {
+        Swal({
+          title: "Apakah Anda yakin?",
+          text: "Resep akan dihapus dan tidak dapat dikembalikan!",
+          icon: "warning",
+          buttons: ["Batal", "Ya, hapus"],
+          dangerMode: true,
+        }).then((willDelete) => {
+          if (willDelete) {
+            setRecipes((prevRecipes) => prevRecipes.filter((recipe) => recipe.recipes_id !== recipes_id));
+          }
+        })
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
 
   return (
     <>
@@ -59,11 +83,12 @@ const ProfilePage = () => {
           {"}"}
           {"}"}
         </>
-      </style>    
+      </style>
 
       <div className="container" style={{ marginTop: 90 }}>
         <div className="row">
           <div className="col-md-12 ">
+            {/* {users.map((item) => ( */}
             <div className="row">
               <div className="col-md-4 " />
               <div className="col-md-4 ">
@@ -87,24 +112,24 @@ const ProfilePage = () => {
                 >
                   <h5>
                     {users.users_name}
-                    </h5>
+                  </h5>
                 </div>
-                <div
-                  style={{ display: "flex", justifyContent: "center" }}
-                >
+                  <div
+                    style={{ display: "flex", justifyContent: "center" }}
+                  >
+                    <ModalUpdateProfile
+                      users_id={users.users_id}
+                      users_name={users.users_name}
+                      users_phone={users.users_phone}
+                      users_photo={users.users_photo}
+                    />
 
-                  <ModalUpdateProfile 
-                  users_id={users.users_id}
-                  users_name={users.users_name}
-                  users_phone={users.users_phone}
-                  users_photo={users.users_photo}
-                  />
-
-                </div>
+                  </div>
 
               </div>
               <div className="col-md-4 " />
             </div>
+                {/* ))} */}
           </div>
           <div className="col-md-12" style={{ marginTop: 50 }}>
             <nav>
@@ -155,33 +180,73 @@ const ProfilePage = () => {
 
               <div className="tab-pane fade show active" id="nav-home">
                 <div className='row'>
-                      {recipes.map((recipe)=> (
-                  <div className="col-md-4 col-6" >
-                    <div className="menu">
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}                      
+                  {recipes.map((recipe) => (
+                    <div className="col-md-4 col-6" >
+                      <div className="menu">
+                        {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
                         <img
-                        className='image-recipe-profile'
-                        src={recipe.recipes_photo}
-                        alt=""
+                          className='image-recipe-profile'
+                          src={recipe.recipes_photo}
+                          alt=""
                         />
-                      <p className="title_menu">
-                        {recipe.recipes_title} 
+                        <p className="title_menu">
+                          {recipe.recipes_title}
 
-                        <ModalUpdateRecipe/>
-                        <button className='btn-danger' style={{marginLeft: 10, borderRadius: 10}}>
-                            <i class="bi bi-trash3"></i>
-                        </button>
-                      </p>
+                          <ModalUpdateRecipe
+                            recipes_id={recipe.recipes_id}
+                            recipes_title={recipe.recipes_title}
+                            recipes_ingredients={recipe.recipes_ingredients}
+                            recipes_photo={recipe.recipes_photo}
+                            recipes_video={recipe.recipes_video}
 
+                          />
+                          {/* {resep.map((recipe) => ( */}
+
+                          {/* {resep && (
+                            <div key={recipes.recipes_id}>
+                              <button className='btn-danger' style={{ marginLeft: 10, borderRadius: 10 }}
+                                onClick={handleDelete}>
+                                <i class="bi bi-trash3"></i>
+                              </button>
+                            </div>
+                          )} */}
+
+                          {recipes.map((recipe) => (
+                            <div className="col-md-4 col-6" key={recipe.recipes_id}>
+                              <div className="menu">
+                                {/* ... */}
+                                <p className="title_menu">
+                                  {/* {recipe.recipes_title} */}
+                                  {/* <ModalUpdateRecipe /> */}
+                                  <button
+                                    className="btn-danger"
+                                    style={{ marginLeft: 10, borderRadius: 10 }}
+                                    onClick={() => handleDelete(recipe.recipes_id)} // Panggil fungsi deleteRecipe saat tombol di klik
+                                  >
+                                    <i className="bi bi-trash3"></i>
+                                  </button>
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+
+                          {/* <ModalDeleteRecipes
+                            recipes_id={recipe.recipes_id} 
+                            recipes_title={recipe.recipes_title}                          
+                            /> */}
+
+                          {/* // ))} */}
+                        </p>
+
+                      </div>
                     </div>
-                  </div>
                   ))}
                 </div>
               </div>
 
               <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <div className='row'>
-                <div className="col-md-4 col-6" >
+                  <div className="col-md-4 col-6" >
                     <div className="menu">
                       {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
                       <img
@@ -191,10 +256,10 @@ const ProfilePage = () => {
                       />
                       <p className="title_menu">
                         Chiken <br />
-                        Kare 
+                        Kare
 
-                        <button className='btn-success' style={{marginLeft: 10, borderRadius: 10}}>
-                        <i class="bi bi-bookmark"></i>
+                        <button className='btn-success' style={{ marginLeft: 10, borderRadius: 10 }}>
+                          <i class="bi bi-bookmark"></i>
                         </button>
                       </p>
 
@@ -211,10 +276,10 @@ const ProfilePage = () => {
                       />
                       <p className="title_menu">
                         Chiken <br />
-                        Kare 
+                        Kare
 
-                        <button className='btn-success' style={{marginLeft: 10, borderRadius: 10}}>
-                        <i class="bi bi-bookmark"></i>
+                        <button className='btn-success' style={{ marginLeft: 10, borderRadius: 10 }}>
+                          <i class="bi bi-bookmark"></i>
                         </button>
                       </p>
 
@@ -231,10 +296,10 @@ const ProfilePage = () => {
                       />
                       <p className="title_menu">
                         Chiken <br />
-                        Kare 
+                        Kare
 
-                        <button className='btn-success' style={{marginLeft: 10, borderRadius: 10}}>
-                        <i class="bi bi-bookmark"></i>
+                        <button className='btn-success' style={{ marginLeft: 10, borderRadius: 10 }}>
+                          <i class="bi bi-bookmark"></i>
                         </button>
                       </p>
                     </div>
@@ -249,7 +314,7 @@ const ProfilePage = () => {
                 aria-labelledby="nav-contact-tab"
               >
                 <div className='row'>
-                <div className="col-md-4 col-6" >
+                  <div className="col-md-4 col-6" >
                     <div className="menu">
                       {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
                       <img
@@ -259,10 +324,10 @@ const ProfilePage = () => {
                       />
                       <p className="title_menu">
                         Chiken <br />
-                        Kare 
+                        Kare
 
-                        <button className='btn-info' style={{marginLeft: 10, borderRadius: 10}}>
-                        <i class="bi bi-heart"></i>
+                        <button className='btn-info' style={{ marginLeft: 10, borderRadius: 10 }}>
+                          <i class="bi bi-heart"></i>
                         </button>
                       </p>
                     </div>
@@ -278,10 +343,10 @@ const ProfilePage = () => {
                       />
                       <p className="title_menu">
                         Chiken <br />
-                        Kare 
+                        Kare
 
-                        <button className='btn-info' style={{marginLeft: 10, borderRadius: 10}}>
-                        <i class="bi bi-heart"></i>
+                        <button className='btn-info' style={{ marginLeft: 10, borderRadius: 10 }}>
+                          <i class="bi bi-heart"></i>
                         </button>
                       </p>
                     </div>
