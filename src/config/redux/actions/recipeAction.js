@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 // Get
 export const getRecipe = (setRecipe) => async (dispatch) => {
   try {
-    axios.get("https://tame-teal-shark-tie.cyclic.app/recipes").then(function (respose) {
+    axios.get("https://glorious-blue-drill.cyclic.app/recipes").then(function (respose) {
       setRecipe(respose.data.data);
     });
 
@@ -20,7 +20,7 @@ export const getRecipe = (setRecipe) => async (dispatch) => {
 
 export const getDetailRecepe = (setRecipe, id) => async (dispatch) => {
   try {
-    axios.get(`https://tame-teal-shark-tie.cyclic.app/recipes/${id}`).then((res) => {
+    axios.get(`https://glorious-blue-drill.cyclic.app/recipes/${id}`).then((res) => {
       setRecipe(res.data.data[0]);
 
       console.log(res.data.data[0]);
@@ -47,7 +47,7 @@ export const createRecipe = (data, recipes_photo) => async (dispatch) => {
     // console.log(FormData.append("recipes_title", data.recipes_title));
     console.log(data);
     axios
-      .post("https://tame-teal-shark-tie.cyclic.app/recipes", formData, {
+      .post("https://glorious-blue-drill.cyclic.app/recipes", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

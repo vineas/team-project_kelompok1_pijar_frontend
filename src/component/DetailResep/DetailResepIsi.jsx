@@ -22,7 +22,7 @@ const DetailResepIsi = () => {
 
   useEffect(() => {
     axios
-      .get(`https://tame-teal-shark-tie.cyclic.app/comments/${recipes_id}`)
+      .get(`https://glorious-blue-drill.cyclic.app/comments/${recipes_id}`)
       .then((res) => {
         setCommet(res.data.data);
         // console.log(res.data.data[0].comment_text);
@@ -50,7 +50,7 @@ const DetailResepIsi = () => {
     e.preventDefault();
 
     axios
-      .post("https://tame-teal-shark-tie.cyclic.app/comments", data, {})
+      .post("https://glorious-blue-drill.cyclic.app/comments", data, {})
       .then((res) => {
         console.log(res);
         alert("Commet");
