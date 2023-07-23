@@ -87,12 +87,6 @@
   border: none;
 }
 
-.comment {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .btnku {
   font-size: 1.4rem;
   color: #f6f5f4;

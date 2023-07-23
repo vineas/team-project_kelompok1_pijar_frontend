@@ -8,7 +8,7 @@ const AddRecepisi = () => {
   // const [show, setShow] = useState(false);
   // const handleClose = () => setShow(false);
   // const handleShow = () => setShow(true);
-  const user = localStorage.getItem("users_id");
+  const user = localStorage.getItem("users_id_profile");
 
   const [data, setData] = useState({
     recipes_title: "",

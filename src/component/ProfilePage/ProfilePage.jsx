@@ -14,7 +14,7 @@ const ProfilePage = () => {
   let [resep, setResep] = useState([]);
   let [recipes, setRecipes] = useState([]);
 
-  const getid = localStorage.getItem("users_id");
+  const getid = localStorage.getItem("users_id_profile");
 
   useEffect(() => {
     axios
