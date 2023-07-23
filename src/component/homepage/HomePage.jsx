@@ -2,7 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getRecipe } from "../../config/redux/actions/recipeAction";
 import { Link } from "react-router-dom";
+import { animateScroll } from 'react-scroll';
+
 const HomePage = () => {
+  
+  const handleOnClick = () => {
+    animateScroll.scrollToTop();
+  }
   let dispatch = useDispatch();
   let [recipe, setRecipe] = useState([]);
 
@@ -179,7 +185,7 @@ const HomePage = () => {
           <div className="row">
             {recipe.map((item, index) => (
               <div className="col-md-4 col-6 p-lg-4 p-3">
-                <Link to={`/DetailRecipe/${item.recipes_id}`} key={index.toString()} style={{ color: "black" }}>
+                <Link to={`/DetailRecipe/${item.recipes_id}`} key={index.toString()} style={{ color: "black" }} onClick={handleOnClick}>
                   <div className="menu" style={{ position: "relative", borderRadius: "10px", overflow: "hidden" }}>
                     <img style={{ width: "100%", objectFit: "cover" }} src={item.recipes_photo} />
                     <p className="title_menu">{item.recipes_title}</p>

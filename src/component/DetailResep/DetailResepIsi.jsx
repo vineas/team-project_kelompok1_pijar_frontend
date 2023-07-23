@@ -72,9 +72,9 @@ const DetailResepIsi = () => {
             <img className={`img1 ${style.img1}`} src={recipe.recipes_photo} alt="" />
             <div className={` ${style.icons} icons row`}>
               <div>
-              <button onClick={handleLikeClick} disabled={isLiked}>
+              <button onClick={handleLikeClick} disabled={isLiked} className="btn-danger">
                 {isLiked ? (
-                  <i className="bi bi-heart-fill"></i>
+                  <i className="bi bi-heart-fill btn-dark"></i>
                   ) : (
                   <i className="bi bi-heart"></i>
                 )}
