@@ -26,7 +26,7 @@ const DetailResepIsi = () => {
       return;
     }
     axios
-      .post("https://glorious-blue-drill.cyclic.app/likeds/", { users_id, recipes_id })
+      .post(`${process.env.REACT_APP_API_KEY}/likeds/`, { users_id, recipes_id })
       .then(() => {
         if (isLiked) {
           alert("Anda sudah menyukai resep ini.");
