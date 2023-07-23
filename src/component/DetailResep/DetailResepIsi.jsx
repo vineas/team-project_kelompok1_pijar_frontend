@@ -7,6 +7,7 @@ import { getDetailRecepe } from "../../config/redux/actions/recipeAction";
 
 // import Commet from "../commet/Commet";
 import axios from "axios";
+import CommetIsi from "../Commet/CommetIsi";
 const DetailResepIsi = () => {
   let dispatch = useDispatch();
   let { id } = useParams();
@@ -106,6 +107,7 @@ const DetailResepIsi = () => {
               </div>
             </div>
           </div>
+          <CommetIsi />
         </div>
       </section>
     </>

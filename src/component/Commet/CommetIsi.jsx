@@ -12,7 +12,7 @@ const CommetIsi = () => {
 
   useEffect(() => {
     dispatch(getDetailComment(setCommet, recipes_id));
-  });
+  }, []);
 
   let [data, setData] = useState({
     comment_text: "",
@@ -47,8 +47,8 @@ const CommetIsi = () => {
         </form>
         <div className={`container ${style.title_2} title_2 `}>
           <h3 className="mb-4">Comment</h3>
-          {comments.map((index) => (
-            <div className="row mt-2">
+          {comments.map((index, key) => (
+            <div className="row mt-2" key={key.toString()}>
               <img src={require("../../assets/img/DetailResep/iconcommen.png")} alt="" />
               <div className="ml-3">
                 <h6>{index.users_name}</h6>
