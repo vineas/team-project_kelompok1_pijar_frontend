@@ -19,7 +19,7 @@ const ProfilePage = () => {
   const getid = localStorage.getItem('users_id')
 
   useEffect(() => {
-    axios.get(`https://tame-teal-shark-tie.cyclic.app/users/profile/${id}`)
+    axios.get(`https://glorious-blue-drill.cyclic.app/users/profile/${getid}`)
       .then((res) => {
         setUsers(res.data.data[0]);
         localStorage.setItem('users_id', res.data.data[0].users_id)
@@ -31,7 +31,7 @@ const ProfilePage = () => {
   }, [])
 
   useEffect(() => {
-    axios.get(`https://tame-teal-shark-tie.cyclic.app/recipes/users/${getid}`)
+    axios.get(`https://glorious-blue-drill.cyclic.app/recipes/users/${getid}`)
       .then((res) => {
         setRecipes(res.data.data);
       }, [])
@@ -41,7 +41,7 @@ const ProfilePage = () => {
   }, [])
 
   const handleDelete = (recipes_id) => {
-    axios.delete(`https://tame-teal-shark-tie.cyclic.app/recipes/${recipes_id}`)
+    axios.delete(`https://glorious-blue-drill.cyclic.app/recipes/${recipes_id}`)
       .then((res) => {
         Swal({
           title: "Apakah Anda yakin?",
@@ -67,9 +67,11 @@ const ProfilePage = () => {
         <>
           .image-recipe-profile{"{"}
           width: 100%;
+          height: 236px;
           margin-right: 30px;
           margin-top: 30px;
           border-radius: 10px;
+          object-fit: cover;
           {"}"}
 
           .title_menu {"{"}
@@ -114,22 +116,22 @@ const ProfilePage = () => {
                     {users.users_name}
                   </h5>
                 </div>
-                  <div
-                    style={{ display: "flex", justifyContent: "center" }}
-                  >
-                    <ModalUpdateProfile
-                      users_id={users.users_id}
-                      users_name={users.users_name}
-                      users_phone={users.users_phone}
-                      users_photo={users.users_photo}
-                    />
+                <div
+                  style={{ display: "flex", justifyContent: "center" }}
+                >
+                  <ModalUpdateProfile
+                    users_id={users.users_id}
+                    users_name={users.users_name}
+                    users_phone={users.users_phone}
+                    users_photo={users.users_photo}
+                  />
 
-                  </div>
+                </div>
 
               </div>
               <div className="col-md-4 " />
             </div>
-                {/* ))} */}
+            {/* ))} */}
           </div>
           <div className="col-md-12" style={{ marginTop: 50 }}>
             <nav>
@@ -181,7 +183,7 @@ const ProfilePage = () => {
               <div className="tab-pane fade show active" id="nav-home">
                 <div className='row'>
                   {recipes.map((recipe) => (
-                    <div className="col-md-4 col-6" >
+                    <div className="col-md-4 col-12" >
                       <div className="menu">
                         {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
                         <img
@@ -192,14 +194,14 @@ const ProfilePage = () => {
                         <p className="title_menu">
                           {recipe.recipes_title}
 
-                          <ModalUpdateRecipe
+                          {/* <ModalUpdateRecipe
                             recipes_id={recipe.recipes_id}
                             recipes_title={recipe.recipes_title}
                             recipes_ingredients={recipe.recipes_ingredients}
                             recipes_photo={recipe.recipes_photo}
                             recipes_video={recipe.recipes_video}
 
-                          />
+                          /> */}
                           {/* {resep.map((recipe) => ( */}
 
                           {/* {resep && (
@@ -217,7 +219,13 @@ const ProfilePage = () => {
                                 {/* ... */}
                                 <p className="title_menu">
                                   {/* {recipe.recipes_title} */}
-                                  {/* <ModalUpdateRecipe /> */}
+                                  <ModalUpdateRecipe
+                                    recipes_id={recipe.recipes_id}
+                                    recipes_title={recipe.recipes_title}
+                                    recipes_ingredients={recipe.recipes_ingredients}
+                                    recipes_photo={recipe.recipes_photo}
+                                    recipes_video={recipe.recipes_video}
+                                  />
                                   <button
                                     className="btn-danger"
                                     style={{ marginLeft: 10, borderRadius: 10 }}

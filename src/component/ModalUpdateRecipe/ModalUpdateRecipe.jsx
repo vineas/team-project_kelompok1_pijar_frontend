@@ -27,55 +27,58 @@ const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, rec
         setImage(e.target.files[0]);
     }
 
-    const getid = localStorage.getItem('users_id')
+    const handleSubmit = async (event) => {
+        event.preventDefault();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+        try {
+            const formData = new FormData();
+            formData.append('recipes_photo', image);
+            formData.append('recipes_title', data.recipes_title);
+            formData.append('recipes_ingredients', data.recipes_ingredients);
+            formData.append('recipes_video', data.recipes_video);
 
-        const formData = new FormData();
-        formData.append('recipes_title', data.recipes_title)
-        formData.append('recipes_ingredients', data.recipes_ingredients)
-        formData.append('recipes_photo', image)
-        formData.append('recipes_video', data.recipes_video)
-        axios.put(`https://tame-teal-shark-tie.cyclic.app/recipes/${recipes_id}`, formData, {
-            headers: {
-                "Content-Type": "multipart/form-data",
-            }
-        })
-            .then(() => {
-                alert("Recipes Updated")
+            // Make the axios.put request to update the recipe
+            await axios.put(`https://glorious-blue-drill.cyclic.app/recipes/${recipes_id}`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                }
+            });
+            alert("Recipes Updated")
                 setShow(false)
                 window.location.reload()
-            })
-            .catch((err) => {
-                alert(err);
-                setShow(false)
-            })
-    }
+
+            // You may want to add some success handling here (e.g., show a success message)
+            // and close the modal after successful update.
+            // For brevity, I'm not implementing it here.
+
+        } catch (error) {
+            // Handle any errors that occurred during the update process
+            // You may want to display an error message to the user.
+            console.error("Error updating recipe:", error);
+        }
+    };
+
 
 
     return (
         <>
             <button className='btn-warning' style={{ marginLeft: 30, borderRadius: 10 }} onClick={handleShow}>
-                <i class="bi bi-pencil-square"></i>
+                <i className="bi bi-pencil-square"></i>
             </button>
 
             <Modal show={show}>
                 <Modal.Header closeButton>
                     <Modal.Title>
-                        {/* {children}  */}
                         Edit Profile
                     </Modal.Title>
                 </Modal.Header>
-                <form
-                onSubmit={handleSubmit}
-                >
+                <form onSubmit={handleSubmit}>
                     <Modal.Body>
                         <input
                             className="form-control mt-3"
                             type="file"
                             placeholder="Image"
-                            name="image"
+                            name="recipes_photo"
                             value={data.image}
                             onChange={handleUpload}
                         />
@@ -90,7 +93,6 @@ const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, rec
                         />
                         <textarea
                             className="form-control mt-3"
-                            type="text"
                             placeholder="Ingredients"
                             name="recipes_ingredients"
                             value={data.recipes_ingredients}
@@ -99,8 +101,8 @@ const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, rec
 
                         <input
                             className="form-control mt-3"
-                            type="recipes_video"
-                            name="phone"
+                            type="text"
+                            name="recipes_video"
                             placeholder="Video"
                             value={data.recipes_video}
                             onChange={handleChange}
@@ -115,9 +117,8 @@ const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, rec
                     </Modal.Footer>
                 </form>
             </Modal>
-
         </>
-    )
+    );
 }
 
 export default ModalUpdateRecipe
