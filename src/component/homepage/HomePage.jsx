@@ -3,7 +3,12 @@ import { useDispatch } from "react-redux";
 import { getRecipe } from "../../config/redux/actions/recipeAction";
 import { Link } from "react-router-dom";
 import Pagination from "../pagination/pagination";
+import { animateScroll } from "react-scroll";
+
 const HomePage = () => {
+  const handleOnClick = () => {
+    animateScroll.scrollToTop();
+  };
   let dispatch = useDispatch();
   let [recipe, setRecipe] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -184,7 +189,7 @@ const HomePage = () => {
         <div className="row">
           {currentPosts.map((item, index) => (
             <div className="col-md-4 col-6 p-lg-4 p-3">
-              <Link to={`/DetailRecipe/${item.recipes_id}`} key={index.toString()} style={{ color: "black" }}>
+              <Link onClick={handleOnClick} to={`/DetailRecipe/${item.recipes_id}`} key={index.toString()} style={{ color: "black" }}>
                 <div
                   className="menu"
                   style={{
