@@ -7,24 +7,16 @@ import NavLog from "../component/navbar login/NavLog";
 
 const Home = () => {
   const login = localStorage.getItem("token");
-  if (login) {
-    return (
-      <>
-        <Nav />
+
+  return (
+    <>
+      {!login ? <NavLog /> : <Nav />}
+      <main>
         <HomePage />
         <Footer />
-        {/* <Chatbox /> */}
-      </>
-    );
-  } else {
-    return (
-      <>
-        <NavLog/>
-        <HomePage />
-        <Footer />
-      </>
-    );
-  }
+      </main>
+    </>
+  );
 };
 
 export default Home;
