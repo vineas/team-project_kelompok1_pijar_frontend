@@ -10,7 +10,7 @@ const CommetIsi = () => {
 
   useEffect(() => {
     axios
-      .get(`https://glorious-blue-drill.cyclic.app/comments/${recipes_id}`)
+      .get(`${process.env.REACT_APP_API_KEY}/comments/${recipes_id}`)
       .then((res) => {
         setCommet(res.data.data);
         // console.log(res.data.data[0].comment_text);
@@ -38,7 +38,7 @@ const CommetIsi = () => {
     e.preventDefault();
 
     axios
-      .post("https://glorious-blue-drill.cyclic.app/comments", data, {})
+      .post(`${process.env.REACT_APP_API_KEY}/comments`, data, {})
       .then((res) => {
         console.log(res);
         alert("Comment");

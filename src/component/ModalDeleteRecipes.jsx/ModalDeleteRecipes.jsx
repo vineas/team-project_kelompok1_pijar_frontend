@@ -11,7 +11,7 @@ const ModalDeleteRecipes = ({ recipes_id, recipes_title }) => {
     const handleShow = () => setShow(true);
     const handleDelete = () => {
         axios
-            .delete(`https://tame-teal-shark-tie.cyclic.app/recipes/${recipes_id}`)
+            .delete(`${process.env.REACT_APP_API_KEY}/recipes/${recipes_id}`)
             .then((res) => {
                 alert("delete success");
                 setShow(false)
