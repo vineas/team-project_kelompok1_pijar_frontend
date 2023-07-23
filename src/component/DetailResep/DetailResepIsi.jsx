@@ -11,32 +11,57 @@ const DetailResepIsi = () => {
   let dispatch = useDispatch();
   let { id } = useParams();
   let [recipe, setRecipe] = useState("");
+  const recipes_id = localStorage.getItem("recipes_id");
+  const users_id = localStorage.getItem("users_id_profile");
+  const [isLiked, setIsLiked] = useState(false);
+  const [isLike, setIsLike] = useState(false);
+
 
   useEffect(() => {
     dispatch(getDetailRecepe(setRecipe, id));
   }, [id]);
 
-  const recipes_id = localStorage.getItem("recipes_id");
-  const users_id = localStorage.getItem("users_id");
+  const toggleLike = (liked) => {
+    setIsLiked(liked);
+  };
+  const toggleLike2 = (like) => {
+    setIsLike(like);
+  };
 
-  const [isLiked, setIsLiked] = useState(false);
   const handleLikeClick = () => {
     if (isLiked) {
       alert("Anda sudah menyukai resep ini.");
       return;
     }
     axios
-      .post(`${process.env.REACT_APP_API_KEY}/likeds/`, { users_id, recipes_id })
+    .post(`${process.env.REACT_APP_API_KEY }/likeds/`, { users_id, recipes_id })
       .then(() => {
-        if (isLiked) {
-          alert("Anda sudah menyukai resep ini.");
-          return;
-        }
+        toggleLike(true); 
+        alert("Resep berhasil disukai.");
       })
       .catch((error) => {
+        toggleLike(false);
         console.error("Error during like:", error);
       });
   };
+
+  const handleBookmarkClick = () => {
+    if (isLike) {
+      alert("Resep tersimpan.");
+      return;
+    }
+    axios
+      .post(`${process.env.REACT_APP_API_KEY}/bookmarks/`, { users_id, recipes_id })
+      .then(() => {
+        toggleLike2(true); 
+        alert("Resep berhasil disimpan.");
+      })
+      .catch((error) => {
+        toggleLike2(false);
+        console.error("Error during like:", error);
+      });
+  };
+
 
   return (
     <>
@@ -47,23 +72,28 @@ const DetailResepIsi = () => {
             <img className={`img1 ${style.img1}`} src={recipe.recipes_photo} alt="" />
             <div className={` ${style.icons} icons row`}>
               <div>
-                <button onClick={handleLikeClick} disabled={isLiked}>
-                  {isLiked ? (
-                    <>
-                      <i class="bi bi-heart"></i>
-                    </>
+              <button onClick={handleLikeClick} disabled={isLiked}>
+                {isLiked ? (
+                  <i className="bi bi-heart-fill"></i>
                   ) : (
-                    <>
-                      <i class="bi bi-heart-fill"></i>
-                    </>
-                  )}
-                </button>
+                  <i className="bi bi-heart"></i>
+                )}
+              </button>
               </div>
-              <div style={{ marginLeft: 30 }}>
+              <div>
+              <button onClick={handleBookmarkClick} disabled={isLike} className="btn-success">
+                {isLike ? (
+                  <i class="bi bi-bookmark-fill btn-dark" style={{ width: "200%", height: "200%" }}></i>
+                  ) : (
+                    <i class="bi bi-bookmark" style={{ width: "200%", height: "200%" }}></i>
+                )}
+              </button>
+              </div>
+              {/* <div style={{ marginLeft: 30 }}>
                 <button className="btn-success" style={{ marginLeft: 10, borderRadius: 10, width: "120%", height: "200%" }}>
-                  <i class="bi bi-bookmark" style={{ width: "200%", height: "200%" }}></i>
+                  <i class="bi bi-bookmark-fill" style={{ width: "200%", height: "200%" }}></i>
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className={`   ${style.title_2} title_2 mt-5  `}>

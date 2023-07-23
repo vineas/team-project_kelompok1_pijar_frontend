@@ -13,8 +13,12 @@ const ProfilePage = () => {
   let [users, setUsers] = useState([]);
   let [resep, setResep] = useState([]);
   let [recipes, setRecipes] = useState([]);
+  let [likeds, setLikeds] = useState([]);
+  let [bookmarks, setBookmarks] = useState([])
 
   const getid = localStorage.getItem("users_id_profile");
+
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     axios
@@ -60,6 +64,73 @@ const ProfilePage = () => {
         console.log(err);
       });
   };
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_KEY}/likeds/${getid}`)
+      .then((res) => {
+        setLikeds(res.data.data);
+      }, [])
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+
+  const handleDeleteLike = (likeds_id) => {
+    axios
+      .delete(`${process.env.REACT_APP_API_KEY}/likeds/${likeds_id}`)
+      .then((res) => {
+        Swal({
+          title: "Apakah Anda yakin?",
+          text: "Resep akan diunlike",
+          icon: "warning",
+          buttons: ["Batal", "Ya, unlike"],
+          dangerMode: true,
+        }).then((willDelete) => {
+          if (willDelete) {
+            setLikeds((prevLikes) => prevLikes.filter((like) => like.likeds_id !== likeds_id));
+          }
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_KEY}/bookmarks/${getid}`)
+      .then((res) => {
+        setBookmarks(res.data.data);
+      }, [])
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const handleDeleteBookmarks = (bookmarks_id) => {
+    axios
+      .delete(`${process.env.REACT_APP_API_KEY}/bookmarks/${bookmarks_id}`)
+      .then((res) => {
+        Swal({
+          title: "Apakah Anda yakin?",
+          text: "Resep akan diunbookmark",
+          icon: "warning",
+          buttons: ["Batal", "Ya, unbookmark"],
+          dangerMode: true,
+        }).then((willDelete) => {
+          if (willDelete) {
+            setLikeds((prevBookmarks) => prevBookmarks.filter((bookmark) => bookmark.bookmarks_id !== bookmarks_id));
+          }
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
 
   return (
     <>
@@ -125,8 +196,20 @@ const ProfilePage = () => {
             </nav>
             <div className="tab-content" id="nav-tabContent" style={{ paddingBottom: 90 }}>
               <div className="tab-pane fade show active" id="nav-home">
+
+                <input
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  style={{ borderRadius: 94 , marginTop: 30, width: '33%'}}
+                />
+
                 <div className="row">
-                  {recipes.map((recipe) => (
+                  {recipes.filter((recipe) => {
+                    return search.toLowerCase() === '' ? recipe : recipe.recipes_title.toLowerCase().includes(search)
+                  }).map((recipe) => (
                     <div className="col-md-4 col-12">
                       <div className="menu">
                         {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
@@ -134,31 +217,11 @@ const ProfilePage = () => {
                         <p className="title_menu">
                           {recipe.recipes_title}
 
-                          {/* <ModalUpdateRecipe
-                            recipes_id={recipe.recipes_id}
-                            recipes_title={recipe.recipes_title}
-                            recipes_ingredients={recipe.recipes_ingredients}
-                            recipes_photo={recipe.recipes_photo}
-                            recipes_video={recipe.recipes_video}
-
-                          /> */}
-                          {/* {resep.map((recipe) => ( */}
-
-                          {/* {resep && (
-                            <div key={recipes.recipes_id}>
-                              <button className='btn-danger' style={{ marginLeft: 10, borderRadius: 10 }}
-                                onClick={handleDelete}>
-                                <i class="bi bi-trash3"></i>
-                              </button>
-                            </div>
-                          )} */}
-
                           {recipes.map((recipe) => (
                             <div className="col-md-4 col-6" key={recipe.recipes_id}>
                               <div className="menu">
                                 {/* ... */}
                                 <p className="title_menu">
-                                  {/* {recipe.recipes_title} */}
                                   <ModalUpdateRecipe
                                     recipes_id={recipe.recipes_id}
                                     recipes_title={recipe.recipes_title}
@@ -166,9 +229,10 @@ const ProfilePage = () => {
                                     recipes_photo={recipe.recipes_photo}
                                     recipes_video={recipe.recipes_video}
                                   />
+
                                   <button
                                     className="btn-danger"
-                                    style={{ marginLeft: 10, borderRadius: 10 }}
+                                    style={{ marginLeft: 5, borderRadius: 10, marginTop: 5, marginBottom: 90 }}
                                     onClick={() => handleDelete(recipe.recipes_id)} // Panggil fungsi deleteRecipe saat tombol di klik
                                   >
                                     <i className="bi bi-trash3"></i>
@@ -178,12 +242,6 @@ const ProfilePage = () => {
                             </div>
                           ))}
 
-                          {/* <ModalDeleteRecipes
-                            recipes_id={recipe.recipes_id} 
-                            recipes_title={recipe.recipes_title}                          
-                            /> */}
-
-                          {/* // ))} */}
                         </p>
                       </div>
                     </div>
@@ -191,81 +249,72 @@ const ProfilePage = () => {
                 </div>
               </div>
 
+              {/* bookmark */}
               <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <div className="row">
-                  <div className="col-md-4 col-6">
-                    <div className="menu">
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img className="image-recipe-profile" src={recipe1} alt="" />
-                      <p className="title_menu">
-                        Chiken <br />
-                        Kare
-                        <button className="btn-success" style={{ marginLeft: 10, borderRadius: 10 }}>
-                          <i class="bi bi-bookmark"></i>
-                        </button>
-                      </p>
-                    </div>
-                  </div>
 
-                  <div className="col-md-4 col-6">
-                    <div className="menu">
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img className="image-recipe-profile" src={recipe1} alt="" />
-                      <p className="title_menu">
-                        Chiken <br />
-                        Kare
-                        <button className="btn-success" style={{ marginLeft: 10, borderRadius: 10 }}>
-                          <i class="bi bi-bookmark"></i>
-                        </button>
-                      </p>
-                    </div>
-                  </div>
+                  {bookmarks.map((bookmark) => (
+                    <div className="col-md-4 col-12" key={bookmark.bookmarks_id}>
+                      <div className="menu">
+                        <img className="image-recipe-profile" src={bookmark.recipes_photo} alt="" />
+                        <p className="title_menu">
+                          {bookmark.recipes_title}
 
-                  <div className="col-md-4 col-6">
-                    <div className="menu">
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img className="image-recipe-profile" src={recipe1} alt="" />
-                      <p className="title_menu">
-                        Chiken <br />
-                        Kare
-                        <button className="btn-success" style={{ marginLeft: 10, borderRadius: 10 }}>
-                          <i class="bi bi-bookmark"></i>
-                        </button>
-                      </p>
+                          <div className="col-md-4 col-12" key={bookmark.bookmarks_id}>
+                            <div className="menu">
+                              <p className="title_menu">
+                                <button
+                                  className="btn-success"
+                                  style={{ marginLeft: 5, borderRadius: 10, marginTop: 5, marginBottom: 140 }}
+                                  onClick={() => handleDeleteBookmarks(bookmark.bookmarks_id)} // Panggil fungsi deleteRecipe saat tombol di klik
+                                >
+                                  <i class="bi bi-bookmark"></i>
+                                </button>
+                              </p>
+                            </div>
+                          </div>
+
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  ))}
+
                 </div>
               </div>
 
+              {/* likeds */}
               <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                 <div className="row">
-                  <div className="col-md-4 col-6">
-                    <div className="menu">
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img className="image-recipe-profile" src={recipe1} alt="" />
-                      <p className="title_menu">
-                        Chiken <br />
-                        Kare
-                        <button className="btn-info" style={{ marginLeft: 10, borderRadius: 10 }}>
-                          <i class="bi bi-heart"></i>
-                        </button>
-                      </p>
-                    </div>
-                  </div>
 
-                  <div className="col-md-4 col-6">
-                    <div className="menu">
-                      {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img className="image-recipe-profile" src={recipe1} alt="" />
-                      <p className="title_menu">
-                        Chiken <br />
-                        Kare
-                        <button className="btn-info" style={{ marginLeft: 10, borderRadius: 10 }}>
-                          <i class="bi bi-heart"></i>
-                        </button>
-                      </p>
+                  {likeds.map((like) => (
+                    <div className="col-md-4 col-12" key={like.likeds_id}>
+
+                      <div className="menu">
+                        <img className="image-recipe-profile" src={like.recipes_photo} alt="" />
+                        <p className="title_menu">
+                          {like.recipes_title}
+
+                          {/* {likeds.map((like) => ( */}
+                          <div className="col-md-4 col-12" key={like.likeds_id}>
+                            <div className="menu">
+                              <p className="title_menu">
+                                <button
+                                  className="btn-danger"
+                                  style={{ marginLeft: 5, borderRadius: 10, marginTop: 5, color: 'pink', marginBottom: 140 }}
+                                  onClick={() => handleDeleteLike(like.likeds_id)} // Panggil fungsi deleteRecipe saat tombol di klik
+                                >
+                                  <i class="bi bi-heart"></i>
+                                </button>
+                              </p>
+                            </div>
+                          </div>
+                          {/* ))} */}
+
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  ))}
+
                 </div>
               </div>
             </div>

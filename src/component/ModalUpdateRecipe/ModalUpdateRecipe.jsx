@@ -62,7 +62,7 @@ const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, rec
 
     return (
         <>
-            <button className='btn-warning' style={{ marginLeft: 30, borderRadius: 10 }} onClick={handleShow}>
+            <button className='btn-warning' style={{ marginLeft: 5, borderRadius: 10, marginBottom: 3 }} onClick={handleShow}>
                 <i className="bi bi-pencil-square"></i>
             </button>
 

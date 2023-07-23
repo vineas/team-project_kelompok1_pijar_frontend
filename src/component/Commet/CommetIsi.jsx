@@ -18,7 +18,7 @@ const CommetIsi = () => {
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
 
   let [data, setData] = useState({
     comment_text: "",
