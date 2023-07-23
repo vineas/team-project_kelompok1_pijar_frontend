@@ -26,7 +26,10 @@ const DetailResepIsi = () => {
       return;
     }
     axios
-      .post(`${process.env.REACT_APP_API_KEY}/likeds/`, { users_id, recipes_id })
+      .post(`${process.env.REACT_APP_API_KEY}/likeds/`, {
+        users_id,
+        recipes_id,
+      })
       .then(() => {
         if (isLiked) {
           alert("Anda sudah menyukai resep ini.");
@@ -44,7 +47,11 @@ const DetailResepIsi = () => {
         <div className="container">
           <div className={`  container ${style.title} title   mt-5`}>
             <h1 className="mb-5">{recipe.recipes_title}</h1>
-            <img className={`img1 ${style.img1}`} src={recipe.recipes_photo} alt="" />
+            <img
+              className={`img1 ${style.img1}`}
+              src={recipe.recipes_photo}
+              alt=""
+            />
             <div className={` ${style.icons} icons row`}>
               <div>
                 <button onClick={handleLikeClick} disabled={isLiked}>
@@ -60,8 +67,19 @@ const DetailResepIsi = () => {
                 </button>
               </div>
               <div style={{ marginLeft: 30 }}>
-                <button className="btn-success" style={{ marginLeft: 10, borderRadius: 10, width: "120%", height: "200%" }}>
-                  <i class="bi bi-bookmark" style={{ width: "200%", height: "200%" }}></i>
+                <button
+                  className="btn-success"
+                  style={{
+                    marginLeft: 10,
+                    borderRadius: 10,
+                    width: "120%",
+                    height: "200%",
+                  }}
+                >
+                  <i
+                    class="bi bi-bookmark"
+                    style={{ width: "200%", height: "200%" }}
+                  ></i>
                 </button>
               </div>
             </div>
@@ -78,24 +96,72 @@ const DetailResepIsi = () => {
               <div className={`${style.button2} button2 mt-4`}>
                 <button>
                   <Link to={`detailvideo/${recipe.recipes_id}`}>
-                    <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3.28223 2.72049L23.6727 13.8819L3.28223 25.0434V2.72049Z" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                    <svg
+                      width="27"
+                      height="28"
+                      viewBox="0 0 27 28"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.28223 2.72049L23.6727 13.8819L3.28223 25.0434V2.72049Z"
+                        stroke="white"
+                        stroke-width="5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
                     </svg>
                   </Link>
                 </button>
                 <button>
-                  <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.28223 2.72049L23.6727 13.8819L3.28223 25.0434V2.72049Z" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                  <svg
+                    width="27"
+                    height="28"
+                    viewBox="0 0 27 28"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.28223 2.72049L23.6727 13.8819L3.28223 25.0434V2.72049Z"
+                      stroke="white"
+                      stroke-width="5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </button>
                 <button>
-                  <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.28223 2.72049L23.6727 13.8819L3.28223 25.0434V2.72049Z" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                  <svg
+                    width="27"
+                    height="28"
+                    viewBox="0 0 27 28"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.28223 2.72049L23.6727 13.8819L3.28223 25.0434V2.72049Z"
+                      stroke="white"
+                      stroke-width="5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </button>
                 <button>
-                  <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.28223 2.72049L23.6727 13.8819L3.28223 25.0434V2.72049Z" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                  <svg
+                    width="27"
+                    height="28"
+                    viewBox="0 0 27 28"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.28223 2.72049L23.6727 13.8819L3.28223 25.0434V2.72049Z"
+                      stroke="white"
+                      stroke-width="5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </button>
               </div>

@@ -8,14 +8,14 @@ const HomePage = () => {
   let [recipe, setRecipe] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
-  
+
   useEffect(() => {
     dispatch(getRecipe(setRecipe));
   }, []);
-  
-    const lastPostIndex = currentPage * postsPerPage;
-    const firstPostIndex = lastPostIndex - postsPerPage;
-    const currentPosts = recipe.slice(firstPostIndex, lastPostIndex);
+
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = recipe.slice(firstPostIndex, lastPostIndex);
 
   return (
     <>
@@ -226,7 +226,11 @@ const HomePage = () => {
                   }}
                 >
                   <img
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
                     src={item.recipes_photo}
                   />
                   <p className="title_menu">{item.recipes_title}</p>

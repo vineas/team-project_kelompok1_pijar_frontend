@@ -15,7 +15,10 @@ const index = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" replace="true"></Navigate>} />
+          <Route
+            path="/"
+            element={<Navigate to="/home" replace="true"></Navigate>}
+          />
           <Route path="/home" element={<Home />} />
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/detailrecipe/:id" element={<DetailRecipe />} />

@@ -33,16 +33,19 @@ const Nav = () => {
     <>
       <style>
         header {"{"}
-        top: 0; position: sticky; background-color: transparent; transition: background-color 0.2s ease-in-out; z-index: 10;
+        top: 0; position: sticky; background-color: transparent; transition:
+        background-color 0.2s ease-in-out; z-index: 10;
         {"}"}
         header.scrolled {"{"}
         background-color: #efc81a; opacity: 0.98;
         {"}"}
         .icon {"{"}
-        height: 50px; width: 50px; position: relative; background-color: transparent;
+        height: 50px; width: 50px; position: relative; background-color:
+        transparent;
         {"}"}
         .icon::after {"{"}
-        content: ""; width: 15px; height: 15px; background-color: #31a24c; position: absolute; border-radius: 100%; right: 0px; top: 0px;
+        content: ""; width: 15px; height: 15px; background-color: #31a24c;
+        position: absolute; border-radius: 100%; right: 0px; top: 0px;
         {"}"}
         {/* div {"{"}
         border: 1px solid;
