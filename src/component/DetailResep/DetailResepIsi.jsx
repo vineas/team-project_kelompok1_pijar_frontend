@@ -50,6 +50,7 @@ const DetailResepIsi = () => {
       alert("Resep tersimpan.");
       return;
     }
+    
     axios
       .post(`${process.env.REACT_APP_API_KEY}/bookmarks/`, { users_id, recipes_id })
       .then(() => {
