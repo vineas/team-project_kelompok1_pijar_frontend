@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
@@ -10,6 +11,24 @@ const Nav = () => {
       header.classList.remove("scrolled");
     }
   });
+
+  let [users, setUsers] = useState([]);
+
+  const getid = localStorage.getItem("users_id_profile");
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_KEY}/users/profile/${getid}`)
+      .then((res) => {
+        setUsers(res.data.data[0]);
+        localStorage.setItem("users_id", res.data.data[0].users_id);
+        console.log(res.data.data[0]);
+      }, [])
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       <style>
@@ -100,7 +119,7 @@ const Nav = () => {
                   borderRadius: "100%",
                   margin: "10px 0",
                 }}
-                src={require("../../assets/img/home/profile-icon.png")}
+                src={users.users_photo}
               />
             </section>
           </div>
