@@ -1,0 +1,61 @@
+.addfile {
+  background-color: #f6f5f4;
+  width: 100%;
+  height: 500px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.addfile input {
+  width: 75px;
+}
+
+.title {
+  /* background-color: azure; */
+  width: 100% !important;
+  /* border: 1px solid black; */
+}
+
+.title input {
+  background-color: #f6f5f4;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  height: 80px;
+}
+
+.Ingredients textarea {
+  background-color: #f6f5f4;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  height: 300px;
+}
+
+.video {
+  width: 100% !important;
+}
+.video input {
+  background-color: #f6f5f4;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  height: 80px;
+}
+
+.buttoninput {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttoninput button {
+  width: 500px;
+  height: 50px;
+  background-color: #efc81a;
+  border-radius: 5px;
+  border: none;
+}

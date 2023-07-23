@@ -1,0 +1,97 @@
+.title {
+  /* background-color: beige; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title h1 {
+  font-size: 72px;
+}
+
+.img1 {
+  border-radius: 15px;
+  width: 60.5rem;
+}
+.title_2 {
+  /* background-color: lightgrey; */
+  padding-top: 3rem;
+  /* width: 500px !important; */
+}
+
+.title_2 ul p {
+  width: 300px;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.title_2 h3 {
+  padding-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.book {
+  background-color: #efc81a;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.vector {
+  background-color: #ffff !important;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.icons {
+  /* background-color: aquamarine; */
+  margin-top: -80px;
+  margin-left: 700px !important;
+}
+
+.button2 {
+  width: 300px;
+  height: 350px;
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.button2 button {
+  height: 50px;
+  border-radius: 10px;
+  background-color: #efc81a;
+  border: none;
+}
+.button2 button svg {
+  width: 20px;
+  height: 40px;
+}
+
+.textarea {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  background-color: #f6f5f4;
+  border: none;
+}
+
+.btnku {
+  font-size: 1.4rem;
+  color: #f6f5f4;
+  width: 426px;
+  height: 64px;
+  background-color: #efc81a !important;
+  border: none;
+}
