@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Profile from "../../pages/Profile";
 import Home from "../../pages/Home";
-import DetailResep from "../../pages/DetailResep";
-import AddRecep from "../../pages/AddRecep";
+import DetailRecipe from "../../pages/DetailRecipe";
+import AddRecipe from "../../pages/AddRecipe";
 import Login from "../../pages/Auth/Login";
 import Register from "../../pages/Auth/Register";
 import ForgotPassword from "../../pages/Auth/ForgotPassword/ForgotPassword";
@@ -18,9 +18,9 @@ const index = () => {
           <Route path="/" element={<Navigate to="/home" replace="true"></Navigate>} />
           <Route path="/home" element={<Home />} />
           <Route path="/profile/:id" element={<Profile />} />
-          <Route path="/detailrecipe" element={<DetailResep />} />
-          <Route path="/detailvideo" element={<DetailVideo />} />    
-          <Route path="/addrecipe" element={<AddRecep />} />
+          <Route path="/detailrecipe/:id" element={<DetailRecipe />} />
+          <Route path="/detailvideo/:id" element={<DetailVideo />} />
+          <Route path="/addrecipe" element={<AddRecipe />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />

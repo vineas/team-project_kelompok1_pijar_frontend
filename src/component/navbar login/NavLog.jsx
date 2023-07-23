@@ -14,8 +14,7 @@ const NavLog = () => {
     <>
       <style>
         header {"{"}
-        top: 0; position: sticky; background-color: transparent; transition:
-        background-color 0.2s ease-in-out; z-index: 10;
+        top: 0; position: sticky; background-color: transparent; transition: background-color 0.2s ease-in-out; z-index: 10;
         {"}"}
         header.scrolled {"{"}
         background-color: #efc81a; opacity: 0.98;
@@ -45,7 +44,7 @@ const NavLog = () => {
                 }}
               >
                 <div>
-                  <Link to="#">
+                  <Link to="/Login">
                     <button
                       style={{
                         height: "40px",
@@ -59,7 +58,7 @@ const NavLog = () => {
                   </Link>
                 </div>
                 <div style={{ margin: "0 10px" }}>
-                  <Link to="#">
+                  <Link to="Register">
                     <button
                       style={{
                         height: "40px",

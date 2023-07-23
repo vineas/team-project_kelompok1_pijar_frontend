@@ -1,6 +1,15 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getRecipe } from "../../config/redux/actions/recipeAction";
+import { Link } from "react-router-dom";
 const HomePage = () => {
+  let dispatch = useDispatch();
+  let [recipe, setRecipe] = useState([]);
+
+  useEffect(() => {
+    dispatch(getRecipe(setRecipe));
+  }, []);
+
   return (
     <>
       <style>
@@ -8,8 +17,7 @@ const HomePage = () => {
         font-size: 52px; font-weight: 500; line-height: 50px; color: #2e266f;
         {"}"}
         .search_input {"{"}
-        width: 80%; height: 70px; background-color: #efefef; border-radius:
-        15px; color: #b6b6b6; padding: 0 50px; border: 0;
+        width: 80%; height: 70px; background-color: #efefef; border-radius: 15px; color: #b6b6b6; padding: 0 50px; border: 0;
         {"}"}
         .colstrip {"{"}
         margin: 50px 0; width: 20px; height: 100px; background-color: #efc81a;
@@ -18,8 +26,7 @@ const HomePage = () => {
         font-weight: 500; font-size: 38px; color: #3f3a3a; margin-left: 20px;
         {"}"}
         .healthy {"{"}
-        color: #3f3a3a; font-weight: 500; font-size: 40px; line-height: 72.91px;
-        width: fit-content;
+        color: #3f3a3a; font-weight: 500; font-size: 40px; line-height: 72.91px; width: fit-content;
         {"}"}
         .strip {"{"}
         height: 3px; background-color: #6f6a40; width: 100px; margin: 15px 0;
@@ -28,26 +35,19 @@ const HomePage = () => {
         color: #3f3a3a; font-size: 20px; line-height: 32px; margin: 35px 0;
         {"}"}
         .learnbtn {"{"}
-        width: 40%; height: 54px; border-radius: 8px; background-color: #efc81a;
-        border: 0;
+        width: 40%; height: 54px; border-radius: 8px; background-color: #efc81a; border: 0;
         {"}"}
         .title_menu {"{"}
-        font-weight: 500; font-size: 25px; position: absolute; bottom: 0; left:
-        20px;
+        font-weight: 500; font-size: 25px; position: absolute; bottom: 0; left: 20px;
         {"}"}
         .popularImg::before{"{"}
-        content: ""; border: 3px solid #efc81a; position: absolute; display:
-        block; width: 400px; height: 480px; border-radius: 5px; top: 60px; left:
-        145px; z-index: -1;
+        content: ""; border: 3px solid #efc81a; position: absolute; display: block; width: 400px; height: 480px; border-radius: 5px; top: 60px; left: 145px; z-index: -1;
         {"}"}
         .newImg::before{"{"}
-        content: ""; background-color: #efc81a; width: 414px; height: 490px;
-        position: absolute; display: block; top: -20px; left: -160px; z-index:
-        -1;
+        content: ""; background-color: #efc81a; width: 414px; height: 490px; position: absolute; display: block; top: -20px; left: -160px; z-index: -1;
         {"}"}
         .eggImg::before{"{"}
-        width: 414px; height: 490px; background-color: #efc81a; position:
-        absolute; display: block;  top: -20px; right: -160px; z-index:
+        width: 414px; height: 490px; background-color: #efc81a; position: absolute; display: block; top: -20px; right: -160px; z-index:
         {"}"}
         @media screen and (max-width: 428px) {"{"}
         .text_title {"{"}
@@ -83,8 +83,7 @@ const HomePage = () => {
         .title_menu {"{"}
         font-size: 15px; bottom: 0; left: 10px;
         {"}"}
-        .popularImg::before{"{"}width: 240px; height: 280px; border-radius: 3px;
-        top: 20px; left: 80px;
+        .popularImg::before{"{"}width: 240px; height: 280px; border-radius: 3px; top: 20px; left: 80px;
         {"}"}
         .newImg::before{"{"}width: 144px; height: 270px; top: -10px; left: 0px;
         {"}"}
@@ -92,32 +91,19 @@ const HomePage = () => {
       </style>
 
       <main className="container">
-        <div
-          className="row pt-3"
-          style={{ display: "flex", alignItems: "center" }}
-        >
+        <div className="row pt-3" style={{ display: "flex", alignItems: "center" }}>
           <div className="col-sm-7 text_title">
             <div className="pt-3 discover">
               <p>Discover Recipe</p>
               <p>&amp; Delicious Food</p>
             </div>
             <div className="pt-md-3">
-              <input
-                className="search_input"
-                type="text"
-                placeholder="Search Restaurant, Food"
-              />
+              <input className="search_input" type="text" placeholder="Search Restaurant, Food" />
             </div>
           </div>
           <div className="col-sm-5 p-3">
-            <div
-              className="eggImg"
-              style={{ display: "flex", justifyContent: "center" }}
-            >
-              <img
-                style={{ width: "100%" }}
-                src={require("../../assets/img/home/telur.png")}
-              />
+            <div className="eggImg" style={{ display: "flex", justifyContent: "center" }}>
+              <img style={{ width: "100%" }} src={require("../../assets/img/home/telur.png")} />
             </div>
           </div>
         </div>
@@ -127,10 +113,7 @@ const HomePage = () => {
         </div>
         <div className="row" style={{ display: "flex", alignItems: "center" }}>
           <div className="col-sm-7 p-md-4 popularImg">
-            <img
-              style={{ width: "80%" }}
-              src={require("../../assets/img/home/Rectangle 313.png")}
-            />
+            <img style={{ width: "80%" }} src={require("../../assets/img/home/Rectangle 313.png")} />
           </div>
           <div className="col-sm-5">
             <div className="deskription">
@@ -156,10 +139,7 @@ const HomePage = () => {
         </div>
         <div className="row" style={{ display: "flex", alignItems: "center" }}>
           <div className="col-sm-7 p-md-4 newImg">
-            <img
-              style={{ width: "80%" }}
-              src={require("../../assets/img/home/burger.png")}
-            />
+            <img style={{ width: "80%" }} src={require("../../assets/img/home/burger.png")} />
           </div>
           <div className="col-sm-5">
             <div className="deskription">
@@ -185,78 +165,16 @@ const HomePage = () => {
         </div>
         <div>
           <div className="row">
-            <div className="col-md-4 col-6 p-lg-4 p-3">
-              <div className="menu" style={{ position: "relative" }}>
-                <img
-                  style={{ width: "100%" }}
-                  src={require("../../assets/img/home/chikenkare.png")}
-                />
-                <p className="title_menu">
-                  Chiken <br />
-                  Kare
-                </p>
+            {recipe.map((item, index) => (
+              <div className="col-md-4 col-6 p-lg-4 p-3">
+                <Link to={`/DetailRecipe/${item.recipes_id}`} key={index.toString()} style={{ color: "black" }}>
+                  <div className="menu" style={{ position: "relative" }}>
+                    <img style={{ width: "100%" }} src={item.recipes_photo} />
+                    <p className="title_menu">{item.recipes_title}</p>
+                  </div>
+                </Link>
               </div>
-            </div>
-            <div className="col-md-4 col-6 p-lg-4 p-3">
-              <div className="menu" style={{ position: "relative" }}>
-                <img
-                  style={{ width: "100%" }}
-                  src={require("../../assets/img/home/bomchiken.png")}
-                />
-                <p className="title_menu">
-                  Bomb <br />
-                  Chicken
-                </p>
-              </div>
-            </div>
-            <div className="col-md-4 col-6 p-lg-4 p-3">
-              <div className="menu" style={{ position: "relative" }}>
-                <img
-                  style={{ width: "100%" }}
-                  src={require("../../assets/img/home/bananapop.png")}
-                />
-                <p className="title_menu">
-                  Banana <br />
-                  othie Pop
-                </p>
-              </div>
-            </div>
-            <div className="col-md-4 col-6 p-lg-4 p-3">
-              <div className="menu" style={{ position: "relative" }}>
-                <img
-                  style={{ width: "100%" }}
-                  src={require("../../assets/img/home/coffelava.png")}
-                />
-                <p className="title_menu">
-                  Coffe Lava <br />
-                  Cake
-                </p>
-              </div>
-            </div>
-            <div className="col-md-4 col-6 p-lg-4 p-3">
-              <div className="menu" style={{ position: "relative" }}>
-                <img
-                  style={{ width: "100%" }}
-                  src={require("../../assets/img/home/sugarsalmon.png")}
-                />
-                <p className="title_menu">
-                  Sugar <br />
-                  Salmon
-                </p>
-              </div>
-            </div>
-            <div className="col-md-4 col-6 p-lg-4 p-3">
-              <div className="menu" style={{ position: "relative" }}>
-                <img
-                  style={{ width: "100%" }}
-                  src={require("../../assets/img/home/indiansalad.png")}
-                />
-                <p className="title_menu">
-                  Indian <br />
-                  Salad
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </main>

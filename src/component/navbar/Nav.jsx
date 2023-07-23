@@ -46,7 +46,6 @@ const Nav = () => {
                   alignItems: "center",
                   height: "100%",
                   display: "flex",
-                  
                 }}
               >
                 <div>
@@ -56,7 +55,7 @@ const Nav = () => {
                         margin: 0,
                         width: "80px",
                         borderRadius: "10px",
-                        color: "#2E266F"
+                        color: "#2E266F",
                       }}
                     >
                       Home
@@ -70,7 +69,7 @@ const Nav = () => {
                         margin: 0,
                         width: "115px",
                         borderRadius: "10px",
-                        color: "#2E266F"
+                        color: "#2E266F",
                       }}
                     >
                       Add Recipe
@@ -84,7 +83,7 @@ const Nav = () => {
                         margin: 0,
                         width: "60px",
                         borderRadius: "10px",
-                        color: "#2E266F"
+                        color: "#2E266F",
                       }}
                     >
                       Profile
@@ -93,7 +92,6 @@ const Nav = () => {
                 </div>
               </div>
             </section>
-
             <section style={{ justifyContent: "center" }}>
               <img
                 style={{
