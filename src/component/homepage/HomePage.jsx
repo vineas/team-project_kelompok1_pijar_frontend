@@ -44,11 +44,18 @@ const HomePage = () => {
         content: ""; border: 3px solid #efc81a; position: absolute; display: block; width: 400px; height: 480px; border-radius: 5px; top: 60px; left: 145px; z-index: -1;
         {"}"}
         .newImg::before{"{"}
-        content: ""; background-color: #efc81a; width: 414px; height: 490px; position: absolute; display: block; top: -20px; left: -160px; z-index: -1;
+        content: ""; background-color: #efc81a; width: 414px; height: 490px;
+        position: absolute; display: block; top: -20px; right: 440px; z-index:
+        -1;
         {"}"}
         .eggImg::before{"{"}
-        width: 414px; height: 490px; background-color: #efc81a; position: absolute; display: block; top: -20px; right: -160px; z-index:
+        content: ""; background-color: #efc81a; position: absolute; display:
+        block; width: 400px; height: 780px; top: -90px; left:
+        265px; z-index: -1;
         {"}"}
+        {/* div {"{"}
+        border: 1px solid;
+        {"}"} */}
         @media screen and (max-width: 428px) {"{"}
         .text_title {"{"}
         display: flex; flex-direction: column-reverse;
@@ -102,8 +109,14 @@ const HomePage = () => {
             </div>
           </div>
           <div className="col-sm-5 p-3">
-            <div className="eggImg" style={{ display: "flex", justifyContent: "center" }}>
-              <img style={{ width: "100%" }} src={require("../../assets/img/home/telur.png")} />
+            <div
+              className="eggImg"
+              style={{ display: "flex", justifyContent: "center", borderRadius: "10px", overflow: "hidden" }}
+            >
+              <img
+                style={{ width: "100%" }}
+                src={require("../../assets/img/home/telur.png")}
+              />
             </div>
           </div>
         </div>
@@ -163,20 +176,20 @@ const HomePage = () => {
           <div className="colstrip" />
           <p className="part">Popular Recipe</p>
         </div>
-        <div>
           <div className="row">
             {recipe.map((item, index) => (
               <div className="col-md-4 col-6 p-lg-4 p-3">
                 <Link to={`/DetailRecipe/${item.recipes_id}`} key={index.toString()} style={{ color: "black" }}>
-                  <div className="menu" style={{ position: "relative" }}>
-                    <img style={{ width: "100%" }} src={item.recipes_photo} />
+                  <div className="menu" style={{ position: "relative", borderRadius: "10px", overflow: "hidden" }}>
+                    <img style={{ width: "100%", objectFit: "cover" }} src={item.recipes_photo} />
                     <p className="title_menu">{item.recipes_title}</p>
                   </div>
                 </Link>
               </div>
             ))}
           </div>
-        </div>
+        {/* <div>
+        </div> */}
       </main>
     </>
   );

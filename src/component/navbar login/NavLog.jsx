@@ -44,7 +44,7 @@ const NavLog = () => {
                 }}
               >
                 <div>
-                  <Link to="/Login">
+                  <Link to="/login">
                     <button
                       style={{
                         height: "40px",
@@ -58,7 +58,7 @@ const NavLog = () => {
                   </Link>
                 </div>
                 <div style={{ margin: "0 10px" }}>
-                  <Link to="Register">
+                  <Link to="/register">
                     <button
                       style={{
                         height: "40px",
@@ -80,7 +80,7 @@ const NavLog = () => {
                   width: "50px",
                   height: "50px",
                   borderRadius: "100%",
-                  margin: "10px ",
+                  margin: "10px 0",
                 }}
                 src={require("../../assets/img/home/profile-icon.png")}
               />
