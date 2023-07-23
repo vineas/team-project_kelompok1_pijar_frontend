@@ -50,6 +50,9 @@ const HomePage = () => {
         block; width: 400px; height: 780px; top: -90px; left:
         265px; z-index: -1;
         {"}"}
+        div {"{"}
+        border: 1px solid;
+        {"}"}
         @media screen and (max-width: 428px) {"{"}
         .text_title {"{"}
         display: flex; flex-direction: column-reverse;
@@ -113,7 +116,7 @@ const HomePage = () => {
           <div className="col-sm-5 p-3">
             <div
               className="eggImg"
-              style={{ display: "flex", justifyContent: "center" }}
+              style={{ display: "flex", justifyContent: "center", borderRadius: "10px", overflow: "hidden" }}
             >
               <img
                 style={{ width: "100%" }}
@@ -184,12 +187,11 @@ const HomePage = () => {
           <div className="colstrip" />
           <p className="part">Popular Recipe</p>
         </div>
-        <div>
           <div className="row">
-            <div className="col-md-4 col-6 p-lg-4 p-3">
-              <div className="menu" style={{ position: "relative" }}>
+            <div className="col-md-4 col-6 p-lg-3 p-1">
+              <div className="menu" style={{ position: "relative", borderRadius: "10px", overflow: "hidden" }}>
                 <img
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", objectFit: "cover" }}
                   src={require("../../assets/img/home/chikenkare.png")}
                 />
                 <p className="title_menu">
@@ -198,10 +200,10 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            <div className="col-md-4 col-6 p-lg-4 p-3">
-              <div className="menu" style={{ position: "relative" }}>
+            <div className="col-md-4 col-6 p-lg-3 p-3">
+              <div className="menu" style={{ position: "relative", borderRadius: "10px", overflow: "hidden" }}>
                 <img
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", objectFit: "cover" }}
                   src={require("../../assets/img/home/bomchiken.png")}
                 />
                 <p className="title_menu">
@@ -210,10 +212,10 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            <div className="col-md-4 col-6 p-lg-4 p-3">
-              <div className="menu" style={{ position: "relative" }}>
+            <div className="col-md-4 col-6 p-lg-3 p-3">
+              <div className="menu" style={{ position: "relative", borderRadius: "10px", overflow: "hidden" }}>
                 <img
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", objectFit: "cover" }}
                   src={require("../../assets/img/home/bananapop.png")}
                 />
                 <p className="title_menu">
@@ -222,10 +224,10 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            <div className="col-md-4 col-6 p-lg-4 p-3">
-              <div className="menu" style={{ position: "relative" }}>
+            <div className="col-md-4 col-6 p-lg-3 p-3">
+              <div className="menu" style={{ position: "relative", borderRadius: "10px", overflow: "hidden" }}>
                 <img
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", objectFit: "cover" }}
                   src={require("../../assets/img/home/coffelava.png")}
                 />
                 <p className="title_menu">
@@ -234,10 +236,10 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            <div className="col-md-4 col-6 p-lg-4 p-3">
-              <div className="menu" style={{ position: "relative" }}>
+            <div className="col-md-4 col-6 p-lg-3 p-3">
+              <div className="menu" style={{ position: "relative", borderRadius: "10px", overflow: "hidden" }}>
                 <img
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", objectFit: "cover" }}
                   src={require("../../assets/img/home/sugarsalmon.png")}
                 />
                 <p className="title_menu">
@@ -246,10 +248,10 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            <div className="col-md-4 col-6 p-lg-4 p-3">
-              <div className="menu" style={{ position: "relative" }}>
+            <div className="col-md-4 col-6 p-lg-3 p-3">
+              <div className="menu" style={{ position: "relative", borderRadius: "10px", overflow: "hidden" }}>
                 <img
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", objectFit: "cover" }}
                   src={require("../../assets/img/home/indiansalad.png")}
                 />
                 <p className="title_menu">
@@ -259,7 +261,8 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-        </div>
+        {/* <div>
+        </div> */}
       </main>
     </>
   );
