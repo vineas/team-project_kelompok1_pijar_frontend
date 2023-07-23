@@ -1,0 +1,33 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title_2 {
+  /* background-color: lightgrey; */
+  padding-top: 3rem;
+  /* width: 500px !important; */
+}
+
+.textarea {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  background-color: #f6f5f4;
+  border: none;
+}
+
+.btnku {
+  font-size: 1.4rem;
+  color: #f6f5f4;
+  width: 426px;
+  height: 64px;
+  background-color: #efc81a !important;
+  border: none;
+}
+
+.title_2 h3 {
+  padding-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+}

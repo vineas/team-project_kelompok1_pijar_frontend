@@ -48,6 +48,7 @@ export const loginUser = (data, navigate) => async (dispatch) => {
     axios.post("https://glorious-blue-drill.cyclic.app/users/login", data).then((res) => {
       console.log(res.data.data);
       localStorage.setItem("users_id", res.data.data.users_id);
+      localStorage.setItem("users_id_profile", res.data.data.users_id);
       localStorage.setItem("token", res.data.data.token_user);
       if (res.data.status === "success") {
         Swal.fire("Login Success", "Your account Success Login", "success")

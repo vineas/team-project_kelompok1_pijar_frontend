@@ -4,8 +4,9 @@ import { Link, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getDetailRecepe } from "../../config/redux/actions/recipeAction";
+
+// import Commet from "../commet/Commet";
 import axios from "axios";
-// import axios from "axios";
 const DetailResepIsi = () => {
   let dispatch = useDispatch();
   let { id } = useParams();
@@ -15,70 +16,27 @@ const DetailResepIsi = () => {
     dispatch(getDetailRecepe(setRecipe, id));
   }, [id]);
 
-  let [comments, setCommet] = useState([]);
-
   const recipes_id = localStorage.getItem("recipes_id");
   const users_id = localStorage.getItem("users_id");
-
-  useEffect(() => {
-    axios
-      .get(`https://glorious-blue-drill.cyclic.app/comments/${recipes_id}`)
-      .then((res) => {
-        setCommet(res.data.data);
-        // console.log(res.data.data[0].comment_text);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
-
-  let [data, setData] = useState({
-    comment_text: "",
-    users_id: users_id,
-    recipes_id: recipes_id,
-  });
-
-  let hendelChange = (e) => {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
-    console.log(data);
-  };
-
-  let hendelSubmit = (e) => {
-    e.preventDefault();
-
-    axios
-      .post("https://glorious-blue-drill.cyclic.app/comments", data, {})
-      .then((res) => {
-        console.log(res);
-        alert("Commet");
-
-        window.location.reload();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   const [isLiked, setIsLiked] = useState(false);
   const handleLikeClick = () => {
     if (isLiked) {
-      alert('Anda sudah menyukai resep ini.');
+      alert("Anda sudah menyukai resep ini.");
       return;
     }
-    axios.post("https://glorious-blue-drill.cyclic.app/likeds/", {users_id, recipes_id})
+    axios
+      .post("https://glorious-blue-drill.cyclic.app/likeds/", { users_id, recipes_id })
       .then(() => {
         if (isLiked) {
-          alert('Anda sudah menyukai resep ini.');
+          alert("Anda sudah menyukai resep ini.");
           return;
         }
-      }).catch((error) => {
-        console.error('Error during like:', error);
+      })
+      .catch((error) => {
+        console.error("Error during like:", error);
       });
-  }
-
+  };
 
   return (
     <>
@@ -102,8 +60,8 @@ const DetailResepIsi = () => {
                 </button>
               </div>
               <div style={{ marginLeft: 30 }}>
-                <button className="btn-success" style={{ marginLeft: 10, borderRadius: 10, width: '120%', height: '200%' }}>
-                  <i class="bi bi-bookmark" style={{ width: '200%', height: '200%' }}></i>
+                <button className="btn-success" style={{ marginLeft: 10, borderRadius: 10, width: "120%", height: "200%" }}>
+                  <i class="bi bi-bookmark" style={{ width: "200%", height: "200%" }}></i>
                 </button>
               </div>
             </div>
@@ -143,28 +101,6 @@ const DetailResepIsi = () => {
                 </button>
               </div>
             </div>
-          </div>
-          <form onSubmit={hendelSubmit}>
-            <div className={`container ${style.comment}  comment mt-5`}>
-              <textarea className={`teksarea ${style.textarea} textarea `} name="comment_text" id="" cols="30" rows="10" placeholder="Comment :" value={data.comment_text} onChange={hendelChange}></textarea>
-              <div className="mt-3">
-                <button className={`${style.btnku} btnku`} type="submit">
-                  Send
-                </button>
-              </div>
-            </div>
-          </form>
-          <div className={`container ${style.title_2} title_2 `}>
-            <h3 className="mb-4">Comment</h3>
-            {comments.map((index) => (
-              <div className="row mt-2">
-                <img src={require("../../assets/img/DetailResep/iconcommen.png")} alt="" />
-                <div className="ml-3">
-                  <h6>{index.users_name}</h6>
-                  <p>{index.comment_text}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
