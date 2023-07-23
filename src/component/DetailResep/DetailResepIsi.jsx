@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { getDetailRecepe } from "../../config/redux/actions/recipeAction";
 
 // import Commet from "../commet/Commet";
-// import axios from "axios";
+import axios from "axios";
 const DetailResepIsi = () => {
   let dispatch = useDispatch();
   let { id } = useParams();
@@ -16,6 +16,28 @@ const DetailResepIsi = () => {
     dispatch(getDetailRecepe(setRecipe, id));
   }, [id]);
 
+  const recipes_id = localStorage.getItem("recipes_id");
+  const users_id = localStorage.getItem("users_id");
+
+  const [isLiked, setIsLiked] = useState(false);
+  const handleLikeClick = () => {
+    if (isLiked) {
+      alert("Anda sudah menyukai resep ini.");
+      return;
+    }
+    axios
+      .post("https://glorious-blue-drill.cyclic.app/likeds/", { users_id, recipes_id })
+      .then(() => {
+        if (isLiked) {
+          alert("Anda sudah menyukai resep ini.");
+          return;
+        }
+      })
+      .catch((error) => {
+        console.error("Error during like:", error);
+      });
+  };
+
   return (
     <>
       <section>
@@ -24,13 +46,23 @@ const DetailResepIsi = () => {
             <h1 className="mb-5">{recipe.recipes_title}</h1>
             <img className={`img1 ${style.img1}`} src={recipe.recipes_photo} alt="" />
             <div className={` ${style.icons} icons row`}>
-              <div className={`${style.book}  book mr-3`}>
-                <button>
-                  <img className={`imgbook ${style.imgbook}`} src="" crossOrigin="Anonymous" alt="" />
+              <div>
+                <button onClick={handleLikeClick} disabled={isLiked}>
+                  {isLiked ? (
+                    <>
+                      <i class="bi bi-heart"></i>
+                    </>
+                  ) : (
+                    <>
+                      <i class="bi bi-heart-fill"></i>
+                    </>
+                  )}
                 </button>
               </div>
-              <div className={`${style.vector} vector`}>
-                <img className={`imgku ${style.imgku}`} src={require("../../assets/img/DetailResep/Vector.png")} alt="" />
+              <div style={{ marginLeft: 30 }}>
+                <button className="btn-success" style={{ marginLeft: 10, borderRadius: 10, width: "120%", height: "200%" }}>
+                  <i class="bi bi-bookmark" style={{ width: "200%", height: "200%" }}></i>
+                </button>
               </div>
             </div>
           </div>
