@@ -38,7 +38,7 @@ const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, rec
             formData.append('recipes_video', data.recipes_video);
 
             // Make the axios.put request to update the recipe
-            await axios.put(`https://glorious-blue-drill.cyclic.app/recipes/${recipes_id}`, formData, {
+            await axios.put(`${process.env.REACT_APP_API_KEY}/recipes/${recipes_id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 }

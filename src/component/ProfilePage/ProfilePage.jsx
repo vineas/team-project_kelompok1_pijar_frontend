@@ -18,7 +18,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     axios
-      .get(`https://green-scorpion-boot.cyclic.app/users/profile/${getid}`)
+      .get(`${process.env.REACT_APP_API_KEY}/users/profile/${getid}`)
       .then((res) => {
         setUsers(res.data.data[0]);
         localStorage.setItem("users_id", res.data.data[0].users_id);
@@ -31,7 +31,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     axios
-      .get(`https://green-scorpion-boot.cyclic.app/recipes/users/${getid}`)
+      .get(`${process.env.REACT_APP_API_KEY}/recipes/users/${getid}`)
       .then((res) => {
         setRecipes(res.data.data);
       }, [])
@@ -42,7 +42,7 @@ const ProfilePage = () => {
 
   const handleDelete = (recipes_id) => {
     axios
-      .delete(`https://green-scorpion-boot.cyclic.app/recipes/${recipes_id}`)
+      .delete(`${process.env.REACT_APP_API_KEY}/recipes/${recipes_id}`)
       .then((res) => {
         Swal({
           title: "Apakah Anda yakin?",

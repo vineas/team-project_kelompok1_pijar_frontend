@@ -43,7 +43,7 @@ const ModalUpdateProfile = ({ users_id, users_name, users_phone, users_photo }) 
         formData.append('users_name', data.users_name)
         formData.append('users_phone', data.users_phone)
         formData.append('users_photo', image)
-        axios.put(`https://glorious-blue-drill.cyclic.app/users/profile/${users_id}`, formData, {
+        axios.put(`${process.env.REACT_APP_API_KEY}/users/profile/${users_id}`, formData, {
             headers: {
                 "Content-Type": "multipart/form-data",
             }

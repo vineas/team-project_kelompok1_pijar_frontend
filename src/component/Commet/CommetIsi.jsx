@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./commet.module.css";
-import axios from "axios";
+
 import { useDispatch } from "react-redux";
 import { createComment, getDetailComment } from "../../config/redux/actions/commentAction";
 
