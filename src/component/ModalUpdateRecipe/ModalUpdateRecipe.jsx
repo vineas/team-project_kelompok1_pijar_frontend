@@ -2,13 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
-const ModalUpdateRecipe = ({
-  recipes_id,
-  recipes_title,
-  recipes_ingredients,
-  recipes_photo,
-  recipes_video,
-}) => {
+const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, recipes_photo, recipes_video }) => {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -43,15 +37,11 @@ const ModalUpdateRecipe = ({
       formData.append("recipes_video", data.recipes_video);
 
       // Make the axios.put request to update the recipe
-      await axios.put(
-        `${process.env.REACT_APP_API_KEY}/recipes/${recipes_id}`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      await axios.put(`${process.env.REACT_APP_API_KEY}/recipes/${recipes_id}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       alert("Recipes Updated");
       setShow(false);
       window.location.reload();
@@ -68,11 +58,7 @@ const ModalUpdateRecipe = ({
 
   return (
     <>
-      <button
-        className="btn-warning"
-        style={{ marginLeft: 30, borderRadius: 10 }}
-        onClick={handleShow}
-      >
+      <button className="btn-warning" style={{ marginLeft: 30, borderRadius: 10 }} onClick={handleShow}>
         <i className="bi bi-pencil-square"></i>
       </button>
 
@@ -82,39 +68,12 @@ const ModalUpdateRecipe = ({
         </Modal.Header>
         <form onSubmit={handleSubmit}>
           <Modal.Body>
-            <input
-              className="form-control mt-3"
-              type="file"
-              placeholder="Image"
-              name="recipes_photo"
-              value={data.image}
-              onChange={handleUpload}
-            />
+            <input className="form-control mt-3" type="file" placeholder="Image" name="recipes_photo" value={data.image} onChange={handleUpload} />
 
-            <input
-              className="form-control mt-3"
-              type="text"
-              placeholder="Title"
-              name="recipes_title"
-              value={data.recipes_title}
-              onChange={handleChange}
-            />
-            <textarea
-              className="form-control mt-3"
-              placeholder="Ingredients"
-              name="recipes_ingredients"
-              value={data.recipes_ingredients}
-              onChange={handleChange}
-            />
+            <input className="form-control mt-3" type="text" placeholder="Title" name="recipes_title" value={data.recipes_title} onChange={handleChange} />
+            <textarea className="form-control mt-3" placeholder="Ingredients" name="recipes_ingredients" value={data.recipes_ingredients} onChange={handleChange} />
 
-            <input
-              className="form-control mt-3"
-              type="text"
-              name="recipes_video"
-              placeholder="Video"
-              value={data.recipes_video}
-              onChange={handleChange}
-            />
+            <input className="form-control mt-3" type="text" name="recipes_video" placeholder="Video" value={data.recipes_video} onChange={handleChange} />
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>

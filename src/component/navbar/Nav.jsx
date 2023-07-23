@@ -1,8 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { animateScroll } from 'react-scroll';
+
 
 const Nav = () => {
+  const handleOnClick = () => {
+    animateScroll.scrollToTop();
+  }
+
   document.addEventListener("scroll", () => {
     const header = document.querySelector("header");
     if (window.scrollY > 0) {
@@ -71,7 +77,7 @@ const Nav = () => {
                 }}
               >
                 <div>
-                  <Link to="/home">
+                  <Link to="/home" onClick={handleOnClick}>
                     <p
                       style={{
                         margin: 0,
@@ -85,7 +91,7 @@ const Nav = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link to="/addrecipe">
+                  <Link to="/addrecipe" onClick={handleOnClick}>
                     <p
                       style={{
                         margin: 0,
@@ -99,7 +105,7 @@ const Nav = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link to="/profile/:id">
+                  <Link to="/profile/:id" onClick={handleOnClick}>
                     <p
                       style={{
                         margin: 0,
