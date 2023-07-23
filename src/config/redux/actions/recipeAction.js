@@ -3,10 +3,10 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 // Get
-export const getRecipe = (setProducts) => async (dispatch) => {
+export const getRecipe = (setRecipe) => async (dispatch) => {
   try {
-    axios.get("https://0326-2001-448a-4005-2b24-491f-7814-7e4e-9e4e.ngrok-free.app/recipes").then(function (respose) {
-      setProducts(respose.data.data);
+    axios.get("https://tame-teal-shark-tie.cyclic.app/recipes").then(function (respose) {
+      setRecipe(respose.data.data);
     });
 
     dispatch({ type: "GET_ALL_PRODUCT", payload: "success" });
@@ -18,6 +18,23 @@ export const getRecipe = (setProducts) => async (dispatch) => {
   }
 };
 
+export const getDetailRecepe = (setRecipe, id) => async (dispatch) => {
+  try {
+    axios.get(`https://tame-teal-shark-tie.cyclic.app/recipes/${id}`).then((res) => {
+      setRecipe(res.data.data[0]);
+
+      console.log(res.data.data[0]);
+
+      localStorage.setItem("recipes_id", res.data.data[0].recipes_id);
+      localStorage.setItem("users_id", res.data.data[0].users_id);
+      // console.log(product);
+    });
+    dispatch({ type: "GET_DETAIL_RECEPE", payload: "success" });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export const createRecipe = (data, recipes_photo) => async (dispatch) => {
   try {
     const formData = new FormData();
@@ -25,11 +42,12 @@ export const createRecipe = (data, recipes_photo) => async (dispatch) => {
     formData.append("recipes_ingredients", data.recipes_ingredients);
     formData.append("recipes_video", data.recipes_video);
     formData.append("recipes_photo", recipes_photo);
+    formData.append("users_id", data.users_id);
 
     // console.log(FormData.append("recipes_title", data.recipes_title));
     console.log(data);
     axios
-      .post("https://0326-2001-448a-4005-2b24-491f-7814-7e4e-9e4e.ngrok-free.app/recipes", formData, {
+      .post("https://tame-teal-shark-tie.cyclic.app/recipes", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

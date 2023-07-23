@@ -13,7 +13,8 @@
 }
 
 .title {
-  width: 100%;
+  /* background-color: azure; */
+  width: 100% !important;
   /* border: 1px solid black; */
 }
 
@@ -34,7 +35,7 @@
 }
 
 .video {
-  width: 100%;
+  width: 100% !important;
 }
 .video input {
   background-color: #f6f5f4;

@@ -51,8 +51,8 @@ const Login = () => {
                 <button onClick={onClick}>Log in</button>
                 <h6>Forgot Password ?</h6>
                 <p id="foot">
-                  Don’t have an account?
-                  <Link to="/register">
+                  Don’t have an account?{" "}
+                  <Link to="/Register">
                     {" "}
                     <span>Sign Up</span>
                   </Link>

@@ -8,10 +8,13 @@ const AddRecepisi = () => {
   // const [show, setShow] = useState(false);
   // const handleClose = () => setShow(false);
   // const handleShow = () => setShow(true);
+  const user = localStorage.getItem("users_id");
+
   const [data, setData] = useState({
     recipes_title: "",
     recipes_ingredients: "",
     recipes_video: "",
+    users_id: user,
   });
   const dispatch = useDispatch();
   const [photo, setPhoto] = useState(null);
@@ -43,7 +46,7 @@ const AddRecepisi = () => {
               <img src={require("../../assets/img/AddRecep/image.png")} alt="" />
               <input id="" type="file" placeholder="Title" accept=".jpg,.gif,.png" value={data.recipes_photo} name="recipes_photo" multiple onChange={handleUpload} />
             </div>
-            <div className={`  ${style.title} title pt-4 `}>
+            <div className={`  ${style.title}  title pt-4 `}>
               <input className="p-4" type="text" placeholder="Title" name="recipes_title" value={data.recipes_title} onChange={hendelChange} />
             </div>
             <div className={`  ${style.Ingredients} Ingredients pt-4`}>

@@ -1,23 +1,18 @@
 const initialState = {
-  data: {
-    users_name: "",
-    users_email: "",
-    users_phone: "",
-  },
-  isLoading: false,
+  user: [],
+  usertDetail: [],
 };
 
 const userReducer = (state = initialState, action) => {
   if (action.type === "USER_LOGIN_PENDING") {
     return {
       ...state,
-      isLoading: true,
+      usertDetail: action.payload,
     };
   } else if (action.type === "USER_LOGIN_SUCCESS") {
     return {
       ...state,
-      data: action.payload,
-      isLoading: false,
+      product: action.payload,
     };
   } else if (action.type === "CREATE_LOGIN") {
     return state;

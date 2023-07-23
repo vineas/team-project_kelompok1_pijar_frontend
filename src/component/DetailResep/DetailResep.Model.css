@@ -11,14 +11,17 @@
 }
 
 .img1 {
+  border-radius: 15px;
   width: 60.5rem;
 }
 .title_2 {
   /* background-color: lightgrey; */
   padding-top: 3rem;
+  /* width: 500px !important; */
 }
 
-.title_2 ul li {
+.title_2 ul p {
+  width: 300px;
   font-size: 30px;
   font-weight: 300;
 }
