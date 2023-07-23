@@ -32,7 +32,6 @@ const Login = () => {
                 crossOrigin="Anonymous"
                 alt="grup-icon"
               />
-              <p>Mama Recipe.</p>
             </div>
           </div>
           <div className="inputku col-12 col-md-6">

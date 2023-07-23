@@ -49,7 +49,7 @@ const HomePage = () => {
         {"}"}
         .title_menu {"{"}
         font-weight: 500; font-size: 25px; position: absolute; bottom: 0; left:
-        20px;
+        20px; color: white; text-shadow: 2px 2px #00000066;
         {"}"}
         .popularImg::before{"{"}
         content: ""; border: 3px solid #efc81a; position: absolute; display:

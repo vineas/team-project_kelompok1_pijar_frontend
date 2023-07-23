@@ -40,7 +40,6 @@ const Register = () => {
                 src={require("../../assets/img/Login/icon.png")}
                 alt="grup-icon"
               />
-              <p>Mama Recipe.</p>
             </div>
           </div>
           <div className={` inputku col-6 col-md-6`}>
