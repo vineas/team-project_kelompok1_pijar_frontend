@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
@@ -10,20 +11,41 @@ const Nav = () => {
       header.classList.remove("scrolled");
     }
   });
+
+  let [users, setUsers] = useState([]);
+
+  const getid = localStorage.getItem("users_id_profile");
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_KEY}/users/profile/${getid}`)
+      .then((res) => {
+        setUsers(res.data.data[0]);
+        localStorage.setItem("users_id", res.data.data[0].users_id);
+        console.log(res.data.data[0]);
+      }, [])
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       <style>
         header {"{"}
-        top: 0; position: sticky; background-color: transparent; transition: background-color 0.2s ease-in-out; z-index: 10;
+        top: 0; position: sticky; background-color: transparent; transition:
+        background-color 0.2s ease-in-out; z-index: 10;
         {"}"}
         header.scrolled {"{"}
         background-color: #efc81a; opacity: 0.98;
         {"}"}
         .icon {"{"}
-        height: 50px; width: 50px; position: relative; background-color: transparent;
+        height: 50px; width: 50px; position: relative; background-color:
+        transparent;
         {"}"}
         .icon::after {"{"}
-        content: ""; width: 15px; height: 15px; background-color: #31a24c; position: absolute; border-radius: 100%; right: 0px; top: 0px;
+        content: ""; width: 15px; height: 15px; background-color: #31a24c;
+        position: absolute; border-radius: 100%; right: 0px; top: 0px;
         {"}"}
         {/* div {"{"}
         border: 1px solid;
@@ -100,7 +122,7 @@ const Nav = () => {
                   borderRadius: "100%",
                   margin: "10px 0",
                 }}
-                src={require("../../assets/img/home/profile-icon.png")}
+                src={users.users_photo}
               />
             </section>
           </div>

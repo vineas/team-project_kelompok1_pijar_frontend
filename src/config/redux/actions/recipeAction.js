@@ -5,9 +5,11 @@ import Swal from "sweetalert2";
 // Get
 export const getRecipe = (setRecipe) => async (dispatch) => {
   try {
-    axios.get(`${process.env.REACT_APP_API_KEY}/recipes`).then(function (respose) {
-      setRecipe(respose.data.data);
-    });
+    axios
+      .get(`${process.env.REACT_APP_API_KEY}/recipes`)
+      .then(function (respose) {
+        setRecipe(respose.data.data);
+      });
 
     dispatch({ type: "GET_ALL_PRODUCT", payload: "success" });
   } catch (error) {

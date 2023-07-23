@@ -52,7 +52,9 @@ const ProfilePage = () => {
           dangerMode: true,
         }).then((willDelete) => {
           if (willDelete) {
-            setRecipes((prevRecipes) => prevRecipes.filter((recipe) => recipe.recipes_id !== recipes_id));
+            setRecipes((prevRecipes) =>
+              prevRecipes.filter((recipe) => recipe.recipes_id !== recipes_id)
+            );
           }
         });
       })
@@ -66,10 +68,12 @@ const ProfilePage = () => {
       <style>
         <>
           .image-recipe-profile{"{"}
-          width: 100%; height: 236px; margin-right: 30px; margin-top: 30px; border-radius: 10px; object-fit: cover;
+          width: 100%; height: 236px; margin-right: 30px; margin-top: 30px;
+          border-radius: 10px; object-fit: cover;
           {"}"}
           .title_menu {"{"}
-          font-weight: 500; font-size: 25px; position: absolute; bottom: 0; left: 20px; color: white; margin-left: 10px;
+          font-weight: 500; font-size: 25px; position: absolute; bottom: 0;
+          left: 20px; color: white; margin-left: 10px;
           {"}"}
           @media screen and (max-width: 480px){"{"}
           .image-recipe-profile {"{"}
@@ -98,11 +102,23 @@ const ProfilePage = () => {
                     }}
                   />
                 </div>
-                <div className="" style={{ display: "flex", justifyContent: "center", marginTop: 10 }}>
+                <div
+                  className=""
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: 10,
+                  }}
+                >
                   <h5>{users.users_name}</h5>
                 </div>
                 <div style={{ display: "flex", justifyContent: "center" }}>
-                  <ModalUpdateProfile users_id={users.users_id} users_name={users.users_name} users_phone={users.users_phone} users_photo={users.users_photo} />
+                  <ModalUpdateProfile
+                    users_id={users.users_id}
+                    users_name={users.users_name}
+                    users_phone={users.users_phone}
+                    users_photo={users.users_photo}
+                  />
                 </div>
               </div>
               <div className="col-md-4 " />
@@ -112,25 +128,60 @@ const ProfilePage = () => {
           <div className="col-md-12" style={{ marginTop: 50 }}>
             <nav>
               <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                <button className="nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                <button
+                  className="nav-link active"
+                  id="nav-home-tab"
+                  data-toggle="tab"
+                  data-target="#nav-home"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-home"
+                  aria-selected="true"
+                >
                   My Recipe
                 </button>
-                <button className="nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                <button
+                  className="nav-link"
+                  id="nav-profile-tab"
+                  data-toggle="tab"
+                  data-target="#nav-profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-profile"
+                  aria-selected="false"
+                >
                   Saved Recipe
                 </button>
-                <button className="nav-link" id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
+                <button
+                  className="nav-link"
+                  id="nav-contact-tab"
+                  data-toggle="tab"
+                  data-target="#nav-contact"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-contact"
+                  aria-selected="false"
+                >
                   Liked Recipe
                 </button>
               </div>
             </nav>
-            <div className="tab-content" id="nav-tabContent" style={{ paddingBottom: 90 }}>
+            <div
+              className="tab-content"
+              id="nav-tabContent"
+              style={{ paddingBottom: 90 }}
+            >
               <div className="tab-pane fade show active" id="nav-home">
                 <div className="row">
                   {recipes.map((recipe) => (
                     <div className="col-md-4 col-12">
                       <div className="menu">
                         {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                        <img className="image-recipe-profile" src={recipe.recipes_photo} alt="" />
+                        <img
+                          className="image-recipe-profile"
+                          src={recipe.recipes_photo}
+                          alt=""
+                        />
                         <p className="title_menu">
                           {recipe.recipes_title}
 
@@ -154,7 +205,10 @@ const ProfilePage = () => {
                           )} */}
 
                           {recipes.map((recipe) => (
-                            <div className="col-md-4 col-6" key={recipe.recipes_id}>
+                            <div
+                              className="col-md-4 col-6"
+                              key={recipe.recipes_id}
+                            >
                               <div className="menu">
                                 {/* ... */}
                                 <p className="title_menu">
@@ -162,14 +216,18 @@ const ProfilePage = () => {
                                   <ModalUpdateRecipe
                                     recipes_id={recipe.recipes_id}
                                     recipes_title={recipe.recipes_title}
-                                    recipes_ingredients={recipe.recipes_ingredients}
+                                    recipes_ingredients={
+                                      recipe.recipes_ingredients
+                                    }
                                     recipes_photo={recipe.recipes_photo}
                                     recipes_video={recipe.recipes_video}
                                   />
                                   <button
                                     className="btn-danger"
                                     style={{ marginLeft: 10, borderRadius: 10 }}
-                                    onClick={() => handleDelete(recipe.recipes_id)} // Panggil fungsi deleteRecipe saat tombol di klik
+                                    onClick={() =>
+                                      handleDelete(recipe.recipes_id)
+                                    } // Panggil fungsi deleteRecipe saat tombol di klik
                                   >
                                     <i className="bi bi-trash3"></i>
                                   </button>
@@ -191,16 +249,28 @@ const ProfilePage = () => {
                 </div>
               </div>
 
-              <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div
+                className="tab-pane fade"
+                id="nav-profile"
+                role="tabpanel"
+                aria-labelledby="nav-profile-tab"
+              >
                 <div className="row">
                   <div className="col-md-4 col-6">
                     <div className="menu">
                       {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img className="image-recipe-profile" src={recipe1} alt="" />
+                      <img
+                        className="image-recipe-profile"
+                        src={recipe1}
+                        alt=""
+                      />
                       <p className="title_menu">
                         Chiken <br />
                         Kare
-                        <button className="btn-success" style={{ marginLeft: 10, borderRadius: 10 }}>
+                        <button
+                          className="btn-success"
+                          style={{ marginLeft: 10, borderRadius: 10 }}
+                        >
                           <i class="bi bi-bookmark"></i>
                         </button>
                       </p>
@@ -210,11 +280,18 @@ const ProfilePage = () => {
                   <div className="col-md-4 col-6">
                     <div className="menu">
                       {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img className="image-recipe-profile" src={recipe1} alt="" />
+                      <img
+                        className="image-recipe-profile"
+                        src={recipe1}
+                        alt=""
+                      />
                       <p className="title_menu">
                         Chiken <br />
                         Kare
-                        <button className="btn-success" style={{ marginLeft: 10, borderRadius: 10 }}>
+                        <button
+                          className="btn-success"
+                          style={{ marginLeft: 10, borderRadius: 10 }}
+                        >
                           <i class="bi bi-bookmark"></i>
                         </button>
                       </p>
@@ -224,11 +301,18 @@ const ProfilePage = () => {
                   <div className="col-md-4 col-6">
                     <div className="menu">
                       {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img className="image-recipe-profile" src={recipe1} alt="" />
+                      <img
+                        className="image-recipe-profile"
+                        src={recipe1}
+                        alt=""
+                      />
                       <p className="title_menu">
                         Chiken <br />
                         Kare
-                        <button className="btn-success" style={{ marginLeft: 10, borderRadius: 10 }}>
+                        <button
+                          className="btn-success"
+                          style={{ marginLeft: 10, borderRadius: 10 }}
+                        >
                           <i class="bi bi-bookmark"></i>
                         </button>
                       </p>
@@ -237,16 +321,28 @@ const ProfilePage = () => {
                 </div>
               </div>
 
-              <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+              <div
+                className="tab-pane fade"
+                id="nav-contact"
+                role="tabpanel"
+                aria-labelledby="nav-contact-tab"
+              >
                 <div className="row">
                   <div className="col-md-4 col-6">
                     <div className="menu">
                       {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img className="image-recipe-profile" src={recipe1} alt="" />
+                      <img
+                        className="image-recipe-profile"
+                        src={recipe1}
+                        alt=""
+                      />
                       <p className="title_menu">
                         Chiken <br />
                         Kare
-                        <button className="btn-info" style={{ marginLeft: 10, borderRadius: 10 }}>
+                        <button
+                          className="btn-info"
+                          style={{ marginLeft: 10, borderRadius: 10 }}
+                        >
                           <i class="bi bi-heart"></i>
                         </button>
                       </p>
@@ -256,11 +352,18 @@ const ProfilePage = () => {
                   <div className="col-md-4 col-6">
                     <div className="menu">
                       {/* <img style={{ width: "100%" }} src={recipe1)} /> */}
-                      <img className="image-recipe-profile" src={recipe1} alt="" />
+                      <img
+                        className="image-recipe-profile"
+                        src={recipe1}
+                        alt=""
+                      />
                       <p className="title_menu">
                         Chiken <br />
                         Kare
-                        <button className="btn-info" style={{ marginLeft: 10, borderRadius: 10 }}>
+                        <button
+                          className="btn-info"
+                          style={{ marginLeft: 10, borderRadius: 10 }}
+                        >
                           <i class="bi bi-heart"></i>
                         </button>
                       </p>

@@ -27,8 +27,11 @@ const Login = () => {
         <div className="row">
           <div className="background col-12 col-md-6">
             <div className="icon-1">
-              <img src={require("../../assets/img/Login/icon.png")} crossOrigin="Anonymous" alt="grup-icon" />
-              <p>Mama Recipe.</p>
+              <img
+                src={require("../../assets/img/Login/icon.png")}
+                crossOrigin="Anonymous"
+                alt="grup-icon"
+              />
             </div>
           </div>
           <div className="inputku col-12 col-md-6">
@@ -38,11 +41,23 @@ const Login = () => {
               <div className="form">
                 <div className="form-1">
                   <label>E-mail</label>
-                  <input type="email" placeholder="examplexxx@gmail.com" name="users_email" id="email" onChange={onChange} />
+                  <input
+                    type="email"
+                    placeholder="examplexxx@gmail.com"
+                    name="users_email"
+                    id="email"
+                    onChange={onChange}
+                  />
                 </div>
                 <div className="form-2">
                   <label>Password</label>
-                  <input type="password" placeholder="*****" name="users_confirmpassword" id="password" onChange={onChange} />
+                  <input
+                    type="password"
+                    placeholder="*****"
+                    name="users_confirmpassword"
+                    id="password"
+                    onChange={onChange}
+                  />
                 </div>
                 <div className="cekbox">
                   <input id="cb-1" type="checkbox" defaultChecked="checked" />
