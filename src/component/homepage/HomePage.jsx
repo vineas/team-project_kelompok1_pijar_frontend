@@ -2,13 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getRecipe } from "../../config/redux/actions/recipeAction";
 import { Link } from "react-router-dom";
+import Pagination from "../pagination/pagination";
 const HomePage = () => {
   let dispatch = useDispatch();
   let [recipe, setRecipe] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(6);
 
   useEffect(() => {
     dispatch(getRecipe(setRecipe));
   }, []);
+
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = recipe.slice(firstPostIndex, lastPostIndex);
 
   return (
     <>
@@ -38,7 +45,7 @@ const HomePage = () => {
         width: 40%; height: 54px; border-radius: 8px; background-color: #efc81a; border: 0;
         {"}"}
         .title_menu {"{"}
-        font-weight: 500; font-size: 25px; position: absolute; bottom: 0; left: 20px;
+        font-weight: 500; font-size: 25px; position: absolute; bottom: 0; left: 20px; color: white; text-shadow: 2px 2px #00000066;
         {"}"}
         .popularImg::before{"{"}
         content: ""; border: 3px solid #efc81a; position: absolute; display: block; width: 400px; height: 480px; border-radius: 5px; top: 60px; left: 145px; z-index: -1;
@@ -105,7 +112,15 @@ const HomePage = () => {
             </div>
           </div>
           <div className="col-sm-5 p-3">
-            <div className="eggImg" style={{ display: "flex", justifyContent: "center", borderRadius: "10px", overflow: "hidden" }}>
+            <div
+              className="eggImg"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                borderRadius: "10px",
+                overflow: "hidden",
+              }}
+            >
               <img style={{ width: "100%" }} src={require("../../assets/img/home/telur.png")} />
             </div>
           </div>
@@ -167,19 +182,33 @@ const HomePage = () => {
           <p className="part">Popular Recipe</p>
         </div>
         <div className="row">
-          {recipe.map((item, index) => (
+          {currentPosts.map((item, index) => (
             <div className="col-md-4 col-6 p-lg-4 p-3">
               <Link to={`/DetailRecipe/${item.recipes_id}`} key={index.toString()} style={{ color: "black" }}>
-                <div className="menu" style={{ position: "relative", borderRadius: "10px", overflow: "hidden" }}>
-                  <img style={{ width: "100%", objectFit: "cover" }} src={item.recipes_photo} />
+                <div
+                  className="menu"
+                  style={{
+                    position: "relative",
+                    borderRadius: "10px",
+                    overflow: "hidden",
+                    height: "100%",
+                  }}
+                >
+                  <img
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                    src={item.recipes_photo}
+                  />
                   <p className="title_menu">{item.recipes_title}</p>
                 </div>
               </Link>
             </div>
           ))}
         </div>
-        {/* <div>
-        </div> */}
+        <Pagination totalPosts={recipe.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
       </main>
     </>
   );

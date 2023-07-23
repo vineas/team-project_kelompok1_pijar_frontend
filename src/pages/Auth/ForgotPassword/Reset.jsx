@@ -8,7 +8,10 @@ const Reset = () => {
         <div className="row">
           <div className="background col-6 col-md-6">
             <div className="icon-1">
-              <img src={require("../../../assets/img/Login/icon.png")} alt="grup-icon" />
+              <img
+                src={require("../../../assets/img/Login/icon.png")}
+                alt="grup-icon"
+              />
               <p>Mama Recipe.</p>
             </div>
           </div>

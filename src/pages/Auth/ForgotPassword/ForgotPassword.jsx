@@ -8,7 +8,10 @@ const ForgotPassword = () => {
         <div className="row">
           <div className="background col-6 col-md-6">
             <div className="icon-1">
-              <img src={require("../../../assets/img/Login/icon.png")} alt="grup-icon" />
+              <img
+                src={require("../../../assets/img/Login/icon.png")}
+                alt="grup-icon"
+              />
               <p>Mama Recipe.</p>
             </div>
           </div>
@@ -16,7 +19,10 @@ const ForgotPassword = () => {
             <div className="inputloginforgot">
               <h2>Forgot Password?</h2>
               <dir className="paragraf">
-                <p>We just need your registered e-mail address to send your password resend</p>
+                <p>
+                  We just need your registered e-mail address to send your
+                  password resend
+                </p>
               </dir>
 
               <div className="formforgot">

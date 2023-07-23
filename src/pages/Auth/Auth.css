@@ -8,7 +8,8 @@ html body {
 .background {
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(#cecb2660 100%, rgb(170, 199, 39) 0%), url("../../assets/img/Login/image\ 15\ \(1\).png");
+  background-image: linear-gradient(#cecb2660 100%, rgb(170, 199, 39) 0%),
+    url("../../assets/img/Login/image\ 15\ \(1\).png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -32,7 +33,7 @@ html body {
 .inputlogin {
   /* background-color: beige; */
   width: 500px;
-  height: 600px;
+  height: 500px;
   /* background-color: lightblue; */
   display: flex;
   flex-direction: column;
@@ -66,8 +67,8 @@ html body {
 
 .form-1 input {
   background-color: #fff;
-  height: 50px;
-  width: 400px;
+  height: 40px;
+  width: 390px;
   padding: 10px 20px;
   border-radius: 6px;
   border: 1px solid #efc81a;
@@ -78,7 +79,7 @@ html body {
   align-items: center;
 }
 .form-2 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   display: flex;
   flex-direction: column;
@@ -91,8 +92,8 @@ html body {
 }
 .form-2 input {
   background-color: #fff;
-  height: 50px;
-  width: 400px;
+  height: 40px;
+  width: 390px;
   padding: 10px 20px;
   border-radius: 6px;
   border: 1px solid #21201f;
@@ -101,9 +102,9 @@ html body {
 .form button {
   margin-top: 10px;
   cursor: pointer;
-  width: 400px;
-  height: 50px;
-  border-radius: 16px;
+  width: 390px;
+  height: 40px;
+  border-radius: 6px;
   border: none;
   background: #efc81a;
   font-size: 17px;
@@ -168,8 +169,7 @@ html body {
   align-items: center;
   justify-content: center;
 }
-
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 428px) {
   .hero {
     font-size: 52%;
   }
