@@ -1,8 +1,9 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import style from "./DetailVodei.Model.css";
 import { getDetailRecepe } from "../../config/redux/actions/recipeAction";
+import ReactPlayer from "react-player";
 
 const DetailVedeoIsi = () => {
   let dispatch = useDispatch();
@@ -18,21 +19,12 @@ const DetailVedeoIsi = () => {
       <section>
         <div className="container">
           <div className="row">
-            <div className="col-12 col-md-9  mt-3 p-2">
-              {/* <img className={`${style.video} video`} src={require("../../assets/img/DetailVedeo/video.png")} alt="" /> */}
-
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/nqHFCV_3PxU"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-
-              <div className={`${style.title} title`}>
-                <h3>Beef Stea with Curry Sauce - [Step 4] Cut the condiment and then mix it</h3>
+            <div className="col-12 col-md-9  mt-3 p-2  ">
+              <div className={`video ${style.video}`}>
+                <ReactPlayer url={recipe.recipes_video} className={`video`} />
+              </div>
+              <div className={`${style.titleku} titleku`}>
+                <h3>{recipe.recipes_title}</h3>
                 <p>3 month ago</p>
               </div>
             </div>

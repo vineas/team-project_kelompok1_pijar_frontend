@@ -1,6 +1,6 @@
 // import React from "react";
 import style from "./DetailResep.Model.css";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getDetailRecepe } from "../../config/redux/actions/recipeAction";
@@ -38,6 +38,11 @@ const DetailResepIsi = () => {
       });
   };
 
+  const navigate = useNavigate();
+
+  const hendelClikVideo = () => {
+    navigate(`/detailvideo/${recipes_id}`);
+  };
   return (
     <>
       <section>
@@ -76,12 +81,12 @@ const DetailResepIsi = () => {
             <h3>Video Step</h3>
             <div>
               <div className={`${style.button2} button2 mt-4`}>
-                <button>
-                  <Link to={`detailvideo/${recipe.recipes_id}`}>
-                    <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3.28223 2.72049L23.6727 13.8819L3.28223 25.0434V2.72049Z" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </Link>
+                <button onClick={hendelClikVideo}>
+                  {/* <Link to={`detailvideo/${recipe.recipes_id}`}> */}
+                  <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.28223 2.72049L23.6727 13.8819L3.28223 25.0434V2.72049Z" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  {/* </Link> */}
                 </button>
                 <button>
                   <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">

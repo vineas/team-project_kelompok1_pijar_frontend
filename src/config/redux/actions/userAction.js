@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 export const userRegister = (data, navigate) => async (dispatch) => {
   try {
-    axios.post("https://glorious-blue-drill.cyclic.app/users/register", data).then((res) => {
+    axios.post("https://green-scorpion-boot.cyclic.app/users/register", data).then((res) => {
       console.log(res);
 
       if (res.status === 201) {
@@ -45,7 +45,7 @@ export const userRegister = (data, navigate) => async (dispatch) => {
 
 export const loginUser = (data, navigate) => async (dispatch) => {
   try {
-    axios.post("https://glorious-blue-drill.cyclic.app/users/login", data).then((res) => {
+    axios.post("https://green-scorpion-boot.cyclic.app/users/login", data).then((res) => {
       console.log(res.data.data);
       localStorage.setItem("users_id", res.data.data.users_id);
       localStorage.setItem("users_id_profile", res.data.data.users_id);

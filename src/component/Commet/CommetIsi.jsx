@@ -1,23 +1,17 @@
 import React, { useEffect, useState } from "react";
 import style from "./commet.module.css";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { createComment, getDetailComment } from "../../config/redux/actions/commentAction";
 
 const CommetIsi = () => {
   let [comments, setCommet] = useState([]);
-
+  let dispatch = useDispatch();
   const recipes_id = localStorage.getItem("recipes_id");
   const users_id = localStorage.getItem("users_id_profile");
 
   useEffect(() => {
-    axios
-      .get(`https://glorious-blue-drill.cyclic.app/comments/${recipes_id}`)
-      .then((res) => {
-        setCommet(res.data.data);
-        // console.log(res.data.data[0].comment_text);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(getDetailComment(setCommet, recipes_id));
   });
 
   let [data, setData] = useState({
@@ -36,18 +30,7 @@ const CommetIsi = () => {
 
   let hendelSubmit = (e) => {
     e.preventDefault();
-
-    axios
-      .post("https://glorious-blue-drill.cyclic.app/comments", data, {})
-      .then((res) => {
-        console.log(res);
-        alert("Comment");
-
-        window.location.reload();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(createComment(data, setData));
   };
   return (
     <>
