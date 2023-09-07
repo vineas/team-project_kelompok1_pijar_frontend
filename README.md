@@ -91,7 +91,7 @@ VITE_API_ENDPOINT = [BACKEND_URL]
 
 <table>
   <tr>
-    <td><img width="350px" src="./documentaion/-users.png"  border="0" border="0" alt="1" /></td>
+    <td><img width="350px" src="./documentaion/register-users.png"  border="0" border="0" alt="1" /></td>
     <td> <img width="350px" src="./documentaion/login-users.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
   <tr>
