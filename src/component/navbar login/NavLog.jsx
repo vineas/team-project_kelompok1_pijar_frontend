@@ -20,9 +20,6 @@ const NavLog = () => {
         header.scrolled {"{"}
         background-color: #efc81a; opacity: 0.98;
         {"}"}
-        {/* div {"{"}
-        border: 1px solid;
-        {"}"} */}
       </style>
 
       <header>

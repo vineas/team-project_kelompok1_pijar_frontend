@@ -1,10 +1,12 @@
 .video {
-  width: 95%;
-  height: 55%;
+  /* background-color: aquamarine; */
+  width: 90%;
+  height: 50%;
 }
 
-.title {
-  width: 70%;
+.titleku {
+  /* background-color: aqua */
+  width: 50%;
 }
 
 .title p {

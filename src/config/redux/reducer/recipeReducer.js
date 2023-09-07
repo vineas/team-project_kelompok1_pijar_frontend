@@ -1,6 +1,6 @@
 const initialState = {
-  recepe: [],
-  productDetail: [],
+  recipe: [],
+  recipeDetail: [],
 };
 
 const recepeReducer = (state = initialState, action) => {

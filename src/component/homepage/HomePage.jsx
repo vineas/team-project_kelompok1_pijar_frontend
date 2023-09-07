@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getRecipe } from "../../config/redux/actions/recipeAction";
 import { Link } from "react-router-dom";
-import Pagination from "../pagination/pagination";
+// import Pagination from "../pagination/pagination";
 import SearchBar from "../searchbar/SearchBar";
 import SearchList from "../searchbar/SearchList";
 const HomePage = () => {
@@ -135,7 +135,7 @@ const HomePage = () => {
       <main className="container">
         <div
           className="row pt-3"
-          // style={{ display: "flex", alignItems: "center" }}
+          style={{ display: "flex", alignItems: "center" }}
         >
           <div className="col-sm-7 text_title">
             <div className="pt-3 discover">

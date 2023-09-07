@@ -7,6 +7,11 @@ import { useDispatch } from "react-redux";
 import { userRegister } from "../../config/redux/actions/userAction";
 
 const Register = () => {
+  const [agreement, setAgreement] = useState(false);
+
+  const handleChange = (e) => {
+    setAgreement(e.target.checked);
+  };
   let [data, setData] = useState({
     users_name: "",
     users_email: "",
@@ -22,7 +27,7 @@ const Register = () => {
       ...data,
       [e.target.name]: e.target.value,
     });
-    console.log(setData);
+    // console.log(setData);
   };
   const dispatch = useDispatch();
   let onClick = (e) => {
@@ -34,7 +39,7 @@ const Register = () => {
     <>
       <section>
         <div className="row">
-          <div className="background col-6 col-md-6">
+          <div className="background  col-12 col-md-6">
             <div className="icon-1">
               <img
                 src={require("../../assets/img/Login/icon.png")}
@@ -42,7 +47,7 @@ const Register = () => {
               />
             </div>
           </div>
-          <div className={` inputku col-6 col-md-6`}>
+          <div className={` inputku col-12 col-md-6`}>
             <div className="inputlogin">
               <h2>Let’s Get Started !</h2>
               <p>Create new account to access all features</p>
@@ -98,11 +103,22 @@ const Register = () => {
                   />
                 </div>
                 <div className="cekbox">
-                  <input id="cb-1" type="checkbox" defaultChecked="checked" />
+                  <input
+                    id="cb-1"
+                    type="checkbox"
+                    name="agreement"
+                    onChange={handleChange}
+                  />
                   <label>I agree to terms &amp; conditions</label>
                 </div>
-                <button onClick={onClick}>Log in</button>
-                <h6>Forgot Password ?</h6>
+                <div>
+                  {!agreement ? (
+                    ""
+                  ) : (
+                    <button onClick={onClick}>Yes Log in </button>
+                  )}
+                </div>
+                <h6 className="mt-2">Forgot Password ?</h6>
                 <p id="foot">
                   Already have account?{" "}
                   <Link to="/Login">

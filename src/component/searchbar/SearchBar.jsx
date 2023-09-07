@@ -5,7 +5,7 @@ const SearchBar = ({setResult}) => {
   const [input, setInput] = useState("");
 
   const fetchData = (value) => {
-    fetch("REACT_APP_API_KEY/recipes")
+    fetch(`${process.env.REACT_APP_API_KEY}/recipes`)
       .then(res => res.json())
       .then((json) => {
         const result = json.filter((item) => {
