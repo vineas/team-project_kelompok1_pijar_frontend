@@ -188,31 +188,31 @@ Contributions are what make the open source community such an amazing place to b
     <tr >
       <td align="center">
         <a href="https://github.com/vineas">
-          <img width="80%"  src="./documentaion/member/alvienas.jpeg" alt=""><br/>
+          <img width="100%"  src="./documentaion/member/alvienas.jpeg" alt=""><br/>
           <b>Alvienas Yandika</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/izaazwaskito">
-          <img width="80%"  src="./documentaion/member/izaaz.jpeg" alt=""><br/>
+          <img width="100%"  src="./documentaion/member/izaaz.jpeg" alt=""><br/>
           <b>Izaaz Waskito</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/msuryasyahruli">
-          <img width="80%"  src="./documentaion/member/ruli.jpeg" alt=""><br/>
+          <img width="100%"  src="./documentaion/member/ruli.jpeg" alt=""><br/>
           <b>Muhammad Surya Syahruli</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/sandriirawan">
-          <img width="80%"   src="./documentaion/member/sandri.jpeg" alt=""><br/>
+          <img width="100%"   src="./documentaion/member/sandri.jpeg" alt=""><br/>
           <b>Sandri Irawan</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/yabeselkana">
-          <img width="80%"  src="./documentaion/member/yabes.jpeg" alt=""><br/>
+          <img width="100%"  src="./documentaion/member/yabes.jpeg" alt=""><br/>
           <b>Yabes Elkana</b>
         </a>
       </td>
@@ -221,4 +221,4 @@ Contributions are what make the open source community such an amazing place to b
 </center>
 
 Deployment Project Link: [https://team-project-kelompok1-pijar-frontend.vercel.app](https://team-project-kelompok1-pijar-frontend.vercel.app)
-Original Project Link: [https://github.com/ikkair/markisak-fe](https://github.com/ikkair/markisak-fe)
+Original Project Link: [https://github.com/vineas/team-project_kelompok1_pijar_frontend](https://github.com/vineas/team-project_kelompok1_pijar_frontend)
