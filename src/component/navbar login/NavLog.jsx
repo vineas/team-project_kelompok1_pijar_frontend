@@ -12,7 +12,7 @@ const NavLog = () => {
   });
   return (
     <>
-      <style>
+      {/* <style>
         header {"{"}
         top: 0; position: sticky; background-color: transparent; transition:
         background-color 0.2s ease-in-out; z-index: 10;
@@ -20,10 +20,7 @@ const NavLog = () => {
         header.scrolled {"{"}
         background-color: #efc81a; opacity: 0.98;
         {"}"}
-        {/* div {"{"}
-        border: 1px solid;
-        {"}"} */}
-      </style>
+      </style> */}
 
       <header>
         <nav className="container">

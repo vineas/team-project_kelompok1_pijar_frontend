@@ -80,7 +80,7 @@ const ModalUpdateProfile = ({
             width: 20,
             height: 20,
             flexDirection: "row",
-            justifyContent: "center",
+            justifyContent: "center"
           }}
         />
       </Link>
