@@ -121,7 +121,7 @@ VITE_API_ENDPOINT = [BACKEND_URL]
     <td> <img width="350px" src="./documentaion/profile-update.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
   <tr>
-    <td>Profile</td>
+    <td>Profile </td>
     <td>Edit Profile</td>
   </tr>
 
