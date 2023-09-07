@@ -194,13 +194,13 @@ Contributions are what make the open source community such an amazing place to b
       </td>
       <td align="center">
         <a href="https://github.com/izaazwaskito">
-          <img width="100%"  src="./documentaion/member/izaaz.jpeg" alt=""><br/>
+          <img width="80%"  src="./documentaion/member/izaaz.jpeg" alt=""><br/>
           <b>Izaaz Waskito</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/msuryasyahruli">
-          <img width="100%"  src="./documentaion/member/ruli.jpeg" alt=""><br/>
+          <img width="85%"  src="./documentaion/member/ruli.jpeg" alt=""><br/>
           <b>Muhammad Surya Syahruli</b>
         </a>
       </td>
