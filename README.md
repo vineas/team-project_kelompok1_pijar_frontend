@@ -1,6 +1,6 @@
 <p align="center">
 <div align="center">
-  <img height="150" src="./documentation/logo.png" alt="blanja-logo" border="0"/>
+  <img height="150" src="./documentaion/logo.png" alt="blanja-logo" border="0"/>
 </div>
   <h3 align="center">My Recipe</h3>
   <p align="center">
@@ -91,8 +91,8 @@ VITE_API_ENDPOINT = [BACKEND_URL]
 
 <table>
   <tr>
-    <td><img width="350px" src="./documentation/-users.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="./documentation/login-users.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+    <td><img width="350px" src="./documentaion/-users.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="350px" src="./documentaion/login-users.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
   <tr>
     <td>Register</td>
@@ -100,8 +100,8 @@ VITE_API_ENDPOINT = [BACKEND_URL]
   </tr>
 
   <tr>
-    <td><img width="350px" src="./documentation/landing-page.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="./documentation/detail-recipe.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+    <td><img width="350px" src="./documentaion/landing-page.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="350px" src="./documentaion/detail-recipe.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
   <tr>
     <td>Landing Page</td>
@@ -109,16 +109,16 @@ VITE_API_ENDPOINT = [BACKEND_URL]
   </tr>
 
   <tr>
-    <td><img width="350px" src="./documentation/add-recipe-before.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="./documentation/add-recipe.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+    <td><img width="350px" src="./documentaion/add-recipe-before.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="350px" src="./documentaion/add-recipe.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
   <tr>
     <td>Create Food</td>
     <td>Edit Food</td>
   </tr>
   <tr>
-    <td><img width="350px" src="./documentation/profile.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="./documentation/profile-update.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+    <td><img width="350px" src="./documentaion/profile.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="350px" src="./documentaion/profile-update.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
   <tr>
     <td>Profile</td>
@@ -126,8 +126,8 @@ VITE_API_ENDPOINT = [BACKEND_URL]
   </tr>
 
   <tr>
-    <td><img width="350px" src="./documentation/profile-save.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="./documentation/profile-like.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+    <td><img width="350px" src="./documentaion/profile-save.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="350px" src="./documentaion/profile-like.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
   <tr>
     <td>Saved Food</td>
@@ -135,8 +135,8 @@ VITE_API_ENDPOINT = [BACKEND_URL]
   </tr>
 
   <tr>
-    <!-- <td><img width="350px" src="./documentation/search-result.png"  border="0" border="0" alt="1" /></td> -->
-    <td> <img width="350px" src="./documentation/recipe-video.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+    <!-- <td><img width="350px" src="./documentaion/search-result.png"  border="0" border="0" alt="1" /></td> -->
+    <td> <img width="350px" src="./documentaion/recipe-video.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
   <tr>
     <!-- <td>Search Result</td> -->
@@ -144,8 +144,8 @@ VITE_API_ENDPOINT = [BACKEND_URL]
   </tr>
 
    <!-- <tr>
-    <td><img width="350px" src="./documentation/mobile/home.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="./documentation/mobile/profile.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+    <td><img width="350px" src="./documentaion/mobile/home.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="350px" src="./documentaion/mobile/profile.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
   <tr>
     <td>Home - Mobile</td>
@@ -181,39 +181,38 @@ Contributions are what make the open source community such an amazing place to b
     <tr >
       <th >Frontend Developer / Project Manager</th>
       <th >Backend Developer</th>
+      <th >Frontend Developer</th>
       <th >Backend Developer</th>
-      <th >Frontend Developer</th>
-      <th >Frontend Developer</th>
       <th >Frontend Developer</th>
     </tr>
     <tr >
       <td align="center">
         <a href="https://github.com/vineas">
-          <img width="200"  src="./documentation/member/alvienas.jpeg" alt=""><br/>
+          <img width="200"  src="./documentaion/member/alvienas.jpeg" alt=""><br/>
           <b>Alvienas Yandika</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/izaazwaskito">
-          <img width="200"  src="./documentation/member/izaaz.jpeg" alt=""><br/>
+          <img width="200"  src="./documentaion/member/izaaz.jpeg" alt=""><br/>
           <b>Izaaz Waskito</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/msuryasyahruli">
-          <img width="200"  src="./documentation/member/ruli.jpeg" alt=""><br/>
+          <img width="200"  src="./documentaion/member/ruli.jpeg" alt=""><br/>
           <b>Muhammad Surya Syahruli</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/sandriirawan">
-          <img width="200"   src="./documentation/member/sandri.jpeg" alt=""><br/>
+          <img width="200"   src="./documentaion/member/sandri.jpeg" alt=""><br/>
           <b>Sandri Irawan</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/yabeselkana">
-          <img width="200"  src="./documentation/member/yabes.jpeg" alt=""><br/>
+          <img width="200"  src="./documentaion/member/yabes.jpeg" alt=""><br/>
           <b>Yabes Elkana</b>
         </a>
       </td>
