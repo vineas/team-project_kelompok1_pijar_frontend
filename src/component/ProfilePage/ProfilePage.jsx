@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import ModalUpdateProfile from "../../component/ModalUpdateProfile/ModalUpdateProfile";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import ModalUpdateRecipe from "../ModalUpdateRecipe/ModalUpdateRecipe";
-import ModalDeleteRecipes from "../ModalDeleteRecipes.jsx/ModalDeleteRecipes";
+// import ModalDeleteRecipes from "../ModalDeleteRecipes.jsx/ModalDeleteRecipes";
 import Swal from "sweetalert";
 // const profileImg = require('../../assets/img/profile/profile.png')
 const recipe1 = require("../../assets/img/profile/recipe1.png");
 
 const ProfilePage = () => {
-  let { id, recipes_id } = useParams();
+  // let { id, recipes_id } = useParams();
   let [users, setUsers] = useState([]);
-  let [resep, setResep] = useState([]);
+  // let [resep, setResep] = useState([]);
   let [recipes, setRecipes] = useState([]);
   let [likeds, setLikeds] = useState([]);
   let [bookmarks, setBookmarks] = useState([]);
@@ -31,6 +31,7 @@ const ProfilePage = () => {
       .catch((err) => {
         console.log(err);
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -42,6 +43,7 @@ const ProfilePage = () => {
       .catch((err) => {
         console.log(err);
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleDelete = (recipes_id) => {
