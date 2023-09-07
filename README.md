@@ -188,7 +188,7 @@ Contributions are what make the open source community such an amazing place to b
     <tr >
       <td align="center">
         <a href="https://github.com/vineas">
-          <img width="120%" src="./documentaion/member/alvienas.jpeg" alt=""><br/>
+          <img width="180%" src="./documentaion/member/alvienas.jpeg" alt=""><br/>
           <b>Alvienas Yandika</b>
         </a>
       </td>
