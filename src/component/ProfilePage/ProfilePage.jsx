@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import ModalUpdateProfile from "../../component/ModalUpdateProfile/ModalUpdateProfile";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import ModalUpdateRecipe from "../ModalUpdateRecipe/ModalUpdateRecipe";
-import ModalDeleteRecipes from "../ModalDeleteRecipes.jsx/ModalDeleteRecipes";
+// import ModalDeleteRecipes from "../ModalDeleteRecipes.jsx/ModalDeleteRecipes";
 import Swal from "sweetalert";
 // const profileImg = require('../../assets/img/profile/profile.png')
 const recipe1 = require("../../assets/img/profile/recipe1.png");
 
 const ProfilePage = () => {
-  let { id, recipes_id } = useParams();
+  // let { id, recipes_id } = useParams();
   let [users, setUsers] = useState([]);
-  let [resep, setResep] = useState([]);
+  // let [resep, setResep] = useState([]);
   let [recipes, setRecipes] = useState([]);
   let [likeds, setLikeds] = useState([]);
   let [bookmarks, setBookmarks] = useState([]);
@@ -31,6 +31,7 @@ const ProfilePage = () => {
       .catch((err) => {
         console.log(err);
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -42,6 +43,7 @@ const ProfilePage = () => {
       .catch((err) => {
         console.log(err);
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleDelete = (recipes_id) => {
@@ -217,24 +219,38 @@ const ProfilePage = () => {
 
                             {recipes.map((recipe) => (
                               <div className="col-md-4 col-6" key={recipe.recipes_id}>
-                                <div className="menu">
+                                <div className="menu" style={{ position: 'relative' }}>
+                                  <div className="menu-content" style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignItems: "center",
+                                    height: "100%"
+                                  }}>
+                                    <div className="menu-left" style={{
+                                      flex: 1
+                                  }}>
+                                      <ModalUpdateRecipe
+                                        recipes_id={recipe.recipes_id}
+                                        recipes_title={recipe.recipes_title}
+                                        recipes_ingredients={recipe.recipes_ingredients}
+                                        recipes_photo={recipe.recipes_photo}
+                                        recipes_video={recipe.recipes_video}
+                                      />
+                                    </div>
+
+                                    <div className="menu-right" style={{ flex: 0, marginLeft: 10 }}>
+                                      <button
+                                        className="btn-danger"
+                                        onClick={() => handleDelete(recipe.recipes_id)}
+                                        style={{ borderRadius:10 }}
+                                      >
+                                        <i className="bi bi-trash3"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+
                                   {/* ... */}
                                   <p className="title_menu">
-                                    <ModalUpdateRecipe
-                                      recipes_id={recipe.recipes_id}
-                                      recipes_title={recipe.recipes_title}
-                                      recipes_ingredients={recipe.recipes_ingredients}
-                                      recipes_photo={recipe.recipes_photo}
-                                      recipes_video={recipe.recipes_video}
-                                    />
-
-                                    <button
-                                      className="btn-danger"
-                                      style={{ marginLeft: 5, borderRadius: 10, marginTop: 5, marginBottom: 90 }}
-                                      onClick={() => handleDelete(recipe.recipes_id)} // Panggil fungsi deleteRecipe saat tombol di klik
-                                    >
-                                      <i className="bi bi-trash3"></i>
-                                    </button>
                                   </p>
                                 </div>
                               </div>

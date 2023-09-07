@@ -33,6 +33,7 @@ const Nav = () => {
       .catch((err) => {
         console.log(err);
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -53,9 +54,6 @@ const Nav = () => {
         content: ""; width: 15px; height: 15px; background-color: #31a24c;
         position: absolute; border-radius: 100%; right: 0px; top: 0px;
         {"}"}
-        {/* div {"{"}
-        border: 1px solid;
-        {"}"} */}
       </style>
 
       <header>
@@ -72,7 +70,7 @@ const Nav = () => {
                 className="linkTo"
                 style={{
                   alignItems: "center",
-                  height: "100%",
+                  height: "70px",
                   display: "flex",
                 }}
               >
@@ -129,6 +127,7 @@ const Nav = () => {
                   margin: "10px 0",
                 }}
                 src={users.users_photo}
+                alt="profile photo"
               />
             </section>
           </div>
