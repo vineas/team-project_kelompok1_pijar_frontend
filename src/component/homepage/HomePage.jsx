@@ -3,19 +3,40 @@ import { useDispatch } from "react-redux";
 import { getRecipe } from "../../config/redux/actions/recipeAction";
 import { Link } from "react-router-dom";
 import Pagination from "../pagination/pagination";
+import SearchBar from "../searchbar/SearchBar";
+import SearchList from "../searchbar/SearchList";
 const HomePage = () => {
   let dispatch = useDispatch();
   let [recipe, setRecipe] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
 
+  const [result, setResult] = useState([])
+
   useEffect(() => {
     dispatch(getRecipe(setRecipe));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPosts = recipe.slice(firstPostIndex, lastPostIndex);
+  const page = Math.ceil(recipe.length / postsPerPage)
+  const number = [...Array(page + 1).keys()].slice(1)
+
+  const perPage = () => {
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1)
+    }
+  }
+  const changePage = (id) => {
+    setCurrentPage(id)
+  }
+  const nextPage = () => {
+    if (currentPage !== page) {
+      setCurrentPage(currentPage + 1)
+    }
+  }
 
   return (
     <>
@@ -51,7 +72,7 @@ const HomePage = () => {
         font-weight: 500; font-size: 25px; position: absolute; bottom: 0; left:
         20px; color: white; text-shadow: 2px 2px #00000066;
         {"}"}
-        .popularImg::before{"{"}
+        {/* .popularImg::before{"{"}
         content: ""; border: 3px solid #efc81a; position: absolute; display:
         block; width: 400px; height: 480px; border-radius: 5px; top: 60px; left:
         145px; z-index: -1;
@@ -63,9 +84,9 @@ const HomePage = () => {
         {"}"}
         .eggImg::before{"{"}
         content: ""; background-color: #efc81a; position: absolute; display:
-        block; width: 400px; height: 780px; top: -90px; left: 265px; z-index:
+        block; width: 400px; height: 780px; top: -90px; right: -20px; z-index:
         -1;
-        {"}"}
+        {"}"} */}
         {/* div {"{"}
         border: 1px solid;
         {"}"} */}
@@ -114,7 +135,7 @@ const HomePage = () => {
       <main className="container">
         <div
           className="row pt-3"
-          style={{ display: "flex", alignItems: "center" }}
+          // style={{ display: "flex", alignItems: "center" }}
         >
           <div className="col-sm-7 text_title">
             <div className="pt-3 discover">
@@ -122,11 +143,13 @@ const HomePage = () => {
               <p>&amp; Delicious Food</p>
             </div>
             <div className="pt-md-3">
-              <input
+              {/* <input
                 className="search_input"
                 type="text"
                 placeholder="Search Restaurant, Food"
-              />
+              /> */}
+              <SearchBar setResult={setResult} />
+              <SearchList result={result} />
             </div>
           </div>
           <div className="col-sm-5 p-3">
@@ -141,6 +164,7 @@ const HomePage = () => {
             >
               <img
                 style={{ width: "100%" }}
+                alt="img"
                 src={require("../../assets/img/home/telur.png")}
               />
             </div>
@@ -155,6 +179,7 @@ const HomePage = () => {
             <img
               style={{ width: "80%" }}
               src={require("../../assets/img/home/Rectangle 313.png")}
+              alt="img"
             />
           </div>
           <div className="col-sm-5">
@@ -184,6 +209,7 @@ const HomePage = () => {
             <img
               style={{ width: "80%" }}
               src={require("../../assets/img/home/burger.png")}
+              alt="img"
             />
           </div>
           <div className="col-sm-5">
@@ -232,6 +258,7 @@ const HomePage = () => {
                       objectFit: "cover",
                     }}
                     src={item.recipes_photo}
+                    alt="recipes photo"
                   />
                   <p className="title_menu">{item.recipes_title}</p>
                 </div>
@@ -239,12 +266,29 @@ const HomePage = () => {
             </div>
           ))}
         </div>
-        <Pagination
+        <nav className="d-flex justify-content-center">
+      </nav>
+        <ul className="pagination">
+          <li className="page-item">
+            <div className="btn page-link" onClick={perPage}>Prev</div>
+          </li>
+          {
+            number.map((n,i) => (
+              <li className={`page-item ${currentPage === n ? 'active' : ''}`} key={i}>
+                <div className="btn page-link" onClick={()=>changePage(n)}>{n}</div>
+              </li>
+            ))
+          }
+          <li className="page-item">
+            <div className="btn page-link" onClick={nextPage}>Next</div>
+          </li>
+        </ul>
+        {/* <Pagination
           totalPosts={recipe.length}
           postsPerPage={postsPerPage}
           setCurrentPage={setCurrentPage}
           currentPage={currentPage}
-        />
+        /> */}
       </main>
     </>
   );

@@ -14,6 +14,7 @@ const DetailResepIsi = () => {
 
   useEffect(() => {
     dispatch(getDetailRecepe(setRecipe, id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const recipes_id = localStorage.getItem("recipes_id");

@@ -39,7 +39,7 @@ const NavLog = () => {
                 className="linkTo"
                 style={{
                   alignItems: "center",
-                  height: "100%",
+                  height: "70px",
                   textAlign: "center",
                   display: "flex",
                 }}
@@ -73,18 +73,6 @@ const NavLog = () => {
                   </Link>
                 </div>
               </div>
-            </section>
-
-            <section style={{ justifyContent: "center" }}>
-              <img
-                style={{
-                  width: "50px",
-                  height: "50px",
-                  borderRadius: "100%",
-                  margin: "10px 0",
-                }}
-                src={require("../../assets/img/home/profile-icon.png")}
-              />
             </section>
           </div>
         </nav>

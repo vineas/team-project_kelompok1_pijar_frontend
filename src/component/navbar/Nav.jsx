@@ -27,6 +27,7 @@ const Nav = () => {
       .catch((err) => {
         console.log(err);
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -123,6 +124,7 @@ const Nav = () => {
                   margin: "10px 0",
                 }}
                 src={users.users_photo}
+                alt="profile photo"
               />
             </section>
           </div>
