@@ -134,7 +134,7 @@ VITE_API_ENDPOINT = [BACKEND_URL]
     <td>Liked Food</td>
   </tr>
 
-  <tr>
+  <tr>  
     <!-- <td><img width="350px" src="./documentaion/search-result.png"  border="0" border="0" alt="1" /></td> -->
     <td> <img width="350px" src="./documentaion/recipe-video.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
@@ -188,31 +188,31 @@ Contributions are what make the open source community such an amazing place to b
     <tr >
       <td align="center">
         <a href="https://github.com/vineas">
-          <img width="200"  src="./documentaion/member/alvienas.jpeg" alt=""><br/>
+          <img width="50%"  src="./documentaion/member/alvienas.jpeg" alt=""><br/>
           <b>Alvienas Yandika</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/izaazwaskito">
-          <img width="200"  src="./documentaion/member/izaaz.jpeg" alt=""><br/>
+          <img width="50%"  src="./documentaion/member/izaaz.jpeg" alt=""><br/>
           <b>Izaaz Waskito</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/msuryasyahruli">
-          <img width="200"  src="./documentaion/member/ruli.jpeg" alt=""><br/>
+          <img width="50%"  src="./documentaion/member/ruli.jpeg" alt=""><br/>
           <b>Muhammad Surya Syahruli</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/sandriirawan">
-          <img width="200"   src="./documentaion/member/sandri.jpeg" alt=""><br/>
+          <img width="50%"   src="./documentaion/member/sandri.jpeg" alt=""><br/>
           <b>Sandri Irawan</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/yabeselkana">
-          <img width="200"  src="./documentaion/member/yabes.jpeg" alt=""><br/>
+          <img width="50%"  src="./documentaion/member/yabes.jpeg" alt=""><br/>
           <b>Yabes Elkana</b>
         </a>
       </td>
