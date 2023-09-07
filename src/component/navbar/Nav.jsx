@@ -37,7 +37,7 @@ const Nav = () => {
 
   return (
     <>
-      <style>
+      {/* <style>
         header {"{"}
         top: 0; position: sticky; background-color: transparent; transition:
         background-color 0.2s ease-in-out; z-index: 10;
@@ -53,10 +53,7 @@ const Nav = () => {
         content: ""; width: 15px; height: 15px; background-color: #31a24c;
         position: absolute; border-radius: 100%; right: 0px; top: 0px;
         {"}"}
-        {/* div {"{"}
-        border: 1px solid;
-        {"}"} */}
-      </style>
+      </style> */}
 
       <header>
         <nav className="container">
