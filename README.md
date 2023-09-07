@@ -194,7 +194,7 @@ Contributions are what make the open source community such an amazing place to b
       </td>
       <td align="center">
         <a href="https://github.com/izaazwaskito">
-          <img width="80%"  src="./documentaion/member/izaaz.jpeg" alt=""><br/>
+          <img width="95%"  src="./documentaion/member/izaaz.jpeg" alt=""><br/>
           <b>Izaaz Waskito</b>
         </a>
       </td>
