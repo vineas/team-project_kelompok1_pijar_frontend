@@ -188,31 +188,31 @@ Contributions are what make the open source community such an amazing place to b
     <tr >
       <td align="center">
         <a href="https://github.com/vineas">
-          <img width="50%"  src="./documentaion/member/alvienas.jpeg" alt=""><br/>
+          <img width="80%"  src="./documentaion/member/alvienas.jpeg" alt=""><br/>
           <b>Alvienas Yandika</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/izaazwaskito">
-          <img width="50%"  src="./documentaion/member/izaaz.jpeg" alt=""><br/>
+          <img width="80%"  src="./documentaion/member/izaaz.jpeg" alt=""><br/>
           <b>Izaaz Waskito</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/msuryasyahruli">
-          <img width="50%"  src="./documentaion/member/ruli.jpeg" alt=""><br/>
+          <img width="80%"  src="./documentaion/member/ruli.jpeg" alt=""><br/>
           <b>Muhammad Surya Syahruli</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/sandriirawan">
-          <img width="50%"   src="./documentaion/member/sandri.jpeg" alt=""><br/>
+          <img width="80%"   src="./documentaion/member/sandri.jpeg" alt=""><br/>
           <b>Sandri Irawan</b>
         </a>
       </td>
       <td align="center">
         <a href="https://github.com/yabeselkana">
-          <img width="50%"  src="./documentaion/member/yabes.jpeg" alt=""><br/>
+          <img width="80%"  src="./documentaion/member/yabes.jpeg" alt=""><br/>
           <b>Yabes Elkana</b>
         </a>
       </td>
