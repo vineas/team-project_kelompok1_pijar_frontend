@@ -113,9 +113,9 @@ const Register = () => {
                 </div>
                 <div>
                   {!agreement ? (
-                    ""
+                    <button disabled={!agreement} style={{backgroundColor: "#f5f5f5", color: "grey"}}>Sign In</button>
                   ) : (
-                    <button onClick={onClick}>Yes Log in </button>
+                    <button onClick={onClick}>Sign In</button>
                   )}
                 </div>
                 <h6 className="mt-2">Forgot Password ?</h6>
