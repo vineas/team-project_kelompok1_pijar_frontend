@@ -79,7 +79,7 @@ const Login = () => {
                 </div>
                 <div>
                   {!agreement ? (
-                    <button disabled={!agreement} style={{backgroundColor: "#f5f5f5", color: "black"}}>Log in </button>
+                    <button disabled={!agreement} style={{backgroundColor: "#f5f5f5", color: "grey"}}>Log in </button>
                   ) : (
                     <button onClick={onClick}>Log in </button>
                   )}
