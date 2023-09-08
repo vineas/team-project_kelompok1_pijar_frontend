@@ -2,13 +2,13 @@
 <div align="center">
   <img height="150" src="./documentaion/logo.png" alt="blanja-logo" border="0"/>
 </div>
-  <h3 align="center">My Recipe</h3>
+  <h3 align="center">Mama Recipe</h3>
   <p align="center">
     <a href="https://github.com/vineas/team-project_kelompok1_pijar_frontend"><strong>Explore the docs »</strong></a>
     <br />
     <a href="https://team-project-kelompok1-pijar-frontend.vercel.app">View Demo</a>
     <br />
-    <a href="https://wild-tan-dog-kilt.cyclic.app/">Api Demo</a>
+    <a href="https://team-project-kelompok1-pijar-backend.vercel.app">Api Demo</a>
   </p>
 </p>
 
@@ -32,13 +32,13 @@
 
 ## About The Project
 
-My Recipe is a food recipe website project that aims to inspire users to cook and share their favorite recipes. The name My Recipe means "let's cook" in Indonesian. On this website, users can search for recipes, share their own recipes, and connect with other food enthusiasts.
+Mama Recipe is a food recipe website project that aims to inspire users to cook and share their favorite recipes. The name Mama Recipe means "let's cook" in Indonesian. On this website, users can search for recipes, share their own recipes, and connect with other food enthusiasts.
 
-One of My Recipe's main features is its user-friendly search function. Users can search for recipes by food name. The website also provides detailed recipe instructions, ingredient lists, and video tutorials to assist users in the cooking process.
+One of Mama Recipe's main features is its user-friendly search function. Users can search for recipes by food name. The website also provides detailed recipe instructions, ingredient lists, and video tutorials to assist users in the cooking process.
 
-Another unique feature of My Recipe is that users can create their own profiles, connect with other users, and share their favorite recipes. This allows users to learn from each other and explore new culinary ideas.
+Another unique feature of Mama Recipe is that users can create their own profiles, connect with other users, and share their favorite recipes. This allows users to learn from each other and explore new culinary ideas.
 
-To use the My Recipe website, users simply need to create an account and start searching or sharing recipes. The site is designed to be easy to use and accessible to all levels of culinary expertise
+To use the Mama Recipe website, users simply need to create an account and start searching or sharing recipes. The site is designed to be easy to use and accessible to all levels of culinary expertise
 
 <!-- GETTING STARTED -->
 
@@ -50,7 +50,6 @@ This is an example of how to list things you need to use the software and how to
 
 - [nodejs](https://nodejs.org/en/download/)
 - [Bootstrap Css](https://getbootstrap.com/)
-- [Vite JS](https://vitejs.dev/)
 - [Redux](https://redux.js.org/)
 
 ### Installation
@@ -64,7 +63,7 @@ git clone https://github.com/vineas/team-project_kelompok1_pijar_frontend
 - Go To Folder Repo
 
 ```
-cd MyRecipe-frontend
+cd team-project_kelompok1_pijar_frontend
 ```
 
 - Install Module
@@ -74,15 +73,14 @@ npm install
 ```
 
 - <a href="#setup-env">Setup .env</a>
-- Type ` npm run dev` To Start Website
-- Type ` npm run production` To Start Production
+- Type ` npm start` To Start Website
 
 ### Setup .env
 
 Create .env file in your root project folder.
 
 ```
-VITE_API_ENDPOINT = [BACKEND_URL]
+REACT_APP_API_KEY = [BACKEND_URL]
 ```
 
 <!-- ROADMAP -->
@@ -166,11 +164,11 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Related Project
 
-:rocket: [`Backend Markisak`](https://github.com/vineas11/team-project_kelompok1_pijar_backend/)
+:rocket: [`Backend Mama Recipe`](https://github.com/vineas11/team-project_kelompok1_pijar_backend)
 
-:rocket: [`Frontend Markisak`](https://github.com/vineas/team-project_kelompok1_pijar_frontend)
+:rocket: [`Frontend Mama Recipe`](https://github.com/vineas/team-project_kelompok1_pijar_frontend)
 
-:rocket: [`Demo Markisak`](https://markisak-fe.vercel.app/)
+:rocket: [`Demo Mama Recipe`](https://team-project-kelompok1-pijar-frontend.vercel.app)
 
 <!-- Meet The Teams -->
 
