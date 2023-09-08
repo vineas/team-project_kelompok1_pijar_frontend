@@ -11,7 +11,7 @@ const HomePage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
 
-  const [result, setResult] = useState([])
+  const [result, setResult] = useState([]);
 
   useEffect(() => {
     dispatch(getRecipe(setRecipe));
@@ -21,22 +21,22 @@ const HomePage = () => {
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPosts = recipe.slice(firstPostIndex, lastPostIndex);
-  const page = Math.ceil(recipe.length / postsPerPage)
-  const number = [...Array(page + 1).keys()].slice(1)
+  const page = Math.ceil(recipe.length / postsPerPage);
+  const number = [...Array(page + 1).keys()].slice(1);
 
   const perPage = () => {
     if (currentPage !== 1) {
-      setCurrentPage(currentPage - 1)
+      setCurrentPage(currentPage - 1);
     }
-  }
+  };
   const changePage = (id) => {
-    setCurrentPage(id)
-  }
+    setCurrentPage(id);
+  };
   const nextPage = () => {
     if (currentPage !== page) {
-      setCurrentPage(currentPage + 1)
+      setCurrentPage(currentPage + 1);
     }
-  }
+  };
 
   return (
     <>
@@ -267,22 +267,29 @@ const HomePage = () => {
           ))}
         </div>
         <nav className="d-flex justify-content-center">
-      </nav>
-        <ul className="pagination">
-          <li className="page-item">
-            <div className="btn page-link" onClick={perPage}>Prev</div>
-          </li>
-          {
-            number.map((n,i) => (
-              <li className={`page-item ${currentPage === n ? 'active' : ''}`} key={i}>
-                <div className="btn page-link" onClick={()=>changePage(n)}>{n}</div>
+          <ul className="pagination">
+            <li className="page-item">
+              <div className="btn page-link" onClick={perPage}>
+                Prev
+              </div>
+            </li>
+            {number.map((n, i) => (
+              <li
+                className={`page-item ${currentPage === n ? "active" : ""}`}
+                key={i}
+              >
+                <div className="btn page-link" onClick={() => changePage(n)}>
+                  {n}
+                </div>
               </li>
-            ))
-          }
-          <li className="page-item">
-            <div className="btn page-link" onClick={nextPage}>Next</div>
-          </li>
-        </ul>
+            ))}
+            <li className="page-item">
+              <div className="btn page-link" onClick={nextPage}>
+                Next
+              </div>
+            </li>
+          </ul>
+        </nav>
         {/* <Pagination
           totalPosts={recipe.length}
           postsPerPage={postsPerPage}
