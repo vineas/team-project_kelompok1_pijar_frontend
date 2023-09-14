@@ -72,8 +72,8 @@ const DetailResepIsi = () => {
   return (
     <>
       <section>
-        <div className="container">
-          <div className={`  container ${style.title} title   mt-5`}>
+        <div className={`container ${style.con} con `}>
+          <div className={`  container ${style.title} title   `}>
             <h1 className="mb-5">{recipe.recipes_title}</h1>
             <img className={`img1 ${style.img1}`} src={recipe.recipes_photo} alt="" />
             <div className={` ${style.icons} icons row`}>

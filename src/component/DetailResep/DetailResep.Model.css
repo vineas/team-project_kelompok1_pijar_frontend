@@ -7,7 +7,7 @@
 }
 
 .title h1 {
-  font-size: 72px;
+  font-size: 70px;
 }
 
 .img1 {
@@ -94,4 +94,39 @@
   height: 64px;
   background-color: #efc81a !important;
   border: none;
+}
+
+@media screen and (max-width: 428px) {
+  .img1 {
+    border-radius: 15px;
+    width: 20rem;
+  }
+
+  .title {
+    height: 200px;
+    width: 100px !important;
+  }
+
+  .icons {
+    /* background-color: aquamarine; */
+    margin-top: -30px;
+    margin-left: 200px !important;
+  }
+  .title {
+    margin-top: 80px;
+  }
+
+  .title h1 {
+    font-size: 50px;
+  }
+
+  .title_2 h3 {
+    font-size: 36px;
+  }
+
+  .title_2 ul p {
+    width: 300px;
+    font-size: 20px;
+    font-weight: 300;
+  }
 }

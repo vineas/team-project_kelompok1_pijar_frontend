@@ -47,19 +47,16 @@ const Nav = () => {
     <>
       <style>
         header {"{"}
-        top: 0; position: sticky; background-color: transparent; transition:
-        background-color 0.2s ease-in-out; z-index: 10;
+        top: 0; position: sticky; background-color: transparent; transition: background-color 0.2s ease-in-out; z-index: 10;
         {"}"}
         header.scrolled {"{"}
         background-color: #efc81a; opacity: 0.98;
         {"}"}
         .icon {"{"}
-        height: 50px; width: 50px; position: relative; background-color:
-        transparent;
+        height: 50px; width: 50px; position: relative; background-color: transparent;
         {"}"}
         .icon::after {"{"}
-        content: ""; width: 15px; height: 15px; background-color: #31a24c;
-        position: absolute; border-radius: 100%; right: 0px; top: 0px;
+        content: ""; width: 15px; height: 15px; background-color: #31a24c; position: absolute; border-radius: 100%; right: 0px; top: 0px;
         {"}"}
       </style>
 
@@ -127,14 +124,7 @@ const Nav = () => {
             </section>
             <section style={{ justifyContent: "center" }}>
               <div className="btn-group">
-                <button
-                  type="button"
-                  className="dropdown-toggle"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  style={{ backgroundColor: "transparent", border: 0 }}
-                >
+                <button type="button" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ backgroundColor: "transparent", border: 0 }}>
                   {!users.users_photo ? (
                     <img
                       style={{
@@ -154,7 +144,7 @@ const Nav = () => {
                         borderRadius: "100%",
                         margin: "10px 0",
                       }}
-                      src={users.users_photo}
+                      src={users?.users_photo}
                       alt="profile photo"
                     />
                   )}
