@@ -8,7 +8,7 @@ const Login = () => {
   const [agreement, setAgreement] = useState(false);
 
   const handleChange = (event) => {
-    console.log(event.target.checked);
+    setAgreement(event.target.checked);
   };
 
   let [data, setData] = useState({
