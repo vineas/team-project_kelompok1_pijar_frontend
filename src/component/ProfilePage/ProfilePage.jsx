@@ -286,7 +286,7 @@ const ProfilePage = () => {
                           <p className="title_menu">
                             {recipe.recipes_title}
 
-                            {recipes.map((recipe) => (
+                            {/* {recipes.map((recipe) => ( */}
                               <div
                                 className="col-md-4 col-6"
                                 key={recipe.recipes_id}
@@ -323,8 +323,7 @@ const ProfilePage = () => {
 
                                     <div
                                       className="menu-right"
-                                      style={{ flex: 0, marginLeft: 10 }}
-                                    >
+                                      style={{ flex: 0, marginLeft: 10 }}>
                                       <button
                                         className="btn-danger"
                                         onClick={() =>
@@ -341,7 +340,7 @@ const ProfilePage = () => {
                                   <p className="title_menu"></p>
                                 </div>
                               </div>
-                            ))}
+                            {/* ))} */}
                           </p>
                         </div>
                       </div>
