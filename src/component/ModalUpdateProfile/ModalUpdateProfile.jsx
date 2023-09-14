@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Button, Image } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const edit = require("../../assets/img/profile/edit.png");
 
 const ModalUpdateProfile = ({
@@ -11,7 +11,6 @@ const ModalUpdateProfile = ({
   users_phone,
   users_photo,
 }) => {
-  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -32,12 +31,6 @@ const ModalUpdateProfile = ({
 
   const handleUpload = (e) => {
     setImage(e.target.files[0]);
-  };
-
-  const handleLogout = () => {
-    localStorage.clear();
-    navigate("/home");
-    window.location.reload();
   };
 
   const handleSubmit = (e) => {
@@ -85,7 +78,7 @@ const ModalUpdateProfile = ({
         />
       </Link>
       <Modal show={show}>
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>
             {/* {children}  */}
             Edit Profile
@@ -119,13 +112,6 @@ const ModalUpdateProfile = ({
             />
           </Modal.Body>
           <Modal.Footer>
-            <Button
-              variant="secondary"
-              className="btn-danger"
-              onClick={handleLogout}
-            >
-              Logout
-            </Button>
             <Button variant="secondary">Change Password</Button>
             <Button variant="secondary" onClick={handleClose}>
               Close

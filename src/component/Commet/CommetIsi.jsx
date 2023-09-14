@@ -12,6 +12,7 @@ const CommetIsi = () => {
 
   useEffect(() => {
     dispatch(getDetailComment(setCommet, recipes_id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let [data, setData] = useState({
@@ -25,7 +26,7 @@ const CommetIsi = () => {
       ...data,
       [e.target.name]: e.target.value,
     });
-    console.log(data);
+    // console.log(data);
   };
 
   let hendelSubmit = (e) => {

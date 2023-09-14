@@ -12,6 +12,7 @@ const DetailVedeoIsi = () => {
   console.log(id);
   useEffect(() => {
     dispatch(getDetailRecepe(setRecipe, id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (

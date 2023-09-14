@@ -27,13 +27,18 @@ const AddRecepisi = () => {
     console.log(data);
   };
 
+  // const handleUpload = (e) => {
+  //   setPhoto(e.target.files[0]);
+  // };
+  const [preview, setPreview] = useState(null);
   const handleUpload = (e) => {
-    setPhoto(e.target.files[0]);
+    const img = e.target.files[0];
+    setPhoto(img);
+    setPreview(URL.createObjectURL(img));
   };
 
   let hendelSubmit = (e) => {
     e.preventDefault();
-
     dispatch(createRecipe(data, photo));
   };
 
@@ -43,10 +48,22 @@ const AddRecepisi = () => {
         <div className="container pt-4">
           <form onSubmit={hendelSubmit}>
             <div className={` container ${style.addfile} addfile `}>
-              <img
-                src={require("../../assets/img/AddRecep/image.png")}
-                alt=""
-              />
+              {preview ? (
+                <img
+                  src={preview}
+                  alt="avatar"
+                  // height={1}
+                  // width={1}
+                  style={{ objectFit: "cover", borderRadius: 5 }}
+                  className="m-auto my-3 h-50 w-md-50"
+                />
+              ) : (
+                // <Image src={upload} alt="uploadImg" />
+                <img
+                  src={require("../../assets/img/AddRecep/image.png")}
+                  alt="uploadImg"
+                />
+              )}
               <input
                 id=""
                 type="file"
@@ -88,10 +105,8 @@ const AddRecepisi = () => {
                 onChange={hendelChange}
               />
             </div>
-            <div className={`  ${style.buttoninput} buttoninput pt-4 `}>
-              <div className="">
-                <button type="submit"> Post</button>
-              </div>
+            <div className={`  ${style.buttoninput} buttoninput mt-4 `}>
+              <button type="submit"> Post</button>
             </div>
           </form>
         </div>
