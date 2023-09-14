@@ -2,7 +2,6 @@ html body {
   overflow-x: hidden;
   padding: 0px;
   margin: 0;
-  overflow-x: hidden;
 }
 
 .coba {
@@ -28,15 +27,18 @@ html body {
 }
 
 .inputku {
+  /* background-color: darkgrey; */
   height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .inputlogin {
   /* background-color: beige; */
-  width: 500px;
-  height: 500px;
+  margin-top: 70px;
+  max-width: 300px;
+  height: 600px;
   /* background-color: lightblue; */
   display: flex;
   flex-direction: column;
@@ -70,8 +72,8 @@ html body {
 
 .form-1 input {
   background-color: #fff;
-  height: 40px;
-  width: 390px;
+  height: 70%;
+  width: 100%;
   padding: 10px 20px;
   border-radius: 6px;
   border: 1px solid #efc81a;
@@ -95,8 +97,8 @@ html body {
 }
 .form-2 input {
   background-color: #fff;
-  height: 40px;
-  width: 390px;
+  height: 70%;
+  width: 100%;
   padding: 10px 20px;
   border-radius: 6px;
   border: 1px solid #21201f;
@@ -172,9 +174,10 @@ html body {
   align-items: center;
   justify-content: center;
 }
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 628px) {
   .hero {
-    font-size: 52%;
+    font-size: 90%;
+    /* height: 100%; */
   }
   .hero {
     display: flex;
@@ -182,9 +185,42 @@ html body {
     justify-content: center;
     align-items: center;
   }
-
+  .inputku {
+    /* background-color: darkgrey; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+  }
+  .inputlogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .background {
-    display: none !important;
+    display: none;
+  }
+  .form-1 input {
+    background-color: #fff;
+    height: auto;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #efc81a;
+  }
+
+  .form-2 input {
+    background-color: #fff;
+    height: auto;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #21201f;
+  }
+
+  .form button {
+    width: 350px;
+    height: 40px;
   }
 
   .hero .con {
@@ -207,8 +243,8 @@ html body {
     width: auto;
   }
 
-  .con button {
+  /* .con button {
     width: auto;
     text-align: center;
-  }
+  } */
 }

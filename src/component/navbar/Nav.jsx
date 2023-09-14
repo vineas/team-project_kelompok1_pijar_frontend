@@ -179,7 +179,7 @@ const Nav = () => {
                         borderRadius: "100%",
                         margin: "10px 0",
                       }}
-                      src={users.users_photo}
+                      src={users?.users_photo}
                       alt="profile photo"
                     />
                   )}

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 .title_2 {
   /* background-color: lightgrey; */
@@ -20,7 +21,7 @@
 .btnku {
   font-size: 1.4rem;
   color: #f6f5f4;
-  width: 426px;
+  width: 526px;
   height: 64px;
   background-color: #efc81a !important;
   border: none;
@@ -30,4 +31,21 @@
   padding-bottom: 1rem;
   font-size: 2.5rem;
   font-weight: 500;
+}
+
+@media screen and (max-width: 428px) {
+  .btnku {
+    font-size: 1.4rem;
+    color: #f6f5f4;
+    width: 300px;
+    height: 64px;
+    background-color: aquamarine;
+    border-radius: 15px;
+  }
+
+  .title_2 h3 {
+    padding-bottom: 1rem;
+    font-size: 36px;
+    font-weight: 500;
+  }
 }
