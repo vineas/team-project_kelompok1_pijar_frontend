@@ -90,7 +90,7 @@ const HomePage = () => {
         {/* div {"{"}
         border: 1px solid;
         {"}"} */}
-        @media screen and (max-width: 428px) {"{"}
+        @media screen and (max-width: 578px) {"{"}
         .text_title {"{"}
         display: flex; flex-direction: column-reverse;
         {"}"}

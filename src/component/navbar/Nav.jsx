@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { animateScroll } from "react-scroll";
-
+import photo from "../../assets/img/home/profile-icon.png"
 const Nav = () => {
   const handleOnClick = () => {
     animateScroll.scrollToTop();
@@ -47,19 +47,16 @@ const Nav = () => {
     <>
       <style>
         header {"{"}
-        top: 0; position: sticky; background-color: transparent; transition:
-        background-color 0.2s ease-in-out; z-index: 10;
+        top: 0; position: sticky; background-color: transparent; transition: background-color 0.2s ease-in-out; z-index: 10;
         {"}"}
         header.scrolled {"{"}
         background-color: #efc81a; opacity: 0.98;
         {"}"}
         .icon {"{"}
-        height: 50px; width: 50px; position: relative; background-color:
-        transparent;
+        height: 50px; width: 50px; position: relative; background-color: transparent;
         {"}"}
         .icon::after {"{"}
-        content: ""; width: 15px; height: 15px; background-color: #31a24c;
-        position: absolute; border-radius: 100%; right: 0px; top: 0px;
+        content: ""; width: 15px; height: 15px; background-color: #31a24c; position: absolute; border-radius: 100%; right: 0px; top: 0px;
         {"}"}
       </style>
 
@@ -126,50 +123,8 @@ const Nav = () => {
               </div>
             </section>
             <section style={{ justifyContent: "center" }}>
-              {/* <ul className="navbar-nav dropdown">
-                <li className="nav-item">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <img
-                      style={{
-                        width: "50px",
-                        height: "50px",
-                        borderRadius: "100%",
-                        margin: "10px 0",
-                      }}
-                      src={users.users_photo}
-                      alt="profile photo"
-                    />
-                  </a>
-                  <div
-                    className="dropdown-menu dropdown-menu-right"
-                    aria-labelledby="navbarDropdownMenuLink"
-                  >
-                    <a className="dropdown-item" href={`/profile/${getid}`}>
-                      Profile
-                    </a>
-                    <button className="dropdown-item" onClick={handleLogout}>
-                      Log Out
-                    </button>
-                  </div>
-                </li>
-              </ul> */}
               <div className="btn-group">
-                <button
-                  type="button"
-                  className="dropdown-toggle"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  style={{ backgroundColor: "transparent", border: 0 }}
-                >
+                <button type="button" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ backgroundColor: "transparent", border: 0 }}>
                   {!users.users_photo ? (
                     <img
                       style={{
@@ -178,7 +133,7 @@ const Nav = () => {
                         borderRadius: "100%",
                         margin: "10px 0",
                       }}
-                      src={require("../../assets/img/home/profile-icon.png")}
+                      src={photo}
                       alt="profile photo"
                     />
                   ) : (
@@ -189,7 +144,7 @@ const Nav = () => {
                         borderRadius: "100%",
                         margin: "10px 0",
                       }}
-                      src={users.users_photo}
+                      src={users?.users_photo}
                       alt="profile photo"
                     />
                   )}
