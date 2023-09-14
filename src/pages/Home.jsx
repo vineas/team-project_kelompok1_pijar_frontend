@@ -11,10 +11,10 @@ const Home = () => {
   return (
     <>
       {!login ? <NavLog /> : <Nav />}
-      <main>
         <HomePage />
         <Footer />
-      </main>
+      {/* <main>
+      </main> */}
     </>
   );
 };

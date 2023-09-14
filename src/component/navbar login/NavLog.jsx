@@ -12,7 +12,7 @@ const NavLog = () => {
   });
   return (
     <>
-      {/* <style>
+      <style>
         header {"{"}
         top: 0; position: sticky; background-color: transparent; transition:
         background-color 0.2s ease-in-out; z-index: 10;
@@ -20,7 +20,7 @@ const NavLog = () => {
         header.scrolled {"{"}
         background-color: #efc81a; opacity: 0.98;
         {"}"}
-      </style> */}
+      </style>
 
       <header>
         <nav className="container">
@@ -36,7 +36,7 @@ const NavLog = () => {
                 className="linkTo"
                 style={{
                   alignItems: "center",
-                  height: "100%",
+                  height: "70px",
                   textAlign: "center",
                   display: "flex",
                 }}
@@ -70,18 +70,6 @@ const NavLog = () => {
                   </Link>
                 </div>
               </div>
-            </section>
-
-            <section style={{ justifyContent: "center" }}>
-              <img
-                style={{
-                  width: "50px",
-                  height: "50px",
-                  borderRadius: "100%",
-                  margin: "10px 0",
-                }}
-                src={require("../../assets/img/home/profile-icon.png")}
-              />
             </section>
           </div>
         </nav>

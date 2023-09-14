@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -39,6 +40,7 @@ const Footer = () => {
         {"}"}
         {"}"}
       </style>
+
       <footer className="mt-5">
         <div className="footer container">
           <h1 className="text1">Eat, Cook, Repeat</h1>
@@ -50,16 +52,16 @@ const Footer = () => {
             style={{ display: "flex", justifyContent: "center" }}
           >
             <div>
-              <a href="">Product</a>
+              <Link to="">Product</Link>
             </div>
             <div>
-              <a href="">Company</a>
+              <Link to="">Company</Link>
             </div>
             <div>
-              <a href="">Learn more</a>
+              <Link to="">Learn more</Link>
             </div>
             <div>
-              <a href="">Get in touch</a>
+              <Link to="">Get in touch</Link>
             </div>
           </div>
         </div>

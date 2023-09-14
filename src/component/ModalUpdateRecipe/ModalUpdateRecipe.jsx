@@ -1,21 +1,21 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import validator from "validator";
+// import validator from "validator";
 
-const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, recipes_photo, recipes_video }) => {
+const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, recipes_video }) => {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  const [errorMessage, setErrorMessage] = useState("");
-  const validate = (value) => {
-    if (validator.isURL(value)) {
-      setErrorMessage("Is Valid URL");
-    } else {
-      setErrorMessage("Is Not Valid URL");
-    }
-  };
+  // const [errorMessage, setErrorMessage] = useState("");
+  // const validate = (value) => {
+  //   if (validator.isURL(value)) {
+  //     setErrorMessage("Is Valid URL");
+  //   } else {
+  //     setErrorMessage("Is Not Valid URL");
+  //   }
+  // };
 
   const [data, setData] = useState({
     recipes_title,
@@ -84,7 +84,7 @@ const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, rec
               placeholder="Url Youtube"
               value={data.recipes_video}
               // onChange={handleChange}
-              onChange={(e) => validate(e.target.value)}
+              // onChange={(e) => validate(e.target.value)}
             />
             <span
               style={{
@@ -92,7 +92,7 @@ const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, rec
                 color: "red",
               }}
             >
-              {errorMessage}
+              {/* {errorMessage} */}
             </span>
           </Modal.Body>
           <Modal.Footer>

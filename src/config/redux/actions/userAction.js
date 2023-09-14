@@ -50,21 +50,17 @@ export const loginUser = (data, navigate) => async (dispatch) => {
     axios
       .post(`${process.env.REACT_APP_API_KEY}/users/login`, data)
       .then((res) => {
-        console.log(res.data.data);
-        localStorage.setItem("users_id", res.data.data.users_id);
-        localStorage.setItem("users_id_profile", res.data.data.users_id);
-        localStorage.setItem("token", res.data.data.token_user);
         if (res.data.status === "success") {
           Swal.fire("Login Success", "Your account Success Login", "success")
             .then((result) => {
               navigate("/home");
+              localStorage.setItem("users_id", res.data.data.users_id);
+              localStorage.setItem("users_id_profile", res.data.data.users_id);
+              localStorage.setItem("token", res.data.data.token_user);
             })
-            .catch((err) => {
-              console.log(res.data);
-            });
         } else {
           console.log(res.data.message);
-          Swal.fire("Login Error", res.data.message, "error");
+          Swal.fire("Login Failed", res.data.message, "error");
         }
         dispatch({ type: "USER_LOGIN_SUCCESS", payload: data });
       });

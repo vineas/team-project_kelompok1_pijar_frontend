@@ -172,7 +172,7 @@ html body {
   align-items: center;
   justify-content: center;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 428px) {
   .hero {
     font-size: 52%;
   }

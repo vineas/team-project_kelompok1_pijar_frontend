@@ -19,7 +19,7 @@ const DetailVedeoIsi = () => {
       <section>
         <div className="container">
           <div className="row">
-            <div className="col-12 col-md-9  mt-3 p-2  ">
+            <div className="col-12 col-md-9  mt-3 p-2">
               <div className={`video ${style.video}`}>
                 <ReactPlayer url={recipe.recipes_video} className={`video`} />
               </div>
