@@ -98,8 +98,8 @@ REACT_APP_API_KEY = [BACKEND_URL]
   </tr>
 
   <tr>
-    <td><img width="350px" src="./documentaion/landing-page.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="./documentaion/detail-recipe.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+    <td><img width="350px" src="./documentaion/home.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="350px" src="./documentaion/edit recipe.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
   <tr>
     <td>Landing Page</td>
