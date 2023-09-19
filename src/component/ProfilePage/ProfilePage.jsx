@@ -317,6 +317,7 @@ const ProfilePage = () => {
                                           recipe.recipes_ingredients
                                         }
                                         recipes_photo={recipe.recipes_photo}
+                                        users_id={getid}
                                         recipes_video={recipe.recipes_video}
                                       />
                                     </div>

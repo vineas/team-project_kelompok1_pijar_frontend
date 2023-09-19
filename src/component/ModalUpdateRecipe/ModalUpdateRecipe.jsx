@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 // import validator from "validator";
 
-const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, recipes_video }) => {
+const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, users_id, recipes_video }) => {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -20,6 +20,7 @@ const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, rec
   const [data, setData] = useState({
     recipes_title,
     recipes_ingredients,
+    users_id,
     recipes_video,
   });
 
@@ -44,6 +45,7 @@ const ModalUpdateRecipe = ({ recipes_id, recipes_title, recipes_ingredients, rec
       formData.append("recipes_photo", image);
       formData.append("recipes_title", data.recipes_title);
       formData.append("recipes_ingredients", data.recipes_ingredients);
+      formData.append("users_id", users_id);
       formData.append("recipes_video", data.recipes_video);
 
       // Make the axios.put request to update the recipe
