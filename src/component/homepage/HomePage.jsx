@@ -225,13 +225,13 @@ const HomePage = () => {
                     position: "relative",
                     borderRadius: "10px",
                     overflow: "hidden",
-                    height: "100%",
+                    height: "90%",
                   }}
                 >
                   <img
                     style={{
                       width: "100%",
-                      height: "100%",
+                      height: "300px",
                       objectFit: "cover",
                     }}
                     src={item.recipes_photo}
